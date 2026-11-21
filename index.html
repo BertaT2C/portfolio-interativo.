@@ -407,6 +407,43 @@ function syncThemeButton(){const dark=document.documentElement.dataset.theme==='
 themeToggle.onclick=()=>{const theme=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=theme;try{localStorage.setItem('berta-theme',theme);}catch{}syncThemeButton();};
 syncThemeButton();
 
+function cycleStages(stages,buttonSelector,detail,title,description,delay){
+ const buttons=[...document.querySelectorAll(buttonSelector)];
+ let index=0;
+ let timer;
+ let visible=false;
+
+ function showStage(next){
+  index=next;
+  const [name,body]=stages[index];
+  buttons.forEach((button,i)=>button.setAttribute('aria-pressed',String(i===index)));
+  title.textContent=name;
+  description.textContent=body;
+ }
+
+ function scheduleNext(){
+  clearTimeout(timer);
+  if(!visible||document.hidden||dialog.open||reducedMotion.matches)return;
+  timer=setTimeout(()=>{
+   if(dialog.open)return;
+   showStage((index+1)%stages.length);
+   scheduleNext();
+  },delay);
+ }
+
+ buttons.forEach((button,i)=>button.onclick=()=>{
+  showStage(i);
+  scheduleNext();
+ });
+ new IntersectionObserver(([entry])=>{
+  visible=entry.isIntersecting;
+  scheduleNext();
+ },{threshold:.25}).observe(detail);
+ document.addEventListener('visibilitychange',scheduleNext);
+ dialog.addEventListener('close',scheduleNext);
+ reducedMotion.addEventListener('change',scheduleNext);
+}
+
 (() => {
 const about=document.getElementById('sobre');
 const paragraphs=[...about.querySelectorAll(':scope > p')];
@@ -433,11 +470,7 @@ if(!motion.matches){
  motion.addEventListener('change',e=>{if(e.matches)finish();});
 }
 const phases=[["Identificar impactos","Desde o início do projeto, converse com as áreas e mapeie quais rotinas, responsabilidades e controles serão afetados pela nova tecnologia."],["Formalizar a mudança","Documente o cenário atual e o futuro, os impactos, os responsáveis e os critérios de adoção. Valide esse registro com a liderança e as áreas envolvidas para institucionalizar a mudança."],["Preparar as equipes","Comunique o que muda, quando e por quê. Prepare materiais, treine os usuários e valide o novo processo com quem vai operar a solução."],["Acompanhar a adoção","Após a entrada em operação, acompanhe indicadores, dúvidas e feedback para ajustar o processo, reforçar a capacitação e sustentar os ganhos."]];
-document.querySelectorAll('[data-gmo-phase]').forEach(button=>button.onclick=()=>{
- const phase=phases[Number(button.dataset.gmoPhase)];
- document.querySelectorAll('[data-gmo-phase]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
- document.getElementById('gmo-phase-title').textContent=phase[0];document.getElementById('gmo-phase-body').textContent=phase[1];
-});
+cycleStages(phases,'[data-gmo-phase]',document.querySelector('.gmo-phase-content'),document.getElementById('gmo-phase-title'),document.getElementById('gmo-phase-body'),6500);
 })();
 
 
@@ -526,43 +559,7 @@ document.getElementById('open-import').onclick=openImport;
 
 {
  const stages=[["Implantação dos módulos","Atuei com a equipe na implantação dos módulos de Compras, Logística, Fiscal, Financeiro, Contas a Receber, Contas a Pagar e Contabilidade."],["Homologação e testes","Executei testes de homologação e validei as regras operacionais, as interfaces e as rotinas dos módulos com as equipes usuárias."],["Capacitação dos usuários","Conduzi treinamentos e orientei as áreas sobre as rotinas do ERP na operação fabril."],["Sustentação e suporte","Atuei no suporte interno após a entrada em produção, acompanhando dúvidas, incidentes e a estabilização das rotinas."]];
- const buttons=[...document.querySelectorAll('[data-oracle-stage]')];
- const detail=document.querySelector('.oracle-stage-detail');
- const title=document.getElementById('oracle-stage-title');
- const description=document.getElementById('oracle-stage-body');
- let index=0;
- let timer;
- let visible=false;
-
- function showStage(next){
-  index=next;
-  const [name,body]=stages[index];
-  buttons.forEach((button,i)=>button.setAttribute('aria-pressed',String(i===index)));
-  title.textContent=name;
-  description.textContent=body;
- }
-
- function scheduleNext(){
-  clearTimeout(timer);
-  if(!visible||document.hidden||dialog.open||reducedMotion.matches)return;
-  timer=setTimeout(()=>{
-   if(dialog.open)return;
-   showStage((index+1)%stages.length);
-   scheduleNext();
-  },4500);
- }
-
- buttons.forEach((button,i)=>button.onclick=()=>{
-  showStage(i);
-  scheduleNext();
- });
- new IntersectionObserver(([entry])=>{
-  visible=entry.isIntersecting;
-  scheduleNext();
- },{threshold:.25}).observe(detail);
- document.addEventListener('visibilitychange',scheduleNext);
- dialog.addEventListener('close',scheduleNext);
- reducedMotion.addEventListener('change',scheduleNext);
+ cycleStages(stages,'[data-oracle-stage]',document.querySelector('.oracle-stage-detail'),document.getElementById('oracle-stage-title'),document.getElementById('oracle-stage-body'),4500);
 }
 
 {
