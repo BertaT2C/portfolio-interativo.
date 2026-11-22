@@ -1,6 +1,7 @@
 for (const header of document.querySelectorAll('.study-header')) {
  const button=header.querySelector('.study-menu-button');
- const nav=header.querySelector('.study-main-nav');
+ const nav=header.querySelector('.study-section-links');
+ if(!button||!nav)continue;
  const isOpen=()=>button.getAttribute('aria-expanded')==='true';
  const close=()=>button.setAttribute('aria-expanded','false');
  button.onclick=()=>button.setAttribute('aria-expanded',String(!isOpen()));
