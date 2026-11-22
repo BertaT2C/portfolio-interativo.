@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Canais digitais: estudo de caso de Product Owner desde o desafio de assistência automotiva, Discovery, Canvas MVP, jornadas, requisitos e backlog até as provas de conceito.">
+  <meta name="theme-color" content="#143b38">
+  <title>Canais digitais | Berta Batista</title>
+  <link rel="stylesheet" href="projetos.css">
+  <style>
+    .case-nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px}
+    .case-nav a{color:#e7f6ef;text-decoration:none;border:1px solid #9bc5b8;border-radius:99px;padding:5px 12px;font-size:.84rem;font-weight:650}
+    .case-nav a:hover{background:rgba(255,255,255,.13)}
+    .stage{display:grid;grid-template-columns:66px minmax(0,1fr);gap:20px;align-items:start}
+    .stage-number{font-size:1.45rem;font-weight:800;color:#155849;background:#e0f1e9;border:1px solid #b9dacf;border-radius:14px;text-align:center;padding:15px 0}
+    .stage h2{margin-top:0}
+    .stage > div:last-child{min-width:0}
+    .muted{color:var(--muted)}
+    .context-quote{font-size:1.12rem;font-weight:650;border-left:4px solid #93bfae;padding:18px 22px;background:#fff;border-radius:7px}
+    .facts{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+    .fact{border:1px solid #bcd8c8;border-radius:11px;background:#fff;padding:10px 15px;font-size:.91rem}
+    .fact strong{display:block;color:var(--green-dark)}
+    .canvas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+    .canvas .panel{border-top:4px solid #3d9b7c;box-shadow:none;padding:17px}
+    .canvas .panel:nth-child(3n+2){border-top-color:#e2ad4e}
+    .canvas .panel h3{font-size:.98rem}
+    .canvas .panel p{font-size:.92rem}
+    .metrics{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}
+    .bar-list{list-style:none;padding:0;margin:0}
+    .bar-list li{margin-bottom:17px}
+    .bar-label{display:flex;justify-content:space-between;gap:12px;margin-bottom:5px;font-size:.94rem;font-weight:650}
+    .bar-track{height:13px;border-radius:99px;background:#e4ece8;overflow:hidden}
+    .bar-fill{display:block;height:100%;border-radius:99px;background:#23758d}
+    .stage-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px}
+    .journey{display:flex;align-items:stretch;flex-wrap:wrap;gap:10px;margin:16px 0}
+    .journey span{background:#e7f1eb;border:1px solid #c6dfd0;border-radius:10px;padding:10px 14px;font-weight:650;font-size:.9rem}
+    .journey b{align-self:center;color:#608b79}
+    .demo{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:18px}
+    .demo-panel{background:#fff;border:1px solid #c5ddcf;border-radius:16px;padding:23px}
+    .demo-panel .tag{margin-bottom:10px}
+    .case-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+    .case-links a{display:block;background:#fff;border:1px solid #cee3d5;border-radius:12px;padding:16px;font-weight:700;text-decoration:none}
+    .case-links .case-resource{display:block;background:#fff;border:1px solid #cee3d5;border-radius:12px;padding:16px}
+    .case-resource strong{display:block;font-weight:700}
+    .case-resource small{display:block;font-weight:400;color:var(--muted);margin-top:4px}
+    .case-links a small{display:block;font-weight:400;color:var(--muted);margin-top:4px}
+    .case-links a:hover{border-color:var(--green)}
+    .case-section{border-bottom:1px solid #e0eae4}
+    .skills{margin-bottom:10px}
+    @media(max-width:830px){.metrics,.canvas,.demo{grid-template-columns:1fr 1fr}}
+    @media(max-width:680px){.metrics,.canvas,.demo,.case-links{grid-template-columns:1fr}.stage{grid-template-columns:1fr;gap:8px}.stage-number{width:58px;padding:7px 0}.journey b{display:none}}
+  .viability-block{margin:26px 0;padding:24px;border:1px solid #c7dfd3;background:#f3faf6;border-radius:16px}.viability-block h3{margin:0 0 10px;color:#174c3e}.viability-block h4{margin:23px 0 10px}.viability-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:18px 0}.viability-grid article{padding:16px;background:#fff;border:1px solid #d5e6db;border-radius:12px}.viability-grid strong,.viability-grid span{display:block}.viability-grid strong{color:#176b54;margin-bottom:6px}.viability-grid span{font-size:.9rem}.viability-table-wrap{overflow-x:auto}.viability-table{width:100%;border-collapse:collapse;background:#fff;font-size:.88rem}.viability-table th,.viability-table td{padding:12px;border:1px solid #dce8e0;text-align:left;vertical-align:top}.viability-table th{background:#dcefe4;color:#174c3e}@media(max-width:680px){.viability-grid{grid-template-columns:1fr}.viability-block{padding:16px}}
+
+    .to-be-map{margin:28px 0;background:#fff;border:1px solid #bfd9cf;border-radius:18px;overflow:hidden;box-shadow:0 10px 34px rgba(16,62,50,.09)}
+    .to-be-map figcaption{display:grid;gap:6px;padding:20px 23px;background:#f1f8f4;border-bottom:1px solid #d7e9df}
+    .to-be-map figcaption strong{font-size:1.06rem;color:#174f42}
+    .to-be-map figcaption span{color:#546d61;font-size:.92rem;line-height:1.5}
+    .to-be-map-frame{height:640px;background:#f6faf8}
+    .to-be-map iframe{display:block;width:100%;height:100%;border:0}
+    .to-be-map-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:14px 22px;background:#fff;font-size:.87rem}
+    .to-be-map-footer span{color:#5a6e65;flex:1 1 250px}
+    .to-be-map-footer a{color:#135e4d;font-weight:750;text-decoration:underline;text-underline-offset:3px}
+    @media(max-width:680px){.to-be-map-frame{height:490px}.to-be-map figcaption{padding:16px}.to-be-map-footer{padding:14px 16px}}
+
+
+    /* Materiais Miro privados: solicitações de acesso, sem iframe ou links públicos. */
+    .request-access{cursor:pointer;font:inherit;text-align:left}
+    .case-links .request-access{display:block;width:100%;background:#fff;border:1px solid #cee3d5;border-radius:12px;padding:16px;font-weight:700;color:var(--green-dark);line-height:1.45}
+    .case-links .request-access small{display:block;font-weight:400;color:var(--muted);margin-top:4px}
+    .case-links .request-access:hover,.case-links .request-access:focus-visible{border-color:#177357;box-shadow:0 0 0 2px #d9eee4}
+    p>.request-access:not(.btn){padding:0;border:0;background:none;color:#176b54;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+    .restricted-map{display:grid;grid-template-columns:minmax(140px,.55fr) minmax(0,1.45fr);gap:24px;margin:27px 0;padding:24px;background:linear-gradient(110deg,#eaf4ee,#fff);border:1px solid #c6dfd2;border-radius:18px;box-shadow:0 10px 28px rgba(17,75,53,.07)}
+    .restricted-map-art{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;border-radius:14px;background:#173e35;min-height:220px}
+    .restricted-lock{font-size:3.2rem}
+    .restricted-map-lines{display:flex;align-items:center;gap:9px}.restricted-map-lines i{display:block;width:26px;height:6px;background:#e6bc65;border-radius:8px}.restricted-map-lines i:nth-child(2){width:55px;background:#8fc7ad}
+    .restricted-eyebrow{font-size:.73rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#266b51}
+    .restricted-map h3{margin:9px 0 9px;font-size:1.25rem;color:#143e32}
+    .restricted-map p{font-size:.95rem;line-height:1.6;color:#49645a}
+    .restricted-map .restricted-note{font-weight:650;color:#245746}
+    .restricted-primary{padding:13px 18px;border:0;border-radius:10px;background:#196b50;color:white;font-weight:750;cursor:pointer;line-height:1.4}
+    .restricted-primary:hover{background:#104c39}
+    .access-dialog{border:0;border-radius:18px;padding:0;max-width:520px;width:calc(100% - 28px);background:#fff;color:#203d31;box-shadow:0 22px 80px rgba(0,0,0,.26)}
+    .access-dialog::backdrop{background:rgba(4,28,24,.70);backdrop-filter:blur(3px)}
+    .access-dialog-inner{padding:26px}
+    .access-dialog-top{display:flex;justify-content:space-between;align-items:flex-start;gap:14px}
+    .access-dialog h2{font-size:1.38rem;margin:6px 0 9px;color:#164a39}
+    .access-dialog p{font-size:.94rem;line-height:1.55;color:#456355}
+    .access-dialog-close{width:36px;height:36px;border:1px solid #c9ddd1;border-radius:50%;background:white;font-size:1.3rem;cursor:pointer;flex-shrink:0}
+    .access-form{display:grid;gap:13px;margin-top:17px}
+    .access-form label{display:grid;gap:5px;font-size:.86rem;font-weight:700}
+    .access-form input:not([type="checkbox"]),.access-form textarea{box-sizing:border-box;width:100%;font:inherit;border:1px solid #b8d3c5;border-radius:9px;padding:10px 12px;min-height:43px;background:#fff;color:#183c30}
+    .access-form textarea{min-height:65px;resize:vertical}
+    .access-form .access-consent{display:flex;align-items:flex-start;gap:9px;font-size:.82rem;font-weight:500;line-height:1.55;color:#466156}
+    .access-consent input{margin-top:4px}
+    .access-form button[type="submit"]{border:0;border-radius:10px;padding:13px;background:#176747;color:#fff;font:inherit;font-weight:750;cursor:pointer}
+    .access-form button[disabled]{opacity:.65;cursor:wait}
+    .access-status{min-height:1.3em;margin:0;font-size:.87rem!important}
+    .access-status.error{color:#a62c2c}
+    .access-status.success{color:#176747}
+    .access-fallback{display:none;font-size:.86rem;color:#176747;font-weight:700}
+    .access-fallback.visible{display:inline-block}
+    .access-privacy{font-size:.76rem!important;color:#617b6e!important}
+    @media(max-width:680px){.restricted-map{grid-template-columns:1fr;padding:16px}.restricted-map-art{min-height:100px;flex-direction:row}.access-dialog-inner{padding:20px}}
+
+</style>
+<link rel="stylesheet" href="study-navigation.css">
+<script src="study-navigation.js" defer></script>
+</head>
+<body>
+  <header class="top study-header"><div class="container top-inner study-header-inner">
+    <a class="brand" href="index.html">Berta Batista</a>
+    <button type="button" class="study-menu-button" aria-expanded="false" aria-controls="study-main-nav"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>Menu</button><nav class="study-main-nav" id="study-main-nav" aria-label="Navegação principal">
+      <a href="index.html">Início</a>
+      <a href="index.html#projetos">Projetos</a>
+      <a href="index.html#como-ajudo">Como atuo</a>
+      <a href="index.html#contato">Contato</a>
+    <div class="study-section-links"><strong>Neste estudo</strong>
+        <a href="#desafio">Desafio</a><a href="#discovery">Discovery</a><a href="#mvp">Canvas MVP</a>
+        <a href="#jornada">Jornada</a><a href="#backlog">Backlog &amp; BDD</a><a href="#poc">POC</a>
+        <a href="#indicadores">Indicadores</a><a href="#evidencias">Evidências</a>
+      </div></nav>
+  </div></header>
+  <main>
+    <div class="hero"><div class="container">
+      <p class="crumb"><a href="index.html">Início</a> / <a href="index.html#projetos">Projetos</a> / Canais digitais</p>
+      <span class="tag">Estudo de caso · Product Owner · Discovery ao MVP</span>
+      <h1>Canais digitais</h1>
+      <p class="hero-lead">Da identificação da dependência do Call Center ao desenho de uma jornada de assistência automotiva por autosserviço — com Discovery, Canvas MVP, requisitos, backlog e demonstração por provas de conceito.</p>
+      <div class="actions">
+        
+        <button type="button" class="btn outline request-access" data-material="Ver quadro no Miro">Ver quadro no Miro · solicitar acesso</button>
+      </div>
+      <nav class="case-nav" aria-label="Etapas deste case">
+        <a href="#desafio">Desafio</a><a href="#discovery">Discovery</a><a href="#mvp">Canvas MVP</a>
+        <a href="#jornada">Jornada</a><a href="#backlog">Backlog &amp; BDD</a><a href="#poc">POC</a>
+        <a href="#indicadores">Indicadores</a><a href="#evidencias">Evidências</a>
+      </nav>
+    </div></div>
+
+    <section id="desafio" class="case-section" aria-labelledby="desafio-h"><div class="container stage">
+      <span class="stage-number" aria-hidden="true">01</span><div>
+      <h2 id="desafio-h">O desafio de negócio</h2>
+      <p class="context-quote">Como permitir que segurados e beneficiários iniciem solicitações de assistência automotiva sem depender exclusivamente de chamadas ao Call Center?</p>
+      <p>O briefing de Product Owner descreve um processo de abertura de assistência — <strong>guincho, carro reserva e motorista amigo</strong> — realizado exclusivamente por telefone, com pouca flexibilidade para o cliente e desvantagem competitiva frente a alternativas digitais.</p>
+      <div class="facts">
+        <div class="fact"><strong>Público</strong>Segurados e beneficiários</div>
+        <div class="fact"><strong>Problema</strong>Dependência do atendimento telefônico</div>
+        <div class="fact"><strong>Direção</strong>Início autônomo do atendimento</div>
+      </div>
+      <p class="muted">O cliente buscava definir um <strong>Produto Mínimo Viável (MVP)</strong> capaz de transformar a experiência de assistência automotiva, ampliando o autosserviço digital e reduzindo a dependência do Call Center. A iniciativa deveria estabelecer uma <strong>proposta de valor clara</strong>, priorizar funcionalidades essenciais e definir <strong>critérios de sucesso e indicadores de desempenho</strong> para avaliar a eficiência operacional, a experiência do usuário e os benefícios entregues ao negócio.</p>
+      </div>
+    </div></section>
+
+    <section id="discovery" class="case-section" aria-labelledby="discovery-h"><div class="container stage">
+      <span class="stage-number" aria-hidden="true">02</span><div>
+      <h2 id="discovery-h">Discovery e diagnóstico</h2>
+      <p>O Discovery usou pesquisa desk para investigar como seguradoras oferecem atendimento digital e quais etapas da assistência automotiva poderiam ser priorizadas no MVP.</p>
+      <div class="metrics">
+        <article class="stage-card">
+          <h3>Primeiro canal para resolver um problema</h3>
+          <ul class="bar-list" aria-label="Quatro canais mais citados na pesquisa brasileira de 2024">
+            <li><div class="bar-label"><span>WhatsApp</span><span>30%</span></div><div class="bar-track" aria-hidden="true"><span class="bar-fill" style="width:30%"></span></div></li>
+            <li><div class="bar-label"><span>Telefone</span><span>30%</span></div><div class="bar-track" aria-hidden="true"><span class="bar-fill" style="width:30%"></span></div></li>
+            <li><div class="bar-label"><span>Chat no site</span><span>20%</span></div><div class="bar-track" aria-hidden="true"><span class="bar-fill" style="width:20%"></span></div></li>
+            <li><div class="bar-label"><span>Aplicativo da empresa</span><span>12%</span></div><div class="bar-track" aria-hidden="true"><span class="bar-fill" style="width:12%"></span></div></li>
+          </ul>
+          <p class="muted"><small>Mobile Time e Opinion Box, março de 2024. Pesquisa com 1.176 brasileiros de 16 anos ou mais que tinham smartphone, sobre atendimento de empresas em geral. O gráfico mostra os quatro canais mais citados. <a href="https://www.mobiletime.com.br/noticias/20/05/2024/whatsapp-e-telefone-sao-os-canais-de-atendimento-preferidos-do-brasileiro/">Consultar pesquisa</a>.</small></p>
+        </article>
+        <article class="stage-card">
+          <h3>Pontos de atenção do AS IS</h3>
+          <ul class="points">
+            <li>Dependência do Call Center para abertura do atendimento.</li>
+            <li>Jornadas fragmentadas entre WhatsApp, portal, e-commerce e atendimento humano.</li>
+            <li>Necessidade de orientação clara para segurados e não segurados.</li>
+            <li>Regras para tratamento de respostas incorretas e encaminhamento ao atendente.</li>
+          </ul>
+        </article>
+      </div>
+      <div class="viability-block">
+        <h3>Benchmark de assistência automotiva</h3>
+        <ul class="points">
+          <li><strong>Allianz Seguros, Brasil (2025):</strong> a assistência 24h foi o serviço mais acionado pelo WhatsApp da seguradora (35%). O canal também direcionava para chat ou telefone. <a href="https://www.sindicatoseguradoras.com.br/2025/07/01/uso-dos-canais-digitais-cresce-mais-de-20-na-allianz-seguros/">Consultar dados divulgados pelo Sindseg</a>.</li>
+          <li><strong>Porto Seguro Auto, Brasil (2025):</strong> O manual do Seguro Auto lista WhatsApp, app e telefone entre os canais 24h para solicitar serviços e abrir sinistro. <a href="https://www.portoseguro.com.br/content/dam/documentos/condicoes_gerais/seguro_auto/2025/CG138-3402-Porto%20Seguro.pdf">Consultar manual do segurado</a>.</li>
+          <li><strong>HDI Seguros (2025):</strong> O manual Auto lista portal e app para consultar a carteirinha e acompanhar pagamentos, além da central telefônica para solicitar serviços e avisar sinistros. <a href="https://www.bv.com.br/documents/d/portal/cg-hdi-1">Condições contratuais de Automóvel</a>.</li>
+          <li><strong>Tokio Marine Brasil (2025):</strong> O guia Auto indica WhatsApp e telefone para carro reserva e canais digitais para serviços de vidros, conforme a apólice. <a href="https://portal.tokiomarine.com.br/docstore-services/rest/download/0807149a-2640-4fc6-b0be-97d47e890179">Guia de Serviços e Benefícios Automóvel</a>.</li>
+        </ul>
+      </div>
+      <div class="viability-block" id="sintese-discovery">
+        <h3>Síntese do Discovery · 2024–2025</h3>
+        <div class="viability-table-wrap">
+          <table class="viability-table">
+            <thead><tr><th scope="col">Recorte</th><th scope="col">Evidência</th><th scope="col">Decisão para o MVP</th></tr></thead>
+            <tbody>
+              <tr><td>Brasil · atendimento ao consumidor · 2024</td><td>WhatsApp e telefone foram a primeira escolha de 30% dos entrevistados cada. Chat no site teve 20% e app, 12%.</td><td>Testar WhatsApp como entrada e manter o telefone acessível para quem preferir atendimento por voz.</td></tr>
+              <tr><td>Brasil · Allianz Seguros · 2025</td><td>Assistência 24h foi o serviço mais acionado no WhatsApp da seguradora (35%). O canal também direcionava para chat ou telefone.</td><td>Priorizar a solicitação de assistência e oferecer encaminhamento ao atendimento humano.</td></tr>
+              <tr><td>Brasil · Porto Seguro Auto · 2025</td><td>O manual do Seguro Auto lista WhatsApp, app e telefone entre os canais 24h para solicitar serviços e abrir sinistro.</td><td>Testar o início pelo WhatsApp, com acesso claro ao telefone. Validar protocolo e acompanhamento no piloto.</td></tr>
+              <tr><td>Brasil · HDI Seguros · 2025</td><td>O manual Auto lista portal e app para consultar a carteirinha e acompanhar pagamentos, além da central telefônica para solicitar serviços e avisar sinistros.</td><td>Oferecer consulta digital de informações básicas e deixar a central visível.</td></tr>
+              <tr><td>Brasil · Tokio Marine Brasil · 2025</td><td>O guia Auto indica WhatsApp e telefone para carro reserva e canais digitais para serviços de vidros, conforme a apólice.</td><td>Mostrar os canais disponíveis por serviço e orientar sobre a cobertura contratada.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h4>Qual canal os clientes preferem para consultar o seguro?</h4>
+        <p>Em 2025, a Allianz informou que quase 40% dos seus clientes de seguro auto usavam o aplicativo Allianz Cliente. Em março de 2025, o acesso à apólice representou 19% no levantamento dos serviços mais usados no app. <a href="https://www.sindicatoseguradoras.com.br/2025/07/01/uso-dos-canais-digitais-cresce-mais-de-20-na-allianz-seguros/">Dados da Allianz divulgados pelo Sindseg</a>.</p>
+        <p>Esses números mostram uso do app na Allianz. A pesquisa brasileira de 2024 mede preferência no atendimento em geral. A preferência entre WhatsApp, telefone, app e portal para consultar o próprio seguro segue como hipótese a validar com segurados. No piloto, perguntar qual canal o segurado escolheria para consultar apólice, cobertura ou carteirinha e comparar a resposta com o canal efetivamente usado.</p>
+        <p>Os percentuais têm bases e objetivos diferentes. Cada dado orienta uma hipótese de produto.</p>
+        <p><strong>Validação:</strong> Medir a taxa de conclusão da abertura digital, os recontatos pelo mesmo pedido e as transferências para atendimento humano. Comparar os indicadores por canal no piloto.</p>
+      </div>
+      <div class="viability-block"><h3>Análise de viabilidade e oportunidades de melhoria</h3><p>Proposta de instrumentação da jornada para validar hipóteses antes de ampliar o MVP. Os indicadores abaixo representam <strong>métricas a coletar</strong>, não resultados já medidos.</p><div class="viability-grid"><article><strong>Abandono por etapa</strong><span>Taxa de desistência, etapa de saída e conclusão do fluxo.</span></article><article><strong>Esforço digital</strong><span>Cliques até o abandono, tempo por etapa, retornos e erros de formulário.</span></article><article><strong>Transição de canais</strong><span>Solicitações iniciadas no digital e encaminhadas ao telefone ou WhatsApp; recontatos por motivo.</span></article><article><strong>Eficiência do atendimento</strong><span>Resolução no primeiro contato, tempo médio e custo por solicitação.</span></article></div><h4>Matriz de priorização do MVP</h4><div class="viability-table-wrap"><table class="viability-table"><thead><tr><th>Problema / hipótese</th><th>Indicador de validação</th><th>Melhoria candidata</th><th>Valor esperado</th></tr></thead><tbody><tr><td>Abandono na identificação</td><td>Saídas e erros por campo</td><td>Formulário simplificado e orientações</td><td>Maior conversão</td></tr><tr><td>Excesso de etapas</td><td>Cliques e tempo até conclusão</td><td>Fluxo guiado e redução de passos</td><td>Menor esforço do usuário</td></tr><tr><td>Migração para telefone</td><td>Transferências e recontatos</td><td>Autosserviço no WhatsApp com opção humana</td><td>Menor demanda repetitiva</td></tr><tr><td>Baixa resolução inicial</td><td>FCR, TMA e custo por solicitação</td><td>Orientações contextuais e integração com atendimento</td><td>Mais eficiência operacional</td></tr></tbody></table></div></div>
+      <p><button type="button" class="request-access" data-material="Abrir Discovery e referências originais no Miro">Abrir Discovery e referências originais no Miro · solicitar acesso</button></p>
+      </div>
+    </div></section>
+
+    <section id="mvp" class="case-section" aria-labelledby="mvp-h"><div class="container stage">
+      <span class="stage-number" aria-hidden="true">03</span><div>
+      <h2 id="mvp-h">Direção de produto e Canvas MVP</h2>
+      <p>O Canvas organizou público, proposta de valor, jornada, funcionalidades iniciais, premissas e métricas para orientar o recorte do MVP.</p>
+      <div class="canvas">
+        <article class="panel"><h3>Missão proposta</h3><p>Facilitar o início de assistências automotivas, com acesso simples a informações e menor esforço do usuário.</p></article>
+        <article class="panel"><h3>Visão proposta</h3><p>Oferecer uma experiência digital de autosserviço que evolua gradualmente para jornadas mais completas.</p></article>
+        <article class="panel"><h3>Resultado esperado</h3><p>Que segurados e beneficiários possam abrir ou iniciar atendimentos de assistência de forma autônoma.</p></article>
+        <article class="panel"><h3>Personas</h3><p>Pessoas com seguros automotivos e usuários familiarizados com aplicativos e mensagens móveis.</p></article>
+        <article class="panel"><h3>Jornada preliminar</h3><p>Aplicativo/canal → base de clientes → escolha da seguradora → dados da seguradora.</p></article>
+        <article class="panel"><h3>Escopo de MVP</h3><p>Explorar serviços de assistência por canal automatizado, com informação compreensível e orientação do usuário.</p></article>
+      </div>
+      <div class="facts">
+        <div class="fact"><strong>Referência de cronograma</strong>3 semanas no Canvas</div>
+        <div class="fact"><strong>Papéis previstos</strong>Desenvolvedor e Product Owner</div>
+        <div class="fact"><strong>Plataforma mencionada</strong>Zenvia — R$ 700 no Canvas</div>
+      </div>
+      <p class="note"><strong>Premissas, não resultados:</strong> missão e visão acima sintetizam o briefing. Prazo, participantes e valor são referências apresentadas no Canvas; não comprovam contrato, custo incorrido ou implantação.</p>
+      <p><button type="button" class="request-access" data-material="Abrir Canvas MVP original no Miro">Abrir Canvas MVP original no Miro · solicitar acesso</button></p>
+      </div>
+    </div></section>
+
+    <section id="jornada" class="case-section" aria-labelledby="jornada-h"><div class="container stage">
+      <span class="stage-number" aria-hidden="true">04</span><div>
+      <h2 id="jornada-h">Desenho da jornada: AS IS → TO BE</h2>
+      <p>Com base na descoberta, o estudo organizou a evolução da navegação, diferenciando perfis de atendimento e descrevendo menus, regras, orientações e alternativas de atendimento humano.</p>
+      <div class="journey" aria-label="Resumo funcional da jornada proposta">
+        <span>Entrada pelo WhatsApp</span><b>→</b><span>Saudação e perfil</span><b>→</b><span>Menu de serviços</span><b>→</b><span>Orientação / portal</span><b>→</b><span>Atendente ou encerramento</span>
+      </div>
+      <p><strong>Segurado:</strong> informações de assistência e direcionamento ao portal conforme o serviço e a cobertura. <strong>Não segurado:</strong> orientação para o e-commerce Autoglass quando busca peças automotivas.</p>
+      <p><strong>Tratamento de exceções:</strong> o fluxo registra orientação após resposta inválida, nova tentativa e encerramento após segunda entrada incorreta.</p>
+
+      <div class="restricted-map" aria-labelledby="restricted-map-title">
+        <div class="restricted-map-art" aria-hidden="true">
+          <span class="restricted-lock">🔒</span>
+          <div class="restricted-map-lines"><i></i><i></i><i></i></div>
+        </div>
+        <div class="restricted-map-content">
+          <span class="restricted-eyebrow">Evidência de projeto · Acesso controlado</span>
+          <h3 id="restricted-map-title">Mapeamento TO BE — Jornada de atendimento digital</h3>
+          <p>O fluxograma detalhado, com menus, decisões, integrações e tratamento de exceções, está preservado em um quadro privado no Miro.</p>
+          <p class="restricted-note">Este material possui acesso restrito e pode ser disponibilizado mediante solicitação.</p>
+          <button type="button" class="restricted-primary request-access" data-material="Mapeamento TO BE — Jornada de atendimento digital">Solicitar acesso ao mapeamento →</button>
+        </div>
+      </div>
+      <div class="case-links">
+        <div class="case-resource"><strong>Jornada detalhada</strong><small>43 etapas e 36 ligações documentadas</small></div>
+        <button type="button" class="request-access" data-material="Fluxograma visual no Miro">Fluxograma visual no Miro · solicitar acesso<small>Transições, mensagens e caminhos originais</small></button>
+      </div>
+      </div>
+    </div></section>
+
+    <section id="backlog" class="case-section" aria-labelledby="backlog-h"><div class="container stage">
+      <span class="stage-number" aria-hidden="true">05</span><div>
+      <h2 id="backlog-h">Backlog, regras de negócio e critérios de aceite</h2>
+      <p>O estudo de evolução considera opções de menu como <strong>Assistência Dia e Noite</strong>, <strong>Seguradoras</strong>, <strong>Oficina</strong> e <strong>Voltar</strong>. A documentação também contém dez cenários de usuário estruturados em BDD.</p>
+      <div class="stage-card">
+        <h3>Exemplo de comportamento documentado — entrada inválida</h3>
+        <p><strong>Dado</strong> que o usuário tenha recebido o menu inicial, <strong>quando</strong> informar uma opção não reconhecida pela primeira vez, <strong>então</strong> o sistema deverá orientá-lo a digitar uma opção válida.</p>
+        <p>Na segunda tentativa inválida, a jornada documentada prevê mensagem de orientação e encerramento.</p>
+        <p class="muted"><small>Exemplo resumido a partir das regras registradas; os dez cenários completos devem ser consultados na fonte.</small></p>
+      </div>
+      <div class="case-links" style="margin-top:14px">
+        <div class="case-resource"><strong>Histórias, regras e BDD</strong><small>Dez cenários originais preservados</small></div>
+        <div class="case-resource"><strong>Estudo completo do backlog</strong><small>34 etapas e 24 ligações documentadas</small></div>
+      </div>
+      </div>
+    </div></section>
+
+    <section id="poc" class="case-section" aria-labelledby="poc-h"><div class="container stage">
+      <span class="stage-number" aria-hidden="true">06</span><div>
+      <h2 id="poc-h">Da proposta à prova de conceito</h2>
+      <p>A etapa final do material apresenta demonstrações para comunicar a experiência antes de uma eventual implementação. O quadro no Miro mantém as telas, os protótipos e suas relações com o backlog.</p>
+      <div class="demo">
+        <article class="demo-panel">
+          <span class="tag">POC 01</span>
+          <h3>Vídeo demonstrativo da jornada</h3>
+          <p>Demonstração relacionada ao MVP, com acesso ao vídeo e ao frame visual do Miro.</p>
+          <p><a href="https://youtu.be/u4LxF7WXEUY" target="_blank" rel="noopener noreferrer">▶ Assistir à POC 01 ↗</a></p>
+          <p><button type="button" class="request-access" data-material="Consultar a POC 01 no Miro">Consultar a POC 01 no Miro · solicitar acesso</button></p>
+        </article>
+        <article class="demo-panel">
+          <span class="tag">POC 02</span>
+          <h3>Sequência de telas do MVP</h3>
+          <p>Referência visual da experiência proposta, mantida no quadro original.</p>
+          <p><button type="button" class="request-access" data-material="Explorar telas da POC 02">Explorar telas da POC 02 · solicitar acesso</button></p>
+        </article>
+      </div>
+      <p class="note" style="margin-top:18px"><strong>Escopo da entrega:</strong> estudo, documentação funcional e provas de conceito. Não há comprovação no material consultado de implantação em produção ou de redução medida das chamadas ao Call Center.</p>
+      </div>
+    </div></section>
+
+    <section id="indicadores" class="case-section" aria-labelledby="indicadores-h"><div class="container stage">
+      <span class="stage-number" aria-hidden="true">07</span><div>
+      <h2 id="indicadores-h">Como medir o sucesso após a implantação</h2>
+      <p>O Canvas prevê instrumentos de validação da experiência, mas o estudo não traz resultados consolidados após a POC.</p>
+      <div class="overview">
+        <article class="panel"><h3>Cliques na automação</h3><p>Medir interação e uso da jornada proposta.</p></article>
+        <article class="panel"><h3>Pesquisa NPS</h3><p>Acompanhar a percepção dos usuários sobre a experiência.</p></article>
+        <article class="panel"><h3>Depoimentos</h3><p>Coletar feedback qualitativo para orientar novas melhorias.</p></article>
+      </div>
+      <p style="margin-top:16px"><strong>Evolução recomendada:</strong> incluir taxa de conclusão da solicitação, abandono da jornada e transferência ao atendimento humano, com linha de base antes/depois, caso o produto seja implantado.</p>
+      </div>
+    </div></section>
+
+    <section id="evidencias" aria-labelledby="evidencias-h"><div class="container">
+      <h2 id="evidencias-h">Evidências, materiais e documentação</h2>
+      <p>Os materiais do Miro possuem acesso restrito e são disponibilizados mediante solicitação. O portfólio apresenta as sínteses públicas dos fluxos, Canvas MVP, backlog e POCs.</p>
+      <div class="case-links">
+        <button type="button" class="request-access" data-material="Quadro completo e navegável no Miro">Quadro completo e navegável no Miro · solicitar acesso<small>Discovery, Canvas MVP, jornadas, backlog e POCs</small></button>
+        <div class="case-resource"><strong>Repositório principal no GitHub</strong><small>README e documentos do estudo de caso</small></div>
+        <div class="case-resource"><strong>Documentação detalhada original</strong><small>Contexto, regras, links e rastreabilidade dos artefatos</small></div>
+        <div class="case-resource"><strong>Mapeamento AS IS em imagem</strong><small>Evidência visual já disponibilizada no repositório</small></div>
+      </div>
+    </div></section>
+
+    <section aria-labelledby="skills-h"><div class="container">
+      <h2 id="skills-h">Competências demonstradas</h2>
+      <ul class="skills"><li>Product Owner</li><li>Discovery</li><li>Jornada do Usuário</li><li>Visão de Produto</li><li>MVP</li><li>Miro</li><li>AS IS / TO BE</li><li>Backlog</li><li>BDD</li><li>Critérios de Aceite</li><li>KPIs</li><li>Comunicação com stakeholders</li></ul>
+    </div></section>
+
+    <section class="next" aria-labelledby="outras"><div class="container">
+      <h2 id="outras">Explore outros projetos</h2>
+      <div class="nextlinks">
+        <a href="refinamento.html">Qualidade do refinamento →</a>
+        <a href="whatsapp.html">Atendimento por WhatsApp →</a>
+        <a href="processos-rpa.html">CT-e e MDF-e →</a>
+        <a href="oracle-r12.html">Notas fiscais no Oracle R12 →</a>
+        <a href="pdv.html">PDV integrado ao ABS →</a>
+      </div>
+      <p style="margin:25px 0 0"><a href="index.html#projetos">← Voltar à página inicial</a></p>
+    </div></section>
+  </main>
+  <footer class="container">© 2026 Berta Batista · <a href="index.html">Portfólio</a> · <a href="https://www.linkedin.com/in/bertabatista/" target="_blank" rel="noopener noreferrer">LinkedIn</a></footer>
+
+  <dialog id="access-request-dialog" class="access-dialog" aria-labelledby="access-dialog-title" aria-describedby="access-dialog-desc">
+    <div class="access-dialog-inner">
+      <div class="access-dialog-top">
+        <div>
+          <span class="restricted-eyebrow">Portfólio · Material protegido</span>
+          <h2 id="access-dialog-title">Solicitar liberação de acesso</h2>
+        </div>
+        <button type="button" class="access-dialog-close" aria-label="Fechar janela" data-close-access>×</button>
+      </div>
+      <p id="access-dialog-desc"><strong>Acesso restrito.</strong> Por favor, solicite liberação preenchendo os dados abaixo. A autorização será analisada individualmente.</p>
+      <form id="access-request-form" class="access-form" action="https://formsubmit.co/bertareg@hotmail.com" method="POST" target="_blank">
+        <input type="hidden" name="material" id="access-material" value="Material privado do Miro">
+        <input type="hidden" name="_subject" value="Portfólio — solicitação de acesso ao Miro">
+        <input type="hidden" name="_url" value="https://bertat2c.github.io/canais-digitais.html">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+        <label for="access-name">Nome completo *
+          <input id="access-name" name="name" autocomplete="name" required maxlength="100" placeholder="Seu nome">
+        </label>
+        <label for="access-email">E-mail profissional *
+          <input id="access-email" name="email" type="email" autocomplete="email" required maxlength="160" placeholder="nome@empresa.com">
+        </label>
+        <label for="access-company">Empresa / consultoria *
+          <input id="access-company" name="empresa" required maxlength="120" placeholder="Empresa onde atua">
+        </label>
+        <label for="access-message">Mensagem (opcional)
+          <textarea id="access-message" name="mensagem" maxlength="600" placeholder="Vaga, finalidade ou contexto da solicitação"></textarea>
+        </label>
+        <label class="access-consent" for="access-consent">
+          <input id="access-consent" type="checkbox" required>
+          <span>Concordo com o envio destes dados ao serviço FormSubmit para encaminhamento da solicitação à responsável pelo portfólio. Os dados serão utilizados para avaliar o pedido de acesso.</span>
+        </label>
+        <button type="submit" id="access-submit">Enviar solicitação de acesso</button>
+        <p class="access-status" id="access-status" role="status" aria-live="polite"></p>
+        <a id="access-fallback" class="access-fallback visible" href="mailto:bertareg@hotmail.com?subject=Solicita%C3%A7%C3%A3o%20de%20acesso%20ao%20Miro">Prefiro solicitar diretamente pelo meu e-mail →</a>
+        <p class="access-privacy">O envio abre uma nova aba para validação pelo FormSubmit. A solicitação somente estará concluída após a confirmação nessa aba. O acesso ao Miro não será liberado automaticamente.</p>
+      </form>
+    </div>
+  </dialog>
+  <script>
+  (() => {
+    const dialog = document.getElementById('access-request-dialog');
+    const form = document.getElementById('access-request-form');
+    const status = document.getElementById('access-status');
+    const fallback = document.getElementById('access-fallback');
+    const material = document.getElementById('access-material');
+    const subject = 'Portfólio — solicitação de acesso ao Miro';
+
+    function refreshAlternative() {
+      const values = new FormData(form);
+      const lines = [
+        'Solicitação de acesso a material privado do portfólio',
+        'Material: ' + (material.value || 'Material privado do Miro'),
+        'Nome: ' + String(values.get('name') || ''),
+        'E-mail: ' + String(values.get('email') || ''),
+        'Empresa: ' + String(values.get('empresa') || ''),
+        'Mensagem: ' + String(values.get('mensagem') || '')
+      ];
+      fallback.href = 'mailto:bertareg@hotmail.com?subject=' +
+        encodeURIComponent(subject) + '&body=' + encodeURIComponent(lines.join('\n'));
+    }
+
+    document.querySelectorAll('.request-access').forEach(button => {
+      button.addEventListener('click', () => {
+        material.value = button.dataset.material || 'Material privado do Miro';
+        status.textContent = '';
+        status.className = 'access-status';
+        refreshAlternative();
+        dialog.showModal();
+        document.getElementById('access-name').focus();
+      });
+    });
+
+    document.querySelector('[data-close-access]').addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
+    form.addEventListener('input', refreshAlternative);
+    form.addEventListener('submit', event => {
+      if (!form.reportValidity()) {
+        event.preventDefault();
+        return;
+      }
+      refreshAlternative();
+      status.className = 'access-status';
+      status.textContent = 'A confirmação do envio será exibida em uma nova aba. Conclua a verificação do FormSubmit nessa aba; o acesso ao Miro ainda depende de aprovação.';
+      // Deixa o navegador realizar o POST HTML nativo. Assim o FormSubmit
+      // pode exibir reCAPTCHA e mensagens de ativação, sem bloqueios de AJAX.
+    });
+    refreshAlternative();
+  })();
+  </script>
+
+</body>
+</html>

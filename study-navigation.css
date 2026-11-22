@@ -1,0 +1,14 @@
+.study-menu-button,.study-section-links{display:none}
+@media(max-width:760px){
+ .study-header.study-menu-ready{position:relative;z-index:10}
+ .study-header.study-menu-ready .study-header-inner{position:relative;display:flex;align-items:center;justify-content:space-between;flex-wrap:nowrap;gap:12px;min-height:60px;padding-top:8px;padding-bottom:8px}
+ .study-header.study-menu-ready .study-menu-button{display:inline-flex;align-items:center;gap:7px;flex:none;min-height:44px;padding:9px 12px;border:1px solid var(--line,#bcd2c8);border-radius:8px;background:var(--surface,#f5f7f2);color:#154139;line-height:1.2;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer}
+ .study-header.study-menu-ready .study-main-nav{display:none}
+ .study-header.study-menu-ready .study-menu-button[aria-expanded="true"] + .study-main-nav{position:absolute;display:flex;flex-direction:column;align-items:stretch;gap:6px;top:100%;right:0;width:min(320px,100%);max-height:calc(100dvh - 72px);overflow:auto;overscroll-behavior:contain;padding:12px;background:#f7f9f4;border:1px solid #bcd2c8;border-radius:12px;box-shadow:0 12px 36px #16362b33;color:#154139}
+ .study-header.study-menu-ready .study-main-nav a,.study-header.study-menu-ready .study-main-nav button{display:flex;align-items:center;min-height:44px;padding:8px 11px;border:1px solid #cbd8ce;border-radius:7px;background:#f7f9f4;color:#154139;font-size:14px;text-decoration:none}
+ .study-header.study-menu-ready .study-main-nav a:hover{background:#e1ebe0}
+ .study-header.study-menu-ready .study-section-links{display:grid;gap:6px;margin-top:4px;padding-top:10px;border-top:1px solid #cbd8ce}
+ .study-section-links strong{padding:0 2px 3px;font-size:13px}
+ body:has(.study-menu-ready) .case-nav{display:none}
+ [data-theme="dark"] .study-header.study-menu-ready .study-menu-button,[data-theme="dark"] .study-header.study-menu-ready .study-main-nav,[data-theme="dark"] .study-header.study-menu-ready .study-main-nav a,[data-theme="dark"] .study-header.study-menu-ready .study-main-nav button{background:#18352d;color:#edf4e8;border-color:#577563}
+}
