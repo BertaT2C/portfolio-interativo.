@@ -301,6 +301,21 @@ dialog:has(.whatsapp-walkthrough) .dialog-body{padding:16px 20px 22px}
  .career-numbers ul{grid-template-columns:1fr;gap:9px}
  .career-numbers li{display:grid;grid-template-columns:5.25rem minmax(0,1fr);align-items:center;gap:12px}
 }
+</style><style id="remaining-project-covers">
+#grid .project-cover{height:auto;min-height:205px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(9px,2vw,22px);padding:clamp(13px,2.5vw,26px);background:radial-gradient(ellipse at 38% 20%,#315f4d,#102f27 75%);color:#f4f5e8}
+.project-cover-flow{min-width:0;position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;padding-bottom:14px}
+.project-cover-stage{min-width:0;display:grid;align-content:start;justify-items:center;gap:6px;padding:9px 3px;color:#e5ede1;border:1px solid #739480;border-radius:10px;background:#254c3e;text-align:center;animation:project-cover-glow 6s ease infinite;animation-delay:var(--stage-offset)}
+.project-cover-stage svg{display:block;width:clamp(27px,6vw,58px);max-width:100%;height:auto;aspect-ratio:1;color:#edd68c}
+.project-cover-stage>span{font:700 clamp(11px,1.15vw,14px)/1.25 Arial,sans-serif;overflow-wrap:anywhere}
+.project-cover-track{position:absolute;bottom:1px;left:16.67%;right:16.67%;height:2px;background:#849f8e;border-radius:2px}
+.project-cover-track::after{content:"";position:absolute;top:-2px;left:0;width:6px;height:6px;border-radius:50%;background:#f6d886;box-shadow:0 0 9px #f6d886;animation:project-cover-signal 6s linear infinite}
+#grid .project-cover .video-play{justify-self:center;color:#f4f5e8;gap:6px}
+#grid .project-cover .video-play svg{width:clamp(34px,5vw,50px);height:clamp(34px,5vw,50px);padding:8px;box-sizing:border-box}
+#grid .card:hover .project-cover .video-play svg{background:#ffe7a0}
+@keyframes project-cover-glow{0%,32%,100%{border-color:#739480}9%,24%{border-color:#f6d886;color:#fff2c9;background:#3c6452;box-shadow:0 0 0 2px #f6d88635}}
+@keyframes project-cover-signal{0%{left:0;opacity:0}8%,88%{opacity:1}100%{left:100%;opacity:0}}
+@media(max-width:450px){#grid .project-cover{min-height:155px}#grid .project-cover .video-play{font-size:11px}.project-cover-stage{padding:7px 2px}}
+@media(prefers-reduced-motion:reduce){.project-cover-stage,.project-cover-track::after{animation:none}.project-cover-track::after{display:none}}
 </style></head><body><header><nav class="wrap portfolio-nav" aria-label="Menu principal"><a class="brand" href="#inicio"><span class="monogram">B</span>Berta Batista</a><button class="mobile-menu-toggle" type="button" aria-controls="portfolio-nav-links" aria-expanded="false" hidden><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span>Menu</span></button><div class="navlinks" id="portfolio-nav-links"><button id="theme-toggle" type="button" aria-label="Ativar modo escuro" aria-pressed="false">Modo escuro</button><div class="portfolio-menu"><a href="#sobre">Sobre mim</a><a href="#habilidades">Habilidades</a><a href="#indicadores-resultados">Resultados</a><a href="#projetos">Projetos</a><a href="#gestao-mudancas">Gestão de mudanças</a><a href="https://www.linkedin.com/in/bertabatista/" target="_blank" rel="noreferrer">LinkedIn</a><a class="portfolio-service" href="https://bertat2c.github.io/Queromeuportfolio/">Quer um portfólio?</a><a href="#contato">Contato</a></div></div></nav></header>
 <section class="hero-new" id="inicio"><div class="wrap hero-layout"><div class="hero-copy"><p class="eyebrow">Product Owner · Analista de Negócios</p><h1>Entendo o negócio<br><em>e estruturo soluções.</em></h1><p class="hero-summary">Processos, produtos digitais e IA generativa.<br><span class="hero-ai-highlight">Da escuta do usuário à organização das descobertas e validação.</span></p><div class="about-me" id="sobre" aria-labelledby="about-title"><h2 id="about-title">Sobre mim</h2><p>Sou Berta Batista, Analista de Negócios e Product Owner. Conecto <strong>necessidades dos usuários, objetivos do negócio e entregas de tecnologia</strong>, do discovery à homologação.</p><p>Minha trajetória passa por <strong>energia, seguros, consultoria e indústria</strong>. Trabalho com evolução de produtos digitais, integrações, automação e melhoria de processos.</p><p>Estruturo requisitos, priorizo backlog e colaboro com negócio, desenvolvimento, arquitetura e UX/UI. Utilizo <strong>IA generativa para organizar descobertas e sintetizar reuniões</strong>, revisando o conteúdo e validando decisões com as pessoas envolvidas.</p></div><div class="hero-cta"><a class="primary-cta" href="#projetos">Conhecer projetos</a><a class="outline-cta" href="#contato">Entre em contato</a></div></div><figure class="hero-photo"><img src="assets/berta-batista-retrato.jpg" alt="Berta Batista" width="345" height="345"></figure></div></section><main class="wrap"><section class="career-numbers" aria-labelledby="career-numbers-title">
   <h2 id="career-numbers-title">Minha trajetória em números</h2>
@@ -382,7 +397,7 @@ dialog:has(.whatsapp-walkthrough) .dialog-body{padding:16px 20px 22px}
   </button>
   <div class="feature-copy"><span class="feature-tag">INTEGRAÇÕES · ERP INDUSTRIAL</span><h3>Fluxo de importação no ERP Oracle R12</h3><p>Da redigitação de itens à integração entre Compras, Logística, Fiscal e Estoque.</p></div>
 </article></div></section>
-<div aria-labelledby="projects-title"><div class="section-top"><div><h3 id="projects-title">Demais projetos</h3><p>Ao longo da minha carreira, atuei em projetos de energia, seguros, consultoria e indústria. Aqui, você encontra alguns desses trabalhos, de canais digitais e automação a integrações e implantação de ERP.</p></div></div><div class="grid" id="grid"></div><div class="more-row"><button class="more" id="more" aria-expanded="false">Ver outros projetos +</button></div></div>
+<div aria-labelledby="projects-title"><div class="section-top"><div><h3 id="projects-title">Demais projetos</h3><p>Ao longo da minha carreira, atuei em projetos de energia, seguros, consultoria e indústria. Aqui, você encontra alguns trabalhos, de canais digitais e automação a integrações e implantação de ERP.</p></div></div><div class="grid" id="grid"></div><div class="more-row"><button class="more" id="more" aria-expanded="false">Ver outros projetos +</button></div></div>
 </section>
 <section class="help-section" id="como-ajudo" aria-labelledby="help-title"><p class="eyebrow">COMO ATUO NOS PROJETOS</p><div class="help-intro"><h2 id="help-title">Da necessidade de negócio<br>à solução tecnológica.</h2></div><div class="help-grid"><button data-help="discovery"><span class="help-number">01 / ENTENDER</span><h3>Discovery e entendimento.</h3><p>Escuta do usuário, busca de transcrições e análise de descobertas com IA.</p><span class="help-open">Explorar minha atuação</span></button><button data-help="processos"><span class="help-number">02 / ESTRUTURAR</span><h3>Processos e boards.</h3><p>Atualização de processos BPMN e boards no Miro e no Mural com evidências das descobertas.</p><span class="help-open">Explorar minha atuação</span></button><button data-help="bdd"><span class="help-number">03 / VALIDAR</span><h3>Requisitos e validação.</h3><p>Regras de negócio, cenários BDD e feedback dos usuários organizados com IA.</p><span class="help-open">Explorar minha atuação</span></button><button data-help="gmo"><span class="help-number">04 / APOIAR A ADOÇÃO</span><h3>Gestão de mudanças.</h3><p>Comunicação, treinamento e acompanhamento da adoção de novos processos e soluções.</p><span class="help-open">Explorar minha atuação</span></button></div></section>
 <section class="gmo-integrated" id="gestao-mudancas" aria-labelledby="gmo-title">
@@ -398,13 +413,109 @@ dialog:has(.whatsapp-walkthrough) .dialog-body{padding:16px 20px 22px}
 <p class="gmo-updates"><a href="gestao-de-mudancas.html">Ver exemplos e histórico de mudanças</a></p>
 </section><section class="contact-section" id="contato" aria-labelledby="contact-title"><div><p class="eyebrow">CONTATO</p><h2 id="contact-title">Vamos conversar sobre<br>o próximo desafio?</h2><p>Análise de negócios, produtos digitais e evolução de processos.</p></div><div class="contact-options"><a href="https://www.linkedin.com/in/bertabatista/" target="_blank" rel="noreferrer"><span>LINKEDIN</span>Conecte-se comigo</a><a href="mailto:bertareg@hotmail.com"><span>E-MAIL</span>bertareg@hotmail.com</a><a href="https://wa.me/5515991814440" target="_blank" rel="noreferrer"><span>WHATSAPP</span>Conversar no WhatsApp</a></div></section><footer class="footer"><p>Projetos e estudos para conhecer minha forma de trabalhar. Dados, documentos e detalhes de casos profissionais são preservados por confidencialidade.</p><span><a href="gestao-de-mudancas.html">Acompanhe as mudanças</a> · <a class="portfolio-service" href="https://bertat2c.github.io/Queromeuportfolio/">Quer um portfólio?</a><br>Berta Batista · Análise de negócios e produtos digitais</span></footer></main><dialog id="detail" aria-labelledby="dialog-title"></dialog><script>
 const projects=[
-{id:'oracle',group:'processos',tag:'Automação · Oracle R12',title:'Menos tarefas manuais no ERP',line:'Prazos: 35% · 72% · janeiro × junho',visual:'oracle',art:"<svg class=\"project-illustration\" viewBox=\"0 0 180 140\" aria-hidden=\"true\"><circle cx=\"90\" cy=\"70\" r=\"53\" fill=\"#e7efe5\"/><g transform=\"translate(90 70) scale(1.35)\" stroke=\"#244f43\" stroke-width=\"3\" stroke-linejoin=\"round\"><path d=\"M-7-29h14l3 9 8 4 9-2 7 12-7 7v9l7 7-7 12-9-2-8 4-3 9H-7l-3-9-8-4-9 2-7-12 7-7V1l-7-7 7-12 9 2 8-4z\" fill=\"#90ad98\" transform=\"translate(0 -5)\"/><circle r=\"11\" fill=\"#f5f7ee\"/></g></svg>",context:'A emissão fiscal exigia preenchimentos repetitivos no Oracle R12, em uma operação industrial com prazos críticos.',role:'Estruturei templates DataLoad, contingências e materiais de orientação para apoiar a automação e a implantação assistida.',deliver:'<div class="evidence"><strong>35% · 72%</strong><br>Cumprimento de prazos</div><div class="evidence"><strong>11% · 6%</strong><br>Taxa de erros</div><p class="subtle">Referências de janeiro e junho publicadas no estudo. Automação introduzida no final de maio.</p>',url:'oracle-r12.html'},
-{id:'pdv',group:'backlog',tag:'Integração · Regras & BDD',title:'Do pedido ao preparo da bebida',line:'PDV · regras · preparo no ABS',visual:'pdv',art:"<svg class=\"project-illustration\" viewBox=\"0 0 210 140\" aria-hidden=\"true\"><g stroke=\"#244f43\" stroke-width=\"3.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"23\" cy=\"32\" r=\"10\" fill=\"#dcb68c\"/><path d=\"M12 77V61c0-8 5-13 12-13 6 0 10 4 12 10l11 9h12M17 77v34m12-34v34\" fill=\"none\"/><path d=\"M40 77h56v32H40z\" fill=\"#91ad96\"/><rect x=\"48\" y=\"40\" width=\"40\" height=\"25\" rx=\"4\" fill=\"#eff4eb\"/><path d=\"M68 66v10M97 53h30m-8-8 8 8-8 8\" fill=\"none\"/><rect x=\"137\" y=\"21\" width=\"58\" height=\"87\" rx=\"8\" fill=\"#d8e6dc\"/><rect x=\"148\" y=\"32\" width=\"36\" height=\"16\" rx=\"3\" fill=\"#eff4eb\"/><path d=\"M147 95V56h37v39m-18-30v6m-10 6h20l-3 13h-14z\" fill=\"none\"/></g></svg>",context:'Um pedido finalizado no ponto de venda precisa virar instruções consistentes para o sistema automatizado de bebidas.',role:'Desdobrei regras de categoria, sabor, copo, gelo, tamanho e consumo em histórias, critérios de aceite e verificações rastreáveis.',deliver:'<div class="evidence"><strong>12</strong> cenários BDD</div><div class="evidence"><strong>15</strong> verificações funcionais</div><p>Regras de negócio conectadas a requisitos e critérios de aceite.</p>',url:'pdv.html'},
-{id:'ia',group:'ia',tag:'IA generativa · Projeto digital',title:'Da ideia ao portfólio com IA',line:'Em breve',visual:'ai',art:'<div class="ai-flow"><div class="ai-box"><small>DIREÇÃO HUMANA</small>Requisitos</div><span class="ai-star">✧</span><div class="ai-box"><small>APOIO DA IA</small>Entrega digital</div></div>',context:'Transformar experiências e materiais dispersos em uma apresentação digital clara e fácil de explorar.',role:'Defini requisitos, priorizei conteúdo, avaliei alternativas e validei as entregas produzidas com apoio de IA generativa.',deliver:'<div class="evidence">Requisitos · prototipação · revisão · entrega</div><p>Conteúdo, código e apresentação visual refinados com ChatGPT/Codex e Lovable, com versionamento no GitHub.</p><details><summary>Ferramentas utilizadas</summary><p>React, TypeScript, Vite, Tailwind CSS, HTML, CSS, GitHub Actions e Pages.</p></details>',upcoming:true},
-{id:'rpa',group:'processos',tag:'Processos · Automação fiscal',title:'Documentos de transporte com RPA',line:'BPMN · CT-e · MDF-e',visual:'oracle',art:"<svg class=\"project-illustration\" viewBox=\"0 0 180 140\" aria-hidden=\"true\"><g stroke=\"#244f43\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"18\" y=\"22\" width=\"62\" height=\"88\" rx=\"8\" fill=\"#f8fbf6\"/><path d=\"M30 42h37M30 55h37M30 68h25M30 81h31\" fill=\"none\"/><path d=\"M85 66h24m-8-7 8 7-8 7\" fill=\"none\"/><rect x=\"115\" y=\"32\" width=\"47\" height=\"68\" rx=\"7\" fill=\"#d8e6dc\"/><path d=\"M115 54h47m-47 22h47M125 43h4m-4 22h4m-4 22h4m7-44h15m-15 22h15m-15 22h15\" fill=\"none\"/></g></svg>",context:'A emissão de documentos de transporte envolvia tarefas manuais e diferentes sistemas.',role:'Levantei necessidades com usuários, participei dos refinamentos e modelei o processo em BPMN no Bizagi.',deliver:'<div class="evidence">Processo mapeado em BPMN</div><p>Solução documentada com planilhas auxiliares, integração dos dados do manifesto e quatro robôs RPA.</p>',url:'processos-rpa.html'},
-{id:'refinamento',group:'backlog',tag:'Backlog · Colaboração',title:'Requisitos mais claros para o time',line:'Antes · durante · depois do refinamento',visual:'pdv',art:'<div class="generic">Dúvida · Clareza</div>',context:'Dúvidas recorrentes sobre regras de negócio fragmentavam a comunicação durante o refinamento.',role:'Analisei as causas e estruturei uma rotina colaborativa com registro de decisões e indicadores.',deliver:'<div class="evidence">Roteiro de refinamento + checklist</div><p>Documento de OKR com fórmulas e proposta de acompanhamento.</p>',url:'refinamento.html'}];
+{id:'oracle',group:'processos',tag:'Automação · Oracle R12',title:'Menos tarefas manuais no ERP',line:'Prazos: 35% · 72% · janeiro × junho',context:'A emissão fiscal exigia preenchimentos repetitivos no Oracle R12, em uma operação industrial com prazos críticos.',role:'Estruturei templates DataLoad, contingências e materiais de orientação para apoiar a automação e a implantação assistida.',deliver:'<div class="evidence"><strong>35% · 72%</strong><br>Cumprimento de prazos</div><div class="evidence"><strong>11% · 6%</strong><br>Taxa de erros</div><p class="subtle">Referências de janeiro e junho publicadas no estudo. Automação introduzida no final de maio.</p>',url:'oracle-r12.html'},
+{id:'pdv',group:'backlog',tag:'Integração · Regras & BDD',title:'Do pedido ao preparo da bebida',line:'PDV · regras · preparo no ABS',context:'Um pedido finalizado no ponto de venda precisa virar instruções consistentes para o sistema automatizado de bebidas.',role:'Desdobrei regras de categoria, sabor, copo, gelo, tamanho e consumo em histórias, critérios de aceite e verificações rastreáveis.',deliver:'<div class="evidence"><strong>12</strong> cenários BDD</div><div class="evidence"><strong>15</strong> verificações funcionais</div><p>Regras de negócio conectadas a requisitos e critérios de aceite.</p>',url:'pdv.html'},
+{id:'ia',group:'ia',tag:'IA generativa · Projeto digital',title:'Da ideia ao portfólio com IA',line:'Em breve',context:'Transformar experiências e materiais dispersos em uma apresentação digital clara e fácil de explorar.',role:'Defini requisitos, priorizei conteúdo, avaliei alternativas e validei as entregas produzidas com apoio de IA generativa.',deliver:'<div class="evidence">Requisitos · prototipação · revisão · entrega</div><p>Conteúdo, código e apresentação visual refinados com ChatGPT/Codex e Lovable, com versionamento no GitHub.</p><details><summary>Ferramentas utilizadas</summary><p>React, TypeScript, Vite, Tailwind CSS, HTML, CSS, GitHub Actions e Pages.</p></details>',upcoming:true},
+{id:'rpa',group:'processos',tag:'Processos · Automação fiscal',title:'Documentos de transporte com RPA',line:'BPMN · CT-e · MDF-e',context:'A emissão de documentos de transporte envolvia tarefas manuais e diferentes sistemas.',role:'Levantei necessidades com usuários, participei dos refinamentos e modelei o processo em BPMN no Bizagi.',deliver:'<div class="evidence">Processo mapeado em BPMN</div><p>Solução documentada com planilhas auxiliares, integração dos dados do manifesto e quatro robôs RPA.</p>',url:'processos-rpa.html'},
+{id:'refinamento',group:'backlog',tag:'Backlog · Colaboração',title:'Requisitos mais claros para o time',line:'Antes · durante · depois do refinamento',context:'Dúvidas recorrentes sobre regras de negócio fragmentavam a comunicação durante o refinamento.',role:'Analisei as causas e estruturei uma rotina colaborativa com registro de decisões e indicadores.',deliver:'<div class="evidence">Roteiro de refinamento + checklist</div><p>Documento de OKR com fórmulas e proposta de acompanhamento.</p>',url:'refinamento.html'}];
 const grid=document.getElementById('grid'),dialog=document.getElementById('detail'),more=document.getElementById('more');let filter='todos',expanded=false,opener;
-function render(){const items=projects.filter((p,i)=>filter==='todos'?(expanded||i<4):p.group===filter);grid.innerHTML=items.map(p=>`<button class="card" data-project="${p.id}" aria-label="Explorar: ${p.title}"><div class="card-visual ${p.visual}" aria-hidden="true">${p.art}</div><div class="card-bottom"><div><span class="tag">${p.tag}</span><h3>${p.title}</h3><p>${p.line}</p></div><span class="arrow" aria-hidden="true"></span></div></button>`).join('');more.hidden=filter!=='todos';more.textContent=expanded?'Recolher projetos −':'Ver outros projetos +';more.setAttribute('aria-expanded',String(expanded));document.querySelectorAll('[data-filter]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.filter===filter)));}
+const projectCoverStages={
+ "oracle": [
+  [
+   "Dados fiscais",
+   "document"
+  ],
+  [
+   "DataLoad",
+   "transfer"
+  ],
+  [
+   "Oracle R12",
+   "gear"
+  ]
+ ],
+ "pdv": [
+  [
+   "Pedido no PDV",
+   "counter"
+  ],
+  [
+   "Enviar pedido",
+   "transfer"
+  ],
+  [
+   "Preparar bebida",
+   "drink"
+  ]
+ ],
+ "ia": [
+  [
+   "Requisitos",
+   "checklist"
+  ],
+  [
+   "Apoio de IA",
+   "spark"
+  ],
+  [
+   "Portfólio",
+   "browser"
+  ]
+ ],
+ "rpa": [
+  [
+   "Manifesto",
+   "document"
+  ],
+  [
+   "Automação",
+   "gear"
+  ],
+  [
+   "CT-e e MDF-e",
+   "files"
+  ]
+ ],
+ "refinamento": [
+  [
+   "Dúvidas",
+   "chat"
+  ],
+  [
+   "Alinhamento",
+   "people"
+  ],
+  [
+   "Requisitos",
+   "checklist"
+  ]
+ ]
+};
+const projectCoverIcons={
+ "document": "<path d=\"M17 7h24l11 11v38H17zM41 7v12h11M24 29h21m-21 8h21m-21 8h14\"/>",
+ "transfer": "<rect x=\"5\" y=\"11\" width=\"20\" height=\"15\" rx=\"4\"/><rect x=\"39\" y=\"39\" width=\"20\" height=\"15\" rx=\"4\"/><path d=\"M25 18h16a8 8 0 0 1 8 8v8m-5-5 5 5 5-5M39 47H23a8 8 0 0 1-8-8v-8m-5 5 5-5 5 5\"/>",
+ "gear": "<path d=\"M27 6h10l2 8 6 3 8-2 5 9-6 6v6l6 6-5 9-8-2-6 3-2 8H27l-2-8-6-3-8 2-5-9 6-6v-6l-6-6 5-9 8 2 6-3z\"/><circle cx=\"32\" cy=\"33\" r=\"10\"/>",
+ "counter": "<circle cx=\"14\" cy=\"13\" r=\"6\"/><path d=\"M6 43V30a8 8 0 0 1 15-4l6 8h8M10 43v12m9-12v12M25 41h34M29 41v14m26-14v14M43 31v9\"/><rect x=\"29\" y=\"13\" width=\"28\" height=\"18\" rx=\"3\"/>",
+ "drink": "<rect x=\"13\" y=\"6\" width=\"38\" height=\"52\" rx=\"5\"/><path d=\"M13 23h38M20 30h24v20H20zM32 29v7m-7 2h14l-2 9H27zM24 14h16\"/>",
+ "checklist": "<rect x=\"13\" y=\"10\" width=\"38\" height=\"47\" rx=\"4\"/><path d=\"M24 10V7h16v3M20 27l3 3 5-6m6 4h10M20 41l3 3 5-6m6 4h10\"/>",
+ "spark": "<path d=\"M27 9l5 15 15 5-15 5-5 15-5-15-15-5 15-5zM49 7l2 7 7 2-7 2-2 7-2-7-7-2 7-2zM48 37l3 7 7 3-7 3-3 7-3-7-7-3 7-3z\"/>",
+ "browser": "<rect x=\"7\" y=\"11\" width=\"50\" height=\"42\" rx=\"5\"/><path d=\"M7 21h50M15 16h2m4 0h2m4 0h2M14 29h14v16H14zM34 31h15m-15 7h15m-15 7h10\"/>",
+ "files": "<path d=\"M20 8h24l9 9v32H20zM44 8v10h9M14 16h-4v41h33v-8M27 27h19m-19 8h19m-19 7h12\"/>",
+ "chat": "<path d=\"M9 11h46v31H28L15 52V42H9zM22 22h8a5 5 0 1 1 0 10h-2m0 5h.1\"/>",
+ "people": "<circle cx=\"20\" cy=\"21\" r=\"8\"/><circle cx=\"44\" cy=\"21\" r=\"8\"/><path d=\"M6 52v-6a14 14 0 0 1 28 0v6m-4 0v-6a14 14 0 0 1 28 0v6\"/>"
+};
+function projectCover(id){
+ const stages=projectCoverStages[id].map(([label,icon],index)=>`
+  <span class="project-cover-stage" style="--stage-offset:${index*2}s">
+   <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" focusable="false">${projectCoverIcons[icon]}</svg>
+   <span>${label}</span>
+  </span>`).join('');
+ return `<div class="card-visual project-cover" aria-hidden="true">
+  <div class="project-cover-flow">${stages}<span class="project-cover-track"></span></div>
+  <span class="video-play"><svg viewBox="0 0 24 24" focusable="false"><path fill="currentColor" d="M8 4.5v15L20 12z"/></svg><span>Explorar</span></span>
+ </div>`;
+}
+function render(){const items=projects.filter((p,i)=>filter==='todos'?(expanded||i<4):p.group===filter);grid.innerHTML=items.map(p=>`<button class="card" data-project="${p.id}" aria-label="Explorar: ${p.title}">${projectCover(p.id)}<div class="card-bottom"><div><span class="tag">${p.tag}</span><h3>${p.title}</h3><p>${p.line}</p></div><span class="arrow" aria-hidden="true"></span></div></button>`).join('');more.hidden=filter!=='todos';more.textContent=expanded?'Recolher projetos −':'Ver outros projetos +';more.setAttribute('aria-expanded',String(expanded));document.querySelectorAll('[data-filter]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.filter===filter)));}
 function shell(tag,title,body){opener=document.activeElement;dialog.innerHTML=`<div class="dialog-head"><span class="eyebrow">${tag}</span><h2 id="dialog-title">${title}</h2><button class="close" aria-label="Fechar detalhes">×</button></div><div class="dialog-body">${body}</div>`;dialog.querySelector('.close').onclick=()=>dialog.close();dialog.showModal();}
 function openProject(p){const projectLink=p.upcoming?'<p>Em breve</p><a class="source-link" data-portfolio-return href="#inicio">Voltar ao portfólio</a>':`<a class="source-link" href="${p.url}">Abrir estudo completo</a>`;shell(p.tag,p.title,`<div class="tabs" role="tablist" aria-label="Explorar projeto"><button id="tab-contexto" role="tab" aria-controls="panel" data-tab="contexto" aria-selected="true">Contexto</button><button id="tab-atuacao" role="tab" aria-controls="panel" data-tab="atuacao" aria-selected="false" tabindex="-1">Minha atuação</button><button id="tab-entregas" role="tab" aria-controls="panel" data-tab="entregas" aria-selected="false" tabindex="-1">Entregas</button></div><div class="detail" id="panel" role="tabpanel" aria-labelledby="tab-contexto" tabindex="0"></div>${projectLink}`);if(p.upcoming)dialog.querySelector('[data-portfolio-return]').onclick=()=>{opener=null;dialog.close();};const tabs=[...dialog.querySelectorAll('[data-tab]')];function select(b){const id=b.dataset.tab;tabs.forEach(t=>{t.setAttribute('aria-selected',String(t===b));t.tabIndex=t===b?0:-1});dialog.querySelector('#panel').setAttribute('aria-labelledby',b.id);dialog.querySelector('#panel').innerHTML=id==='entregas'?p.deliver:`<h3>${id==='contexto'?'O problema de negócio':'Como contribuí'}</h3><p>${id==='contexto'?p.context:p.role}</p>`;}tabs.forEach((b,i)=>{b.onclick=()=>select(b);b.onkeydown=e=>{let n;if(e.key==='ArrowRight')n=(i+1)%3;if(e.key==='ArrowLeft')n=(i+2)%3;if(e.key==='Home')n=0;if(e.key==='End')n=2;if(n!==undefined){e.preventDefault();select(tabs[n]);tabs[n].focus();}}});select(tabs[0]);}
 grid.onclick=e=>{const b=e.target.closest('[data-project]');if(b)openProject(projects.find(p=>p.id===b.dataset.project));};document.querySelectorAll('[data-filter]').forEach(b=>b.onclick=()=>{filter=b.dataset.filter;render()});more.onclick=()=>{expanded=!expanded;render()};dialog.addEventListener('close',()=>{if(opener?.isConnected)opener.focus()});dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});
