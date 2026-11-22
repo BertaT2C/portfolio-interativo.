@@ -255,19 +255,29 @@ dialog:has(.whatsapp-walkthrough) .dialog-body{padding:16px 20px 22px}
 .import-cover-art{display:flex;align-items:center;justify-content:center;flex-wrap:nowrap;gap:8px;margin:12px 0 0}
 .import-cover-art svg{width:clamp(28px,5vw,55px);padding:5px;color:#e5eee0}
 .import-cover-art .import-cover-arrow{font-size:19px}
-.import-diagram{margin:0 0 16px;padding:20px;background:#173e35;border-radius:12px;color:#e5eee0}
-.import-track{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:10px}
-.import-node{display:grid;justify-items:center;align-content:center;gap:8px;width:100%;min-height:104px;padding:9px 6px;background:#244f43;color:#f4f6eb;border:1px solid #83a190;border-radius:10px;font-size:14px;font-weight:700;text-align:center;overflow-wrap:anywhere}
-.import-node svg{width:38px;height:38px}
-.import-node[aria-pressed=true]{color:#173e35;background:#efcf78;border-color:#efcf78}
-.import-track-arrow{font-size:21px;color:#92b09b}
-.import-diagram[data-phase=entrada] .import-track-arrow{color:#efcf78}
-.import-connector{display:block;width:100%;height:35px;fill:none;stroke:#8cae9a;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.import-diagram[data-phase=fiscal] .import-split,.import-diagram[data-phase=estoque] .import-merge{stroke:#efcf78}
-.import-branches{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:0 8%}
-.import-end{max-width:50%;margin:auto}
-.import-diagram+.process-detail{min-height:110px}
-@media(max-width:520px){.import-diagram{padding:9px}.import-track{gap:4px}.import-node{min-height:92px;font-size:12px;padding:5px 3px}.import-node svg{width:29px;height:29px}.import-track-arrow{font-size:15px}.import-cover-art{margin:12px auto 0}.import-cover-art svg{width:38px}}
+
+.import-story .audit-view-tabs{margin-bottom:12px}
+.import-story .audit-view-tabs button{min-height:44px}
+.import-scenario-line{margin:0 0 12px;font:700 clamp(15px,2.3vw,20px)/1.3 Arial,sans-serif;color:var(--ink)}
+.import-canvas{overflow:hidden;border-radius:12px;background:#163b31}
+.import-scene{display:block;width:100%;height:auto}
+.import-route,.import-chevron{stroke:#dfba75}
+.import-scene.integrated .import-route,.import-scene.integrated .import-chevron{stroke:#76dbb5}
+.import-scene.integrated .import-route{animation:import-data 2.2s linear infinite}
+@keyframes import-data{to{stroke-dashoffset:-40}}
+.import-scene-stop{opacity:.72;cursor:pointer}
+.import-scene-stop[data-active]{opacity:1}
+.import-scene-glow{fill:transparent;pointer-events:all}
+.import-scene-stop[data-active] .import-scene-glow{fill:#285647;stroke:#8abb9f;stroke-width:1.3}
+.import-route-stop{fill:#244d42;stroke:#abc6b6;stroke-width:2}
+.import-scene-stop[data-active] .import-route-stop{fill:#efcf78;stroke:#efcf78}
+.import-step-links{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin:10px 0}
+.import-step-links button{min-width:0;min-height:44px;padding:6px 5px;border:1px solid var(--line);border-radius:8px;background:var(--theme-surface,var(--paper));color:var(--ink);font-size:13px;font-weight:700;overflow-wrap:anywhere}
+.import-step-links button[aria-pressed=true]{background:#efcf78;color:#173e35;border-color:#efcf78}
+.import-story .import-caption{margin:12px 0 8px;min-height:3em;font-size:16px;line-height:1.45;color:var(--ink)}
+.import-story .import-note{margin:0;color:var(--muted);font-size:13px}
+@media(max-width:520px){.import-cover-art{margin:12px auto 0}.import-cover-art svg{width:38px}.import-step-links{gap:4px}.import-step-links button{font-size:12px}.import-story .import-caption{font-size:14px;min-height:3.2em}}
+@media(prefers-reduced-motion:reduce){.import-scene.integrated .import-route{animation:none}}
 </style></head><body><header><nav class="wrap portfolio-nav" aria-label="Menu principal"><a class="brand" href="#inicio"><span class="monogram">B</span>Berta Batista</a><button class="mobile-menu-toggle" type="button" aria-controls="portfolio-nav-links" aria-expanded="false" hidden><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span>Menu</span></button><div class="navlinks" id="portfolio-nav-links"><button id="theme-toggle" type="button" aria-label="Ativar modo escuro" aria-pressed="false">Modo escuro</button><div class="portfolio-menu"><a href="#sobre">Sobre mim</a><a href="#habilidades">Habilidades</a><a href="#projetos">Projetos</a><a href="#gestao-mudancas">Gestão de mudanças</a><a href="https://www.linkedin.com/in/bertabatista/" target="_blank" rel="noreferrer">LinkedIn</a><a class="portfolio-service" href="https://bertat2c.github.io/Queromeuportfolio/">Quer um portfólio?</a><a href="#contato">Contato</a></div></div></nav></header>
 <section class="hero-new" id="inicio"><div class="wrap hero-layout"><div class="hero-copy"><p class="eyebrow">Product Owner · Analista de Negócios</p><h1>Entendo o negócio<br><em>e estruturo soluções.</em></h1><p class="hero-summary">Processos, produtos digitais e IA generativa.<br><span class="hero-ai-highlight">Da escuta do usuário à organização das descobertas e validação.</span></p><div class="about-me" id="sobre" aria-labelledby="about-title"><h2 id="about-title">Sobre mim</h2><p>Sou Berta Batista, Analista de Negócios e Product Owner. Conecto <strong>necessidades dos usuários, objetivos do negócio e entregas de tecnologia</strong>, do discovery à homologação.</p><p>Minha trajetória passa por <strong>energia, seguros, consultoria e indústria</strong>. Trabalho com evolução de produtos digitais, integrações, automação e melhoria de processos.</p><p>Estruturo requisitos, priorizo backlog e colaboro com negócio, desenvolvimento, arquitetura e UX/UI. Utilizo <strong>IA generativa para organizar descobertas e sintetizar reuniões</strong>, revisando o conteúdo e validando decisões com as pessoas envolvidas.</p></div><div class="hero-cta"><a class="primary-cta" href="#destaques">Conhecer projetos</a><a class="outline-cta" href="#contato">Entre em contato</a></div></div><figure class="hero-photo"><img src="https://avatars.githubusercontent.com/u/99225701?v=4" alt="Berta Batista" width="345" height="345"></figure></div></section><main class="wrap"><section class="skills-section" id="habilidades" aria-labelledby="skills-title"><p class="eyebrow">O QUE TRAGO PARA O PROJETO</p><h2 id="skills-title" class="editorial-title">Habilidades</h2><div class="skills-grid"><button type="button" data-help="discovery" class="skill-block"><svg viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 5h20v14H15l-7 6v-6H6z"/><path d="M11 10h10M11 14h7"/></svg><h3>Discovery e entendimento</h3><p>Escuta, entrevistas e descobertas</p><span class="skill-detail">Ver atuação</span></button><button type="button" data-help="processos" class="skill-block"><svg viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="10" height="7" rx="2"/><rect x="19" y="21" width="10" height="7" rx="2"/><path d="M8 11v13h11M13 7h11v14"/></svg><h3>BPMN e boards</h3><p>Bizagi · Miro · Mural</p><span class="skill-detail">Ver atuação</span></button><button type="button" data-help="bdd" class="skill-block"><svg viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3" width="21" height="26" rx="3"/><path d="m10 10 2 2 4-4m-6 11 2 2 4-4M19 10h4m-4 9h4"/></svg><h3>Requisitos e cenários BDD</h3><p>Regras e critérios de aceite</p><span class="skill-detail">Ver atuação</span></button><button type="button" data-help="validacao" class="skill-block"><svg viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="10" r="4"/><path d="M3 27v-4a8 8 0 0 1 16 0v4m1-16 4 4 6-8"/></svg><h3>Validação com usuários</h3><p>Testes, homologação e feedback</p><span class="skill-detail">Ver atuação</span></button><button type="button" data-help="gmo" class="skill-block"><svg viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="5"/><path d="M5 11a12 12 0 0 1 21-3M26 3v5h-5M27 21A12 12 0 0 1 6 24M6 29v-5h5"/></svg><h3>Gestão de mudanças</h3><p>Impactos, treinamento e adoção</p><span class="skill-detail">Ver atuação</span></button><article class="skill-block"><svg viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="26" height="24" rx="3"/><path d="M12 4v24M21 4v24M6 10h3m6 0h3m6 0h2M6 16h3m9 0h-3"/></svg><h3>Produtos e backlog</h3><p>Roadmap · Jira · Confluence</p></article><article class="skill-block"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="15" height="13" rx="3"/><rect x="30" y="28" width="15" height="13" rx="3"/><path d="M18 13h13a7 7 0 0 1 7 7v6m-4-4 4 4 4-4M30 35H17a7 7 0 0 1-7-7v-6m-4 4 4-4 4 4"/></svg><h3>Integrações e automação</h3><p>APIs · RPA · Oracle ERP</p></article><article class="skill-block"><svg viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="16" cy="7" rx="11" ry="4"/><path d="M5 7v17c0 5 22 5 22 0V7M5 15c0 5 22 5 22 0"/></svg><h3>Análise de dados</h3><p>Consultas SQL e validação</p></article><article class="skill-block"><svg viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m16 2 4 10 10 4-10 4-4 10-4-10L2 16l10-4z"/><path d="m26 2 1 3 3 1-3 1-1 3-1-3-3-1 3-1z"/></svg><h3>IA generativa</h3><p>Síntese e organização de descobertas</p></article></div></section><section class="featured-section" id="destaques" aria-labelledby="featured-title"><p class="eyebrow">PROJETOS</p><h2 id="featured-title" class="editorial-title">Destaques</h2><div class="featured-grid"><article class="feature-card"><button type="button" class="chat-preview" id="telas-whatsapp" aria-label="Abrir a apresentação de WhatsApp e chatbot" aria-haspopup="dialog"><div class="chat-phone"><div class="chat-top"><span class="chat-avatar" aria-hidden="true">B</span><span>Atendimento digital<small>WhatsApp · Chatbot</small></span></div><div class="chat-body"><span class="bubble incoming">Olá! Como posso ajudar?</span><span class="bubble outgoing">Quero acessar meus serviços.</span><span class="bubble incoming">Escolha o que você precisa:<br><b>Boletos · Serviços · Atendimento</b></span></div><span class="chat-foot">Representação da jornada de atendimento</span></div><span class="video-play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l12-7z"/></svg>Ver demonstração</span></button><div class="feature-copy"><span class="feature-tag">PRODUTOS DIGITAIS · SEGUROS</span><h3>WhatsApp e chatbot</h3><p>Evolução da jornada de atendimento para facilitar o acesso a serviços e direcionar solicitações de autosserviço.</p><details><summary>Minha atuação</summary><p>Discovery, mapeamento AS IS / TO BE, requisitos e critérios de aceite. Colaboração com negócio, arquitetura, desenvolvimento e UX/UI, além do acompanhamento de testes e homologação.</p></details></div></article><article class="feature-card"><button id="open-audit" class="audit-cover process-cover" type="button" aria-label="Abrir os cenários AS IS e TO BE da Auditoria Contínua"><span class="audit-cover-kicker">INTEGRAÇÕES · AUTOMAÇÃO</span><span class="audit-illustration" aria-hidden="true"><span class="audit-gear gear-one">⚙</span><span class="audit-gear gear-two">⚙</span><span class="audit-person person-one"><i></i><b></b></span><span class="audit-person person-two"><i></i><b></b></span><span class="audit-laptop"><i></i><b></b></span></span><span class="audit-cover-copy"><strong>Auditoria Contínua</strong><small>Do processo manual à integração automatizada</small></span><span class="video-play"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 4.5v15L20 12z"/></svg><span>Explorar<br>AS IS · TO BE</span></span></button><div class="feature-copy"><span class="feature-tag">INTEGRAÇÕES · AUTOMAÇÃO</span><h3>Auditoria Contínua</h3><p>Integração de dados para automatizar a auditoria, preservar arquivos de origem e ampliar a rastreabilidade. Escopo inicial: Compras e Contas a Pagar.</p><details><summary>Minha atuação</summary><p>Estruturação de requisitos e integrações, com foco em evidências, guarda segura dos arquivos e um processo extensível a outras áreas.</p></details></div></article><article class="feature-card import-feature">
   <button id="open-import" class="audit-cover process-cover" type="button" aria-label="Abrir os cenários AS IS e TO BE da importação no ERP Oracle R12">
@@ -276,7 +286,7 @@ dialog:has(.whatsapp-walkthrough) .dialog-body{padding:16px 20px 22px}
     <span class="audit-cover-copy"><strong>Do recebimento ao estoque</strong><small>Integração de dados fiscais e de importação</small></span>
     <span class="video-play"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 4.5v15L20 12z"/></svg><span>Explorar<br>AS IS · TO BE</span></span>
   </button>
-  <div class="feature-copy"><span class="feature-tag">INTEGRAÇÕES · ERP INDUSTRIAL</span><h3>Fluxo de importação no ERP Oracle R12</h3><p>Veja como a integração substituiu a redigitação de lotes de 50 ou mais itens entre Compras, Logística e Fiscal.</p></div>
+  <div class="feature-copy"><span class="feature-tag">INTEGRAÇÕES · ERP INDUSTRIAL</span><h3>Fluxo de importação no ERP Oracle R12</h3><p>Da redigitação de itens à integração entre Compras, Logística, Fiscal e Estoque.</p></div>
 </article></div></section>
 <section class="impact-section" id="indicadores-resultados" aria-labelledby="impact-title">
   <div class="impact-heading"><p class="eyebrow">RESULTADOS · TRANSFORMAÇÃO DIGITAL</p><h2 class="editorial-title" id="impact-title">Da mudança operacional ao resultado mensurável.</h2></div>
@@ -425,17 +435,17 @@ document.querySelectorAll('.help-grid > button[data-help]').forEach((stage)=>{
  const slides=[{html:initial},...helpSlides[key]];
  const card=document.createElement('article');card.className='help-carousel';card.setAttribute('aria-label',stage.querySelector('h3').textContent);
  stage.before(card);card.append(stage);stage.classList.add('help-stage');
- const controls=document.createElement('div');controls.className='help-controls';controls.innerHTML='<span class="slide-count"></span><button type="button" class="prev" aria-label="Anterior">Anterior</button><button type="button" class="pause">Pausar</button><button type="button" class="next" aria-label="Próximo">Próximo</button>';card.append(controls);
- let index=0,paused=reducedMotion.matches,busy=false;
- const count=controls.querySelector('.slide-count'),pause=controls.querySelector('.pause');
- function refresh(){stage.innerHTML=slides[index].html;stage.classList.toggle('media-stage',!!slides[index].media);stage.setAttribute('aria-label',`${card.getAttribute('aria-label')} — ${index+1} de ${slides.length}. Abrir detalhes`);count.textContent=`${index+1} / ${slides.length}`;pause.textContent=paused?'Reproduzir':'Pausar';pause.setAttribute('aria-pressed',String(paused));}
+ const controls=document.createElement('div');controls.className='help-controls';controls.innerHTML='<span class="slide-count"></span><button type="button" class="prev" aria-label="Anterior">Anterior</button><button type="button" class="next" aria-label="Próximo">Próximo</button>';card.append(controls);
+ let index=0,busy=false;
+ const count=controls.querySelector('.slide-count');
+ function refresh(){stage.innerHTML=slides[index].html;stage.classList.toggle('media-stage',!!slides[index].media);stage.setAttribute('aria-label',`${card.getAttribute('aria-label')} — ${index+1} de ${slides.length}. Abrir detalhes`);count.textContent=`${index+1} / ${slides.length}`;}
  function advance(delta){if(busy)return;busy=true;stage.classList.add('turning');setTimeout(()=>{index=(index+delta+slides.length)%slides.length;refresh();stage.classList.remove('turning');busy=false;},reducedMotion.matches?0:300);}
  sequencedCards.push({
   start(){card.classList.add('sequence-active');if(index!==0){index=0;refresh();}},
   stop(){card.classList.remove('sequence-active');},
-  step(){if(paused||busy||card.matches(':hover')||card.contains(document.activeElement))return false;if(index===slides.length-1)return true;advance(1);return false;}
+  step(){if(reducedMotion.matches||busy||card.matches(':hover')||card.contains(document.activeElement))return false;if(index===slides.length-1)return true;advance(1);return false;}
  });
- controls.querySelector('.prev').onclick=()=>{advance(-1)};controls.querySelector('.next').onclick=()=>{advance(1)};pause.onclick=()=>{paused=!paused;refresh()};
+ controls.querySelector('.prev').onclick=()=>{advance(-1)};controls.querySelector('.next').onclick=()=>{advance(1)};
  stage.onclick=()=>showHelp(key,slides[index]);refresh();
 });
 sequencedCards[0].start();
@@ -548,145 +558,135 @@ cycleStages(phases,'[data-gmo-phase]',document.querySelector('.gmo-phase-content
 
 
 const importScenarios={
- "as-is": [
-  [
-   "Pedido manual",
-   "order",
-   "Compras digitava item por item no pedido do ERP. Os lotes tinham 50 itens ou mais."
-  ],
-  [
-   "Conferência física",
-   "receiving",
-   "Logística conferia o material e os dados da nota e encaminhava as informações para lançamento."
-  ],
-  [
-   "Redigitação no ERP",
-   "typing",
-   "A equipe de Contas a Receber registrava novamente os itens de forma manual para dar entrada no estoque."
-  ],
-  [
-   "Fiscal · Synchro",
-   "tax",
-   "O Fiscal preparava, item por item, os dados do registro chamado internamente de nacionalização."
-  ],
-  [
-   "COMEX · Nota",
-   "customs",
-   "Em paralelo, a equipe preparava os dados da nota de importação no software de comércio exterior."
-  ],
-  [
-   "Contabilização e estoque",
-   "release",
-   "Os registros seguiam para contabilização e o material era liberado para uso na fábrica."
-  ]
- ],
- "to-be": [
-  [
-   "Compra e conferência",
-   "receiving",
-   "Após a compra e a conferência do recebimento pela Logística, a lista de itens segue por integração."
-  ],
-  [
-   "Interface Oracle R12",
-   "integration",
-   "A lista fica na interface de entrada. Uma rotina agendada processa os itens e encaminha os dados ao ERP."
-  ],
-  [
-   "Entrada e estoque",
-   "warehouse",
-   "O ERP registra os itens e alimenta o estoque. A equipe acompanha o processamento da entrada."
-  ],
-  [
-   "Fiscal · Synchro",
-   "tax",
-   "Uma interface envia a movimentação ao Fiscal para o registro interno da nacionalização."
-  ],
-  [
-   "COMEX · Softway",
-   "customs",
-   "Em paralelo, o Softway recebe pela interface os dados para a emissão da nota de importação."
-  ],
-  [
-   "Contabilização e estoque",
-   "release",
-   "Os registros seguem para contabilização e o material fica disponível para uso na fábrica."
-  ]
- ]
-};
-const importIcons={
- "order": "<rect x=\"8\" y=\"8\" width=\"32\" height=\"34\" rx=\"4\"/><path d=\"M17 8V4h14v4M16 18h16M16 25h16M16 32h9\"/>",
- "receiving": "<path d=\"M5 18 24 8l19 10v19l-19 9L5 37zM5 18l19 10 19-10M24 28v18M14 13l19 10v8\"/>",
- "typing": "<rect x=\"5\" y=\"8\" width=\"38\" height=\"25\" rx=\"3\"/><path d=\"M24 33v8M16 41h16M12 17h13m-13 7h21m-3-7h6\"/>",
- "integration": "<rect x=\"3\" y=\"7\" width=\"15\" height=\"13\" rx=\"3\"/><rect x=\"30\" y=\"28\" width=\"15\" height=\"13\" rx=\"3\"/><path d=\"M18 13h13a7 7 0 0 1 7 7v6m-4-4 4 4 4-4M30 35H17a7 7 0 0 1-7-7v-6m-4 4 4-4 4 4\"/>",
- "warehouse": "<path d=\"M4 45V19L24 6l20 13v26ZM11 45V24h26v21M11 31h26m-26 7h26\"/>",
- "tax": "<path d=\"M10 5h20l8 8v30H10zM30 5v9h8M16 22h16m-16 7h16m-16 7h10\"/>",
- "customs": "<circle cx=\"24\" cy=\"24\" r=\"19\"/><path d=\"M5 24h38M10 14h28M10 34h28M24 5c-9 7-11 29 0 38m0-38c9 7 11 29 0 38\"/>",
- "release": "<path d=\"M4 44V20L24 7l20 13v24zM10 44h28M15 31l6 6 12-13\"/>"
+ 'as-is':{headline:'Dados redigitados a cada repasse',steps:[["Digitar pedido","Compras cadastrava os itens no ERP."],["Conferir entrega","Logística conferia o material e a nota."],["Redigitar dados","Entrada, Fiscal e COMEX reaproveitavam os dados manualmente."],["Liberar material","Após os registros, o material ficava disponível para a fábrica."]],scene:`<svg class="import-scene manual" viewBox="0 0 720 250" aria-hidden="true">
+ <rect width="720" height="250" fill="#163b31"/>
+ <path d="M0 126h720M0 158h720" fill="none" stroke="#517666" stroke-width="1" opacity=".45"/>
+ <path class="import-route" d="M82 193H638" fill="none" stroke-width="3" stroke-dasharray="5 8"/>
+ <path class="import-chevron" d="m169 188 6 5-6 5m179-10 6 5-6 5m179-10 6 5-6 5" fill="none" stroke-width="2"/>
+ <g class="import-scene-stop" data-scene-stop="0" transform="translate(0 0)">
+   <rect class="import-scene-glow" x="7" y="16" width="166" height="147" rx="15"/>
+   <path d="M22 142h136" stroke="#658677" stroke-width="1.5"/>
+   <g transform="translate(6 23)" stroke="#285446" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(0 28)"><g transform="translate(6 0)"><circle cx="17" cy="14" r="9" fill="#e1b58d"/><path d="M4 65V39a13 13 0 0 1 26 0v26m-21 0v21m15-21v21m6-46 16 10h14" fill="#7caa95"/></g><g transform="translate(43 11)"><path d="M9 51H85v32H9z" fill="#a5bcaa"/><path d="M4 49h85v7H4z" fill="#cee0cc"/><path d="M43 66h29" fill="none"/></g><g transform="translate(46 11)"><rect x="38" y="12" width="40" height="27" rx="4" fill="#e5f2e5"/><path d="M45 20h21m-21 8h16m-7 12v8m-11 0h28" fill="none"/></g><g transform="translate(111 2)"><path d="M0 1h21l7 7v30H0z" fill="#fff2ce"/><path d="M21 1v8h7M6 15h15M6 22h15M6 29h10" fill="none"/></g></g></g>
+   <circle class="import-route-stop" cx="90" cy="193" r="7"/>
+ </g><g class="import-scene-stop" data-scene-stop="1" transform="translate(180 0)">
+   <rect class="import-scene-glow" x="7" y="16" width="166" height="147" rx="15"/>
+   <path d="M22 142h136" stroke="#658677" stroke-width="1.5"/>
+   <g transform="translate(6 23)" stroke="#285446" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(0 32)"><g transform="translate(0 22)"><path d="M0 8h48v34H0z" fill="#92b9a4"/><path d="M48 20h18l12 12v10H48z" fill="#d9e6d7"/><path d="M57 24h7l6 8H57z" fill="#7cab91"/><circle cx="15" cy="43" r="6" fill="#244d42"/><circle cx="63" cy="43" r="6" fill="#244d42"/></g><g transform="translate(70 36)"><path d="M0 9 17 0l17 9v22l-17 9L0 31z" fill="#d6b673"/><path d="M0 9l17 9 17-9M17 18v22m-8-36 17 9v8" fill="none"/></g><g transform="translate(104 0)"><circle cx="17" cy="14" r="9" fill="#e1b58d"/><path d="M4 65V39a13 13 0 0 1 26 0v26m-21 0v21m15-21v21m6-46 16 10h14" fill="#7caa95"/></g><g transform="translate(138 3)"><path d="M0 1h21l7 7v30H0z" fill="#fff2ce"/><path d="M21 1v8h7M6 15h15M6 22h15M6 29h10" fill="none"/></g></g></g>
+   <circle class="import-route-stop" cx="90" cy="193" r="7"/>
+ </g><g class="import-scene-stop" data-scene-stop="2" transform="translate(360 0)">
+   <rect class="import-scene-glow" x="7" y="16" width="166" height="147" rx="15"/>
+   <path d="M22 142h136" stroke="#658677" stroke-width="1.5"/>
+   <g transform="translate(6 23)" stroke="#285446" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(0 26)"><g transform="translate(1 7)"><path d="M0 1h21l7 7v30H0z" fill="#fff2ce"/><path d="M21 1v8h7M6 15h15M6 22h15M6 29h10" fill="none"/></g><g transform="translate(39 17)"><path d="M9 51H85v32H9z" fill="#a5bcaa"/><path d="M4 49h85v7H4z" fill="#cee0cc"/><path d="M43 66h29" fill="none"/></g><g transform="translate(34 16)"><rect x="38" y="12" width="40" height="27" rx="4" fill="#e5f2e5"/><path d="M45 20h21m-21 8h16m-7 12v8m-11 0h28" fill="none"/></g><g transform="translate(114 -4)"><path d="M0 1h21l7 7v30H0z" fill="#fff2ce"/><path d="M21 1v8h7M6 15h15M6 22h15M6 29h10" fill="none"/></g><g transform="translate(120 38)"><path d="M0 1h21l7 7v30H0z" fill="#fff2ce"/><path d="M21 1v8h7M6 15h15M6 22h15M6 29h10" fill="none"/></g></g></g>
+   <circle class="import-route-stop" cx="90" cy="193" r="7"/>
+ </g><g class="import-scene-stop" data-scene-stop="3" transform="translate(540 0)">
+   <rect class="import-scene-glow" x="7" y="16" width="166" height="147" rx="15"/>
+   <path d="M22 142h136" stroke="#658677" stroke-width="1.5"/>
+   <g transform="translate(6 23)" stroke="#285446" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(29 28)"><path d="M0 28 50 0l50 28v64H0z" fill="#c4d7c6"/><path d="M0 28 50 0l50 28M12 92V39h76v53M13 54h74M13 72h74" fill="none"/><path d="M21 54V42h16v12m7 0V41h16v13m5 18V59h17v13m-55 0V61h17v11m10 20V78h24v14" fill="#d6b673"/><g transform="translate(111 39)"><path d="M0 9 17 0l17 9v22l-17 9L0 31z" fill="#d6b673"/><path d="M0 9l17 9 17-9M17 18v22m-8-36 17 9v8" fill="none"/></g></g></g>
+   <circle class="import-route-stop" cx="90" cy="193" r="7"/>
+ </g>
+</svg>`},
+ 'to-be':{headline:'Dados do pedido percorrem os sistemas',steps:[["Pedido como origem","A lista do pedido serve de base para o recebimento."],["Conferir volumes","Logística valida a entrega e trata divergências."],["Integrar sistemas","O Oracle R12 registra a entrada e distribui dados para Synchro e Softway."],["Disponibilizar estoque","O material fica disponível após as validações aplicáveis."]],scene:`<svg class="import-scene integrated" viewBox="0 0 720 250" aria-hidden="true">
+ <rect width="720" height="250" fill="#163b31"/>
+ <path d="M0 126h720M0 158h720" fill="none" stroke="#517666" stroke-width="1" opacity=".45"/>
+ <path class="import-route" d="M82 193H638" fill="none" stroke-width="3" stroke-dasharray="2 8"/>
+ <path class="import-chevron" d="m169 188 6 5-6 5m179-10 6 5-6 5m179-10 6 5-6 5" fill="none" stroke-width="2"/>
+ <g class="import-scene-stop" data-scene-stop="0" transform="translate(0 0)">
+   <rect class="import-scene-glow" x="7" y="16" width="166" height="147" rx="15"/>
+   <path d="M22 142h136" stroke="#658677" stroke-width="1.5"/>
+   <g transform="translate(6 23)" stroke="#285446" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(5 31)"><g transform="translate(10 8)"><rect x="38" y="12" width="40" height="27" rx="4" fill="#e5f2e5"/><path d="M45 20h21m-21 8h16m-7 12v8m-11 0h28" fill="none"/></g><g transform="translate(67 8)"><path d="M0 1h21l7 7v30H0z" fill="#fff2ce"/><path d="M21 1v8h7M6 15h15M6 22h15M6 29h10" fill="none"/></g><g transform="translate(105 22)"><rect x="0" y="0" width="34" height="20" rx="3" fill="#efefdb"/><path d="M6 5v10m4-10v10m5-10v10m5-10v10m4-10v10m4-10v10" fill="none"/></g></g></g>
+   <circle class="import-route-stop" cx="90" cy="193" r="7"/>
+ </g><g class="import-scene-stop" data-scene-stop="1" transform="translate(180 0)">
+   <rect class="import-scene-glow" x="7" y="16" width="166" height="147" rx="15"/>
+   <path d="M22 142h136" stroke="#658677" stroke-width="1.5"/>
+   <g transform="translate(6 23)" stroke="#285446" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(0 31)"><g transform="translate(4 25)"><path d="M0 8h48v34H0z" fill="#92b9a4"/><path d="M48 20h18l12 12v10H48z" fill="#d9e6d7"/><path d="M57 24h7l6 8H57z" fill="#7cab91"/><circle cx="15" cy="43" r="6" fill="#244d42"/><circle cx="63" cy="43" r="6" fill="#244d42"/></g><g transform="translate(87 32)"><path d="M0 9 17 0l17 9v22l-17 9L0 31z" fill="#d6b673"/><path d="M0 9l17 9 17-9M17 18v22m-8-36 17 9v8" fill="none"/></g><g transform="translate(110 0)"><circle cx="17" cy="14" r="9" fill="#e1b58d"/><path d="M4 65V39a13 13 0 0 1 26 0v26m-21 0v21m15-21v21m6-46 16 10h14" fill="#7caa95"/></g><g transform="translate(128 36)"><rect x="0" y="0" width="34" height="20" rx="3" fill="#efefdb"/><path d="M6 5v10m4-10v10m5-10v10m5-10v10m4-10v10m4-10v10" fill="none"/></g></g></g>
+   <circle class="import-route-stop" cx="90" cy="193" r="7"/>
+ </g><g class="import-scene-stop" data-scene-stop="2" transform="translate(360 0)">
+   <rect class="import-scene-glow" x="7" y="16" width="166" height="147" rx="15"/>
+   <path d="M22 142h136" stroke="#658677" stroke-width="1.5"/>
+   <g transform="translate(6 23)" stroke="#285446" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(0 38)"><g transform="translate(13 1)"><rect x="0" y="0" width="55" height="68" rx="7" fill="#c0dbcb"/><path d="M0 23h55M0 45h55M11 11h3m-3 22h3m-3 22h3m8-44h22m-22 22h22m-22 22h22" fill="none"/></g><path d="M70 35h22V10h19m-19 25v28h19" fill="none" stroke="#72e0b8" stroke-width="3"/><g transform="translate(115 -6)"><path d="M0 1h21l7 7v30H0z" fill="#fff2ce"/><path d="M21 1v8h7M6 15h15M6 22h15M6 29h10" fill="none"/></g><g transform="translate(115 44)"><path d="M0 1h21l7 7v30H0z" fill="#fff2ce"/><path d="M21 1v8h7M6 15h15M6 22h15M6 29h10" fill="none"/></g></g></g>
+   <circle class="import-route-stop" cx="90" cy="193" r="7"/>
+ </g><g class="import-scene-stop" data-scene-stop="3" transform="translate(540 0)">
+   <rect class="import-scene-glow" x="7" y="16" width="166" height="147" rx="15"/>
+   <path d="M22 142h136" stroke="#658677" stroke-width="1.5"/>
+   <g transform="translate(6 23)" stroke="#285446" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><g transform="translate(28 28)"><path d="M0 28 50 0l50 28v64H0z" fill="#c4d7c6"/><path d="M0 28 50 0l50 28M12 92V39h76v53M13 54h74M13 72h74" fill="none"/><path d="M21 54V42h16v12m7 0V41h16v13m5 18V59h17v13m-55 0V61h17v11m10 20V78h24v14" fill="#d6b673"/><circle cx="115" cy="72" r="16" fill="#b7e6bf"/><path d="m108 72 5 5 9-10" fill="none" stroke-width="3"/></g></g>
+   <circle class="import-route-stop" cx="90" cy="193" r="7"/>
+ </g>
+</svg>`}
 };
 
 function openImport(){
- shell('ERP ORACLE R12 · COMÉRCIO EXTERIOR','Do recebimento ao estoque',`
-  <div class="detail audit-comparison">
-   <div class="process-controls">
-    <div class="audit-view-tabs" role="group" aria-label="Cenários da importação">
-     <button type="button" data-import-view="as-is" aria-pressed="true">Antes · AS IS</button>
-     <button type="button" data-import-view="to-be" aria-pressed="false">Depois · TO BE</button>
-    </div>
-    <button type="button" id="import-play" class="sequence-control">Pausar</button>
+ shell('ERP ORACLE R12 · COMÉRCIO EXTERIOR','Da compra ao estoque',`
+  <div class="detail audit-comparison import-story">
+   <div class="audit-view-tabs" role="group" aria-label="Cenários da importação">
+    <button type="button" data-import-view="as-is" aria-pressed="true">Antes · AS IS</button>
+    <button type="button" data-import-view="to-be" aria-pressed="false">Depois · TO BE</button>
    </div>
-   <div class="import-diagram" role="group" aria-label="Fluxo de importação interativo"></div>
-   <div class="process-detail"><strong></strong><p></p></div>
-   <h3>Nota de importação e nacionalização</h3>
-   <p>A NF-e de entrada documenta a entrada da mercadoria importada para fins fiscais. No contexto aduaneiro, o desembaraço registra a conclusão da conferência da importação. Neste projeto, “nacionalização” reproduz o nome dado pela operação a uma etapa fiscal interna. A identificação de um eventual segundo documento depende dos XMLs e dos CFOPs da época.</p>
-   <p><a href="https://legislacao.fazenda.sp.gov.br/Paginas/RC22398_2020.aspx" target="_blank" rel="noreferrer">Sefaz-SP · Nota fiscal de entrada</a> · <a href="https://www.gov.br/receitafederal/pt-br/assuntos/aduana-e-comercio-exterior/manuais/despacho-de-importacao/topicos-1/despacho-de-importacao/etapas-do-despacho-aduaneiro-de-importacao/desembaraco-aduaneiro/desembaraco-aduaneiro" target="_blank" rel="noreferrer">Receita Federal · Desembaraço</a></p>
+   <p class="import-scenario-line"></p>
+   <div class="import-canvas"></div>
+   <div class="import-step-links" role="group" aria-label="Etapas da importação"></div>
+   <p class="import-caption"></p>
+   <p class="import-note">Fluxo ilustrativo, reconstruído a partir da experiência no projeto.</p>
   </div>`);
- const flow=dialog.querySelector('.import-diagram');
- const detail=dialog.querySelector('.process-detail');
- const play=dialog.querySelector('#import-play');
- let scenario='as-is', index=0, timer;
- let nodes=[];
- function display(){
-  const [title,,body]=importScenarios[scenario][index];
-  nodes.forEach((node,i)=>node.setAttribute('aria-pressed',String(i===index)));
-  flow.dataset.phase=index<3?'entrada':index<5?'fiscal':'estoque';
-  detail.querySelector('strong').textContent=title;
-  detail.querySelector('p').textContent=body;
+ const canvas=dialog.querySelector('.import-canvas');
+ const headline=dialog.querySelector('.import-scenario-line');
+ const caption=dialog.querySelector('.import-caption');
+ const controls=dialog.querySelector('.import-step-links');
+ const views=[...dialog.querySelectorAll('[data-import-view]')];
+ let scenario,index,timer,stops,buttons;
+
+ function showStep(next,announce=false){
+  index=next;
+  stops.forEach((stop,i)=>stop.toggleAttribute('data-active',i===index));
+  buttons.forEach((button,i)=>button.setAttribute('aria-pressed',String(i===index)));
+  caption.setAttribute('aria-live',announce?'polite':'off');
+  caption.textContent=scenario.steps[index][1];
  }
- function setPlaying(playing){
-  clearInterval(timer);
-  timer=playing?setInterval(()=>{
-   if(!dialog.open||document.hidden)return;
-   index=(index+1)%importScenarios[scenario].length;
-   display();
-  },4200):undefined;
-  play.textContent=playing?'Pausar':'Reproduzir';
-  detail.setAttribute('aria-live',playing?'off':'polite');
+
+ function scheduleNext(){
+  clearTimeout(timer);
+  if(!dialog.open||document.hidden||reducedMotion.matches||controls.matches(':hover, :has(:focus-visible)'))return;
+  timer=setTimeout(()=>{
+   if(!dialog.open)return;
+   showStep((index+1)%scenario.steps.length);
+   scheduleNext();
+  },4000);
  }
+
  function selectScenario(view){
-  scenario=view;
-  index=0;
-  dialog.querySelectorAll('[data-import-view]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.importView===view)));
-  const cards=importScenarios[view].map(([title,icon],i)=>`<button type="button" class="import-node" data-step="${i}" aria-pressed="false"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${importIcons[icon]}</svg><span>${title}</span></button>`);
-  const arrow='<span class="import-track-arrow" aria-hidden="true">→</span>';
-  const split='<svg class="import-connector import-split" viewBox="0 0 320 40" preserveAspectRatio="none" aria-hidden="true"><path d="M268 0V11H91V35M229 11V35M86 29l5 6 5-6m128 0 5 6 5-6"/></svg>';
-  const merge='<svg class="import-connector import-merge" viewBox="0 0 320 40" preserveAspectRatio="none" aria-hidden="true"><path d="M91 0V16H229V0M160 16V35m-5-6 5 6 5-6"/></svg>';
-  flow.innerHTML=`<div class="import-track">${cards.slice(0,3).join(arrow)}</div>${split}<div class="import-branches" role="group" aria-label="Fiscal e COMEX em paralelo">${cards.slice(3,5).join('')}</div>${merge}<div class="import-end">${cards[5]}</div>`;
-  nodes=[...flow.querySelectorAll('[data-step]')];
-  display();
-  setPlaying(Boolean(timer));
+  scenario=importScenarios[view];
+  views.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.importView===view)));
+  headline.textContent=scenario.headline;
+  canvas.innerHTML=scenario.scene;
+  controls.innerHTML=scenario.steps.map(([title],i)=>`<button type="button" data-import-step="${i}" aria-pressed="false">${title}</button>`).join('');
+  stops=[...canvas.querySelectorAll('[data-scene-stop]')];
+  buttons=[...controls.querySelectorAll('[data-import-step]')];
+  buttons.forEach((button,i)=>button.onclick=()=>{
+   showStep(i,true);
+   scheduleNext();
+  });
+  showStep(0,true);
+  scheduleNext();
  }
- flow.onclick=event=>{
-  const button=event.target.closest('[data-step]');
-  if(!button)return;
-  setPlaying(false);
-  index=Number(button.dataset.step);
-  display();
+
+ canvas.onclick=event=>{
+  const stop=event.target.closest('[data-scene-stop]');
+  if(!stop)return;
+  showStep(Number(stop.dataset.sceneStop),true);
+  scheduleNext();
  };
- play.onclick=()=>setPlaying(!timer);
- dialog.querySelectorAll('[data-import-view]').forEach(button=>button.onclick=()=>selectScenario(button.dataset.importView));
- dialog.addEventListener('close',()=>clearInterval(timer),{once:true});
- selectScenario(scenario);
- setPlaying(!reducedMotion.matches);
+ views.forEach(button=>button.onclick=()=>selectScenario(button.dataset.importView));
+ controls.addEventListener('pointerenter',scheduleNext);
+ controls.addEventListener('pointerleave',scheduleNext);
+ controls.addEventListener('focusin',scheduleNext);
+ controls.addEventListener('focusout',()=>requestAnimationFrame(scheduleNext));
+ document.addEventListener('visibilitychange',scheduleNext);
+ reducedMotion.addEventListener('change',scheduleNext);
+ dialog.addEventListener('close',()=>{
+  clearTimeout(timer);
+  document.removeEventListener('visibilitychange',scheduleNext);
+  reducedMotion.removeEventListener('change',scheduleNext);
+ },{once:true});
+ selectScenario('as-is');
 }
 document.getElementById('open-import').onclick=openImport;
 
