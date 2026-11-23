@@ -313,7 +313,24 @@ dialog:has(.whatsapp-walkthrough) .dialog-body{padding:16px 20px 22px}
 #grid .card:hover .project-cover .video-play svg{background:#ffe7a0}
 @keyframes project-cover-glow{0%,32%,100%{border-color:#739480}9%,24%{border-color:#f6d886;color:#fff2c9;background:#3c6452;box-shadow:0 0 0 2px #f6d88635}}
 @keyframes project-cover-signal{0%{left:0;opacity:0}8%,88%{opacity:1}100%{left:100%;opacity:0}}
-@media(max-width:450px){#grid .project-cover{min-height:155px}#grid .project-cover .video-play{font-size:11px}.project-cover-stage{padding:7px 2px}}
+@media(max-width:760px){
+ #grid{grid-template-columns:minmax(0,1fr);gap:20px}
+ #grid .card{display:block;width:100%;border-radius:18px}
+ #grid .project-cover{
+  grid-template-columns:minmax(0,1fr);min-height:0;
+  gap:18px;padding:24px clamp(12px,4vw,28px) 22px
+ }
+ .project-cover-flow{width:100%;gap:8px}
+ .project-cover-stage{padding:12px 4px;gap:9px}
+ .project-cover-stage svg{width:clamp(26px,9vw,54px)}
+ .project-cover-stage>span{font-size:clamp(12px,3.35vw,16px);overflow-wrap:normal}
+ #grid .project-cover .video-play{flex-direction:row;gap:10px;max-width:none;font-size:14px}
+ #grid .project-cover .video-play svg{width:44px;height:44px;padding:10px}
+ #grid .card-bottom{padding:23px}
+ #grid .card-bottom .tag{font-size:10px}
+ #grid .card-bottom h3{font:500 clamp(24px,6.2vw,28px)/1.2 Georgia,serif;margin:13px 0}
+ #grid .card-bottom p{font-size:16px;line-height:1.65}
+}
 @media(prefers-reduced-motion:reduce){.project-cover-stage,.project-cover-track::after{animation:none}.project-cover-track::after{display:none}}
 </style><style id="portfolio-contact-layout">
 .portfolio-identity{display:grid;justify-items:end;gap:5px;flex:none}
