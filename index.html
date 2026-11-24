@@ -305,7 +305,9 @@ dialog:has(.whatsapp-walkthrough) .dialog-body{padding:16px 20px 22px}
 .featured-pair{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
 #open-pdv{display:grid;justify-items:center;align-content:center;gap:12px;width:100%;padding:18px;border:0;background:radial-gradient(ellipse at 38% 20%,#315f4d,#102f27 75%);color:#f4f5e8}
 .pdv-maquette{display:block;width:100%;height:auto;border-radius:12px}
-#detail .pdv-maquette{margin:0 auto 18px;max-width:640px}
+#detail .pdv-maquette{margin:0 auto 18px;max-width:min(100%,640px);object-fit:contain}
+#destaques #open-pdv{grid-template-columns:minmax(0,1fr);min-width:0}
+#destaques #open-pdv .pdv-maquette{min-width:0;max-width:min(100%,440px);object-fit:contain}
 #detail:has(.pdv-bpmn){width:min(1050px,calc(100% - 24px))}
 .pdv-bpmn,.pdv-poc{margin:24px 0}
 .pdv-bpmn h3,.pdv-poc h3{margin:0 0 12px;font:500 clamp(23px,4vw,30px)/1.2 Georgia,serif}
@@ -420,11 +422,16 @@ dialog:has(.whatsapp-walkthrough) .dialog-body{padding:16px 20px 22px}
 #destaques :is(#telas-whatsapp,#open-audit,#open-import,#open-pdv) .video-play svg{
  width:55px;height:55px;padding:13px;box-sizing:border-box;flex:none
 }
-#destaques :is(.featured-pair,.feature-card){display:grid;grid-row:span 3;grid-template-rows:subgrid;row-gap:0;min-width:0}
-#destaques .feature-copy{display:grid;grid-row:span 2;grid-template-rows:subgrid;row-gap:0}
+#destaques :is(.featured-pair,.feature-card){display:grid;grid-row:span 4;grid-template-rows:subgrid;row-gap:0;min-width:0}
+#destaques .feature-copy{display:grid;grid-row:span 3;grid-template-rows:subgrid;row-gap:0}
 #destaques .feature-intro,#destaques .feature-copy details{min-width:0}
 #destaques .feature-copy details{align-self:start}
-.feature-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+#destaques .feature-actions{display:none;align-self:end;flex-wrap:wrap;gap:8px;margin-top:14px}
+#destaques .feature-copy:has(>details[open])>.feature-actions{display:flex}
+.study-access-form{display:grid;gap:13px}
+.study-access-form label{display:grid;gap:5px;font-weight:650}
+.study-access-form input{width:100%;min-height:44px;padding:9px 11px;font:inherit;color:var(--ink);background:var(--theme-surface);border:1px solid var(--line);border-radius:8px}
+.study-access-form button{justify-self:start}
 .feature-action{display:inline-flex;align-items:center;min-height:44px;padding:8px 12px;border:1px solid var(--line);border-radius:8px;background:var(--theme-surface);color:var(--ink);font:inherit;font-size:14px;font-weight:650;text-align:left;text-decoration:none;cursor:pointer}
 .feature-action:hover{text-decoration:underline;text-underline-offset:3px}
 .study-access-request{margin:0 0 16px;color:var(--muted);line-height:1.6}
@@ -509,7 +516,7 @@ dialog:has(.whatsapp-walkthrough) .dialog-body{padding:16px 20px 22px}
   </div>
 </section>
 <section id="projetos" aria-labelledby="featured-title">
-<section class="featured-section" id="destaques" aria-labelledby="featured-title"><p class="eyebrow">PROJETOS</p><h2 id="featured-title" class="editorial-title">Destaques</h2><div class="featured-grid"><article class="feature-card"><button type="button" class="chat-preview" id="telas-whatsapp" aria-label="Abrir a apresentação de WhatsApp e chatbot" aria-haspopup="dialog"><div class="chat-phone"><div class="chat-top"><span class="chat-avatar" aria-hidden="true">B</span><span>Atendimento digital<small>WhatsApp · Chatbot</small></span></div><div class="chat-body"><span class="bubble incoming">Olá! Como posso ajudar?</span><span class="bubble outgoing">Quero acessar meus serviços.</span><span class="bubble incoming">Escolha o que você precisa:<br><b>Boletos · Serviços · Atendimento</b></span></div><span class="chat-foot">Representação da jornada de atendimento</span></div><span class="video-play"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 4.5v15L20 12z"/></svg><span>Explorar</span></span></button><div class="feature-copy"><div class="feature-intro"><span class="feature-tag">PRODUTOS DIGITAIS · SEGUROS</span><h3>WhatsApp e chatbot</h3><p>Evolução da jornada de atendimento para facilitar o acesso a serviços e direcionar solicitações de autosserviço.</p></div><details><summary>Minha atuação</summary><p>Discovery, mapeamento AS IS / TO BE, requisitos e critérios de aceite. Colaboração com negócio, arquitetura, desenvolvimento e UX/UI, além do acompanhamento de testes e homologação.</p><div class="feature-actions"><button class="feature-action" type="button" data-study-access="canais">Canais digitais e MVP</button><button class="feature-action" type="button" data-study-access="whatsapp">Jornada de serviços</button></div></details></div></article><article class="feature-card"><button id="open-audit" class="audit-cover process-cover" type="button" aria-label="Abrir os cenários AS IS e TO BE da Auditoria Contínua"><span class="audit-cover-kicker">INTEGRAÇÕES · AUTOMAÇÃO</span><span class="audit-illustration" aria-hidden="true"><span class="audit-gear gear-one">⚙</span><span class="audit-gear gear-two">⚙</span><span class="audit-person person-one"><i></i><b></b></span><span class="audit-person person-two"><i></i><b></b></span><span class="audit-laptop"><i></i><b></b></span></span><span class="audit-cover-copy"><strong>Auditoria Contínua</strong><small>Do processo manual à integração automatizada</small></span><span class="video-play"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 4.5v15L20 12z"/></svg><span>Explorar</span></span></button><div class="feature-copy"><div class="feature-intro"><span class="feature-tag">INTEGRAÇÕES · AUTOMAÇÃO</span><h3>Auditoria Contínua</h3><p>Integração de dados para automatizar a auditoria, preservar arquivos de origem e ampliar a rastreabilidade. Escopo inicial: Compras e Contas a Pagar.</p></div><details><summary>Minha atuação</summary><p>Estruturação de requisitos e integrações, com foco em evidências, guarda segura dos arquivos e um processo extensível a outras áreas.</p><div class="feature-actions"><button class="feature-action" type="button" data-study-access="auditoria">Jornada da auditoria</button></div></details></div></article><div class="featured-pair"><article class="feature-card import-feature">
+<section class="featured-section" id="destaques" aria-labelledby="featured-title"><p class="eyebrow">PROJETOS</p><h2 id="featured-title" class="editorial-title">Destaques</h2><div class="featured-grid"><article class="feature-card"><button type="button" class="chat-preview" id="telas-whatsapp" aria-label="Abrir a apresentação de WhatsApp e chatbot" aria-haspopup="dialog"><div class="chat-phone"><div class="chat-top"><span class="chat-avatar" aria-hidden="true">B</span><span>Atendimento digital<small>WhatsApp · Chatbot</small></span></div><div class="chat-body"><span class="bubble incoming">Olá! Como posso ajudar?</span><span class="bubble outgoing">Quero acessar meus serviços.</span><span class="bubble incoming">Escolha o que você precisa:<br><b>Boletos · Serviços · Atendimento</b></span></div><span class="chat-foot">Representação da jornada de atendimento</span></div><span class="video-play"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 4.5v15L20 12z"/></svg><span>Explorar</span></span></button><div class="feature-copy"><div class="feature-intro"><span class="feature-tag">PRODUTOS DIGITAIS · SEGUROS</span><h3>WhatsApp e chatbot</h3><p>Evolução da jornada de atendimento para facilitar o acesso a serviços e direcionar solicitações de autosserviço.</p></div><details><summary>Minha atuação</summary><p>Discovery, mapeamento AS IS / TO BE, requisitos e critérios de aceite. Colaboração com negócio, arquitetura, desenvolvimento e UX/UI, além do acompanhamento de testes e homologação.</p></details><div class="feature-actions"><button class="feature-action" type="button" data-study-access="canais">Canais digitais e MVP</button><button class="feature-action" type="button" data-study-access="whatsapp">Jornada do processo</button></div></div></article><article class="feature-card"><button id="open-audit" class="audit-cover process-cover" type="button" aria-label="Abrir os cenários AS IS e TO BE da Auditoria Contínua"><span class="audit-cover-kicker">INTEGRAÇÕES · AUTOMAÇÃO</span><span class="audit-illustration" aria-hidden="true"><span class="audit-gear gear-one">⚙</span><span class="audit-gear gear-two">⚙</span><span class="audit-person person-one"><i></i><b></b></span><span class="audit-person person-two"><i></i><b></b></span><span class="audit-laptop"><i></i><b></b></span></span><span class="audit-cover-copy"><strong>Auditoria Contínua</strong><small>Do processo manual à integração automatizada</small></span><span class="video-play"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 4.5v15L20 12z"/></svg><span>Explorar</span></span></button><div class="feature-copy"><div class="feature-intro"><span class="feature-tag">INTEGRAÇÕES · AUTOMAÇÃO</span><h3>Auditoria Contínua</h3><p>Integração de dados para automatizar a auditoria, preservar arquivos de origem e ampliar a rastreabilidade. Escopo inicial: Compras e Contas a Pagar.</p></div><details><summary>Minha atuação</summary><p>Estruturação de requisitos e integrações, com foco em evidências, guarda segura dos arquivos e um processo extensível a outras áreas.</p></details><div class="feature-actions"><button class="feature-action" type="button" data-study-access="auditoria">Jornada do processo</button></div></div></article><div class="featured-pair"><article class="feature-card import-feature">
   <button id="open-import" class="audit-cover process-cover" type="button" aria-label="Abrir os cenários AS IS e TO BE da importação no ERP Oracle R12">
     <span class="audit-cover-kicker">ERP ORACLE R12 · COMÉRCIO EXTERIOR</span>
     <span class="import-cover-art" aria-hidden="true">
@@ -530,11 +537,11 @@ dialog:has(.whatsapp-walkthrough) .dialog-body{padding:16px 20px 22px}
     <span class="audit-cover-copy"><strong>Do recebimento ao estoque</strong><small>Integração de dados fiscais e de importação</small></span>
     <span class="video-play"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 4.5v15L20 12z"/></svg><span>Explorar</span></span>
   </button>
-  <div class="feature-copy"><div class="feature-intro"><span class="feature-tag">INTEGRAÇÕES · ERP INDUSTRIAL</span><h3>Fluxo de importação no ERP Oracle R12</h3><p>Da redigitação de itens à integração entre Compras, Logística, Fiscal e Estoque.</p></div><details><summary>Minha atuação</summary><p>Mapeei o fluxo do recebimento ao estoque com as áreas envolvidas. Apoiei a implantação e a homologação das integrações no Oracle R12, validando com a equipe o trânsito dos dados de importação entre Compras, Logística, Fiscal e Estoque.</p><p><strong>Evolução proposta</strong> — acompanhar as falhas de integração e preparar o reprocessamento de pedidos com divergência.</p><div class="feature-actions"><button class="feature-action" type="button" id="explore-import-role">Explorar o fluxo de importação</button></div></details></div>
+  <div class="feature-copy"><div class="feature-intro"><span class="feature-tag">INTEGRAÇÕES · ERP INDUSTRIAL</span><h3>Fluxo de importação no ERP Oracle R12</h3><p>Da redigitação de itens à integração entre Compras, Logística, Fiscal e Estoque.</p></div><details><summary>Minha atuação</summary><p>Mapeei o fluxo do recebimento ao estoque com as áreas envolvidas. Apoiei a implantação e a homologação das integrações no Oracle R12, validando com a equipe o trânsito dos dados de importação entre Compras, Logística, Fiscal e Estoque.</p><p><strong>Evolução proposta</strong> — acompanhar as falhas de integração e preparar o reprocessamento de pedidos com divergência.</p></details><div class="feature-actions"><button class="feature-action" type="button" data-study-access="erp">Jornada do processo</button></div></div>
 </article>
 <article class="feature-card" id="featured-pdv">
   <button id="open-pdv" type="button" aria-label="Explorar: Do pedido ao preparo da bebida"><img class="pdv-maquette" src="assets/pdv-maquete.svg" alt="O atendente registra o pedido 042 no caixa. O painel indica o andamento e a máquina serve o refrigerante." width="560" height="290"><span class="video-play"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 4.5v15L20 12z"/></svg><span>Explorar</span></span></button>
-  <div class="feature-copy"><div class="feature-intro"><span class="feature-tag">INTEGRAÇÃO · REGRAS E BDD</span><h3>Do pedido ao preparo da bebida</h3><p>Integração do ponto de venda ao sistema automatizado de bebidas (ABS).</p></div><details><summary>Minha atuação</summary><p>Detalhei as regras de categoria, sabor, copo, gelo, tamanho e consumo em histórias de usuário, critérios de aceite e cenários BDD.</p><div class="feature-actions"><a class="feature-action pdv-poc-link" href="simulador-abs.html">POC – Experimentar a máquina ABS</a></div></details></div>
+  <div class="feature-copy"><div class="feature-intro"><span class="feature-tag">INTEGRAÇÃO · REGRAS E BDD</span><h3>Do pedido ao preparo da bebida</h3><p>Integração do ponto de venda ao sistema automatizado de bebidas (ABS).</p></div><details><summary>Minha atuação</summary><p>Detalhei as regras de categoria, sabor, copo, gelo, tamanho e consumo em histórias de usuário, critérios de aceite e cenários BDD.</p></details><div class="feature-actions"><button class="feature-action" type="button" data-study-access="pdv">Jornada do processo</button></div></div>
 </article></div></div></section>
 <div aria-labelledby="projects-title"><div class="section-top"><div><h3 id="projects-title">Demais projetos</h3><p>Aqui, você encontra alguns trabalhos, de canais digitais e automação a integrações e implantação de ERP.</p></div></div><div class="grid" id="grid"></div><div class="more-row"><button class="more" id="more" aria-expanded="false">Ver outros projetos +</button></div></div>
 </section>
@@ -643,10 +650,10 @@ const pdvEvidence = `
  <section class="pdv-bpmn" aria-labelledby="pdv-bpmn-title">
   <h3 id="pdv-bpmn-title">Fluxo BPMN no Bizagi</h3>
   <figure>
-   <div class="pdv-bpmn-scroll" tabindex="0" role="region" aria-label="Fluxograma BPMN completo com rolagem horizontal">
-    <img src="assets/pdv-bpmn-bizagi.png" width="2047" height="822" alt="Fluxo completo do pedido no PDV até o preparo e a retirada da bebida na máquina ABS." loading="lazy">
+   <div class="pdv-bpmn-scroll" tabindex="0" role="region" aria-label="Fluxo vetorial com rolagem horizontal">
+    <img src="assets/pdv-bpmn-leitura.svg" width="1610" height="515" alt="Redesenho das etapas e decisões do pedido no PDV até o preparo e a retirada da bebida na máquina ABS." loading="lazy">
    </div>
-   <figcaption>Deslize na horizontal para percorrer o fluxo. <a href="assets/pdv-bpmn-bizagi.png" target="_blank" rel="noopener">Abrir em tamanho original</a></figcaption>
+   <figcaption>Deslize na horizontal para percorrer o fluxo. <a href="assets/pdv-bpmn-bizagi.png" target="_blank" rel="noopener">Consultar BPMN original do Bizagi</a> · <a href="assets/pdv-bpmn-leitura.svg" target="_blank" rel="noopener">Abrir versão vetorial</a></figcaption>
   </figure>
  </section>
  <section class="pdv-poc" aria-labelledby="pdv-poc-title">
@@ -981,14 +988,34 @@ function openImport(){
  selectScenario('as-is');
 }
 document.getElementById('open-import').onclick=openImport;
-document.getElementById('explore-import-role').addEventListener('click', openImport);
-const studyAccessTitles={canais:'Estudo de canais digitais e MVP',whatsapp:'Estudo da jornada de serviços no WhatsApp',auditoria:'Jornada da Auditoria Contínua'};
+const studyAccessTitles={
+ canais:'Estudo de canais digitais e MVP',
+ whatsapp:'Jornada do processo · WhatsApp e chatbot',
+ auditoria:'Jornada do processo · Auditoria Contínua',
+ erp:'Jornada do processo · Fluxo de importação no ERP Oracle R12',
+ pdv:'Jornada do processo · Do pedido ao preparo da bebida'
+};
 document.querySelectorAll('[data-study-access]').forEach(button=>{
  button.addEventListener('click',()=>{
   const title=studyAccessTitles[button.dataset.studyAccess];
-  const subject=encodeURIComponent('Solicitação de acesso — '+title);
-  const body=encodeURIComponent('Olá, Berta! Gostaria de solicitar acesso a: '+title+'.\n\nNome:\nEmpresa ou organização:\nMotivo da solicitação:');
-  shell('ACESSO SOB SOLICITAÇÃO',title,`<p class="study-access-request">Solicite o acesso por e-mail e conte brevemente por que você quer consultar este material.</p><a class="feature-action" href="mailto:bertareg@hotmail.com?subject=${subject}&amp;body=${body}">Solicitar acesso por e-mail</a>`);
+  shell('ACESSO SOB SOLICITAÇÃO',title,`<p class="study-access-request">Solicite acesso por e-mail.</p>
+   <form class="study-access-form">
+    <label>Nome <input name="nome" type="text" autocomplete="name" maxlength="100" required></label>
+    <label>E-mail <input name="email" type="email" autocomplete="email" maxlength="254" required></label>
+    <button class="feature-action" type="submit">Solicitar acesso</button>
+   </form>`);
+  const form=dialog.querySelector('.study-access-form');
+  form.addEventListener('submit',event=>{
+   event.preventDefault();
+   const fields=new FormData(form);
+   const name=fields.get('nome').trim();
+   const nameField=form.elements.namedItem('nome');
+   if(!name){nameField.setCustomValidity('Informe seu nome.');nameField.reportValidity();return;}
+   const subject=encodeURIComponent('Solicitação de acesso — '+title);
+   const body=encodeURIComponent('Nome: '+name+'\nE-mail: '+fields.get('email').trim());
+   window.location.href='mailto:bertareg@hotmail.com?subject='+subject+'&body='+body;
+  });
+  form.elements.namedItem('nome').addEventListener('input',event=>event.target.setCustomValidity(''));
  });
 });
 
