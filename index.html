@@ -152,7 +152,7 @@ dialog:has(.audit-comparison){width:min(1150px,calc(100% - 24px))}
 .process-cover .video-play svg{flex:none}
 .process-cover .video-play{color:#f6f6ec;max-width:82px}
 .process-cover:hover .video-play svg{background:#ffe7a0}
-.import-feature{grid-column:1/-1}
+
 .import-feature .process-cover{min-height:270px;grid-template-columns:1fr 1fr auto}
 .import-cover-flow{display:grid;justify-items:center;text-align:center;gap:6px;color:#e9d795;margin-top:18px}
 .import-cover-flow b{display:block;border:1px solid #91a997;border-radius:8px;background:#1a3d33;padding:10px 14px;font-size:13px;color:#edf1e4}
@@ -354,6 +354,14 @@ dialog:has(.whatsapp-walkthrough) .dialog-body{padding:16px 20px 22px}
  .contact-section{grid-template-columns:1fr}
 }
 </style><style id="portfolio-desktop-layout">
+@media(min-width:761px){
+ #open-import{grid-template-columns:minmax(0,1fr) auto;gap:18px 12px;min-height:330px;padding:54px 18px 20px}
+ #open-import .import-cover-art{grid-column:1/-1;width:min(100%,440px);justify-self:center}
+ #open-import .audit-cover-copy strong{font-size:clamp(22px,2.1vw,30px)}
+ #featured-pdv .project-cover{grid-template-columns:minmax(0,1fr);align-content:center;gap:22px;min-height:330px}
+ #featured-pdv .project-cover-flow{width:min(100%,440px);justify-self:center}
+ #featured-pdv .project-cover .video-play{flex-direction:row;max-width:none;gap:10px}
+}
 @media(min-width:761px){
  .wrap{max-width:none;width:100%;padding-inline:clamp(24px,3vw,64px)}
  .hero-copy .hero-summary{font-size:clamp(21px,1.7vw,26px)}
