@@ -302,25 +302,45 @@ dialog:has(.whatsapp-walkthrough) .dialog-body{padding:16px 20px 22px}
  .career-numbers li{display:grid;grid-template-columns:5.25rem minmax(0,1fr);align-items:center;gap:12px}
 }
 </style><style id="remaining-project-covers">
-#open-pdv{display:block;width:100%;padding:0;border:0}
+.featured-pair{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+#open-pdv{display:grid;justify-items:center;align-content:center;gap:12px;width:100%;padding:18px;border:0;background:radial-gradient(ellipse at 38% 20%,#315f4d,#102f27 75%);color:#f4f5e8}
+.pdv-maquette{display:block;width:100%;height:auto;border-radius:12px}
+#detail .pdv-maquette{margin-bottom:18px}
+#open-pdv .video-play{flex-direction:row;gap:8px;max-width:none}
+#open-pdv .video-play svg{width:44px;height:44px;padding:10px}
+@media(min-width:761px){#open-pdv{min-height:330px}#open-pdv .pdv-maquette{max-width:440px}}
+@media(max-width:760px){
+ .featured-pair{gap:10px}
+ .featured-pair .feature-copy{padding:13px}
+ .featured-pair .feature-copy h3{font-size:clamp(17px,4.5vw,24px);overflow-wrap:anywhere}
+ .featured-pair .feature-copy p{font-size:14px;line-height:1.5}
+ .featured-pair .feature-tag{font-size:9px;letter-spacing:.04em}
+ #open-import,#open-pdv{min-height:168px;padding:12px 8px;gap:8px}
+ #open-import{grid-template-columns:minmax(0,1fr);justify-items:center}
+ #open-import .audit-cover-kicker,#open-import .audit-cover-copy,#open-import .import-cover-stage>span{display:none}
+ #open-import .import-cover-art{gap:3px;padding-bottom:9px;align-self:center}
+ #open-import .import-cover-stage{padding:4px 2px}
+ #open-import .video-play,#open-pdv .video-play{gap:4px;font-size:11px}
+ #open-import .video-play svg,#open-pdv .video-play svg{width:34px;height:34px;padding:7px}
+}
 #open-pdv:hover .video-play svg{background:#ffe7a0}
 .more-row:has(> .more[hidden]){display:none}
-:is(#grid,#featured-pdv) .project-cover{height:auto;min-height:205px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(9px,2vw,22px);padding:clamp(13px,2.5vw,26px);background:radial-gradient(ellipse at 38% 20%,#315f4d,#102f27 75%);color:#f4f5e8}
+#grid .project-cover{height:auto;min-height:205px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:clamp(9px,2vw,22px);padding:clamp(13px,2.5vw,26px);background:radial-gradient(ellipse at 38% 20%,#315f4d,#102f27 75%);color:#f4f5e8}
 .project-cover-flow{min-width:0;position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;padding-bottom:14px}
 .project-cover-stage{min-width:0;display:grid;align-content:start;justify-items:center;gap:6px;padding:9px 3px;color:#e5ede1;border:1px solid #739480;border-radius:10px;background:#254c3e;text-align:center;animation:project-cover-glow 6s ease infinite backwards;animation-delay:var(--stage-offset)}
 .project-cover-stage svg{display:block;width:clamp(27px,6vw,58px);max-width:100%;height:auto;aspect-ratio:1;color:#edd68c}
 .project-cover-stage>span{font:700 clamp(11px,1.15vw,14px)/1.25 Arial,sans-serif;overflow-wrap:anywhere}
 .project-cover-track{position:absolute;bottom:1px;left:16.67%;right:16.67%;height:2px;background:#849f8e;border-radius:2px}
 .project-cover-track::after{content:"";position:absolute;top:-2px;left:0;width:6px;height:6px;border-radius:50%;background:#f6d886;box-shadow:0 0 9px #f6d886;animation:project-cover-signal 6s linear infinite}
-:is(#grid,#featured-pdv) .project-cover .video-play{justify-self:center;color:#f4f5e8;gap:6px}
-:is(#grid,#featured-pdv) .project-cover .video-play svg{width:clamp(34px,5vw,50px);height:clamp(34px,5vw,50px);padding:8px;box-sizing:border-box}
+#grid .project-cover .video-play{justify-self:center;color:#f4f5e8;gap:6px}
+#grid .project-cover .video-play svg{width:clamp(34px,5vw,50px);height:clamp(34px,5vw,50px);padding:8px;box-sizing:border-box}
 #grid .card:hover .project-cover .video-play svg{background:#ffe7a0}
 @keyframes project-cover-glow{0%,32%,100%{border-color:#739480}9%,24%{border-color:#f6d886;color:#fff2c9;background:#3c6452;box-shadow:0 0 0 2px #f6d88635}}
 @keyframes project-cover-signal{0%{left:0;opacity:0}8%,88%{opacity:1}100%{left:100%;opacity:0}}
 @media(max-width:760px){
  #grid{grid-template-columns:minmax(0,1fr);gap:20px}
  #grid .card{display:block;width:100%;border-radius:18px}
- :is(#grid,#featured-pdv) .project-cover{
+ #grid .project-cover{
   grid-template-columns:minmax(0,1fr);min-height:0;
   gap:18px;padding:24px clamp(12px,4vw,28px) 22px
  }
@@ -328,8 +348,8 @@ dialog:has(.whatsapp-walkthrough) .dialog-body{padding:16px 20px 22px}
  .project-cover-stage{padding:12px 4px;gap:9px}
  .project-cover-stage svg{width:clamp(26px,9vw,54px)}
  .project-cover-stage>span{font-size:clamp(12px,3.35vw,16px);overflow-wrap:normal}
- :is(#grid,#featured-pdv) .project-cover .video-play{flex-direction:row;gap:10px;max-width:none;font-size:14px}
- :is(#grid,#featured-pdv) .project-cover .video-play svg{width:44px;height:44px;padding:10px}
+ #grid .project-cover .video-play{flex-direction:row;gap:10px;max-width:none;font-size:14px}
+ #grid .project-cover .video-play svg{width:44px;height:44px;padding:10px}
  #grid .card-bottom{padding:23px}
  #grid .card-bottom .tag{font-size:10px}
  #grid .card-bottom h3{font:500 clamp(24px,6.2vw,28px)/1.2 Georgia,serif;margin:13px 0}
@@ -358,9 +378,6 @@ dialog:has(.whatsapp-walkthrough) .dialog-body{padding:16px 20px 22px}
  #open-import{grid-template-columns:minmax(0,1fr) auto;gap:18px 12px;min-height:330px;padding:54px 18px 20px}
  #open-import .import-cover-art{grid-column:1/-1;width:min(100%,440px);justify-self:center}
  #open-import .audit-cover-copy strong{font-size:clamp(22px,2.1vw,30px)}
- #featured-pdv .project-cover{grid-template-columns:minmax(0,1fr);align-content:center;gap:22px;min-height:330px}
- #featured-pdv .project-cover-flow{width:min(100%,440px);justify-self:center}
- #featured-pdv .project-cover .video-play{flex-direction:row;max-width:none;gap:10px}
 }
 @media(min-width:761px){
  .wrap{max-width:none;width:100%;padding-inline:clamp(24px,3vw,64px)}
@@ -449,7 +466,7 @@ dialog:has(.whatsapp-walkthrough) .dialog-body{padding:16px 20px 22px}
   </div>
 </section>
 <section id="projetos" aria-labelledby="featured-title">
-<section class="featured-section" id="destaques" aria-labelledby="featured-title"><p class="eyebrow">PROJETOS</p><h2 id="featured-title" class="editorial-title">Destaques</h2><div class="featured-grid"><article class="feature-card"><button type="button" class="chat-preview" id="telas-whatsapp" aria-label="Abrir a apresentação de WhatsApp e chatbot" aria-haspopup="dialog"><div class="chat-phone"><div class="chat-top"><span class="chat-avatar" aria-hidden="true">B</span><span>Atendimento digital<small>WhatsApp · Chatbot</small></span></div><div class="chat-body"><span class="bubble incoming">Olá! Como posso ajudar?</span><span class="bubble outgoing">Quero acessar meus serviços.</span><span class="bubble incoming">Escolha o que você precisa:<br><b>Boletos · Serviços · Atendimento</b></span></div><span class="chat-foot">Representação da jornada de atendimento</span></div><span class="video-play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l12-7z"/></svg>Ver demonstração</span></button><div class="feature-copy"><span class="feature-tag">PRODUTOS DIGITAIS · SEGUROS</span><h3>WhatsApp e chatbot</h3><p>Evolução da jornada de atendimento para facilitar o acesso a serviços e direcionar solicitações de autosserviço.</p><details><summary>Minha atuação</summary><p>Discovery, mapeamento AS IS / TO BE, requisitos e critérios de aceite. Colaboração com negócio, arquitetura, desenvolvimento e UX/UI, além do acompanhamento de testes e homologação.</p><ul><li><a href="canais-digitais.html">Estudo de canais digitais e MVP</a></li><li><a href="whatsapp.html">Estudo da jornada de serviços no WhatsApp</a></li></ul></details></div></article><article class="feature-card"><button id="open-audit" class="audit-cover process-cover" type="button" aria-label="Abrir os cenários AS IS e TO BE da Auditoria Contínua"><span class="audit-cover-kicker">INTEGRAÇÕES · AUTOMAÇÃO</span><span class="audit-illustration" aria-hidden="true"><span class="audit-gear gear-one">⚙</span><span class="audit-gear gear-two">⚙</span><span class="audit-person person-one"><i></i><b></b></span><span class="audit-person person-two"><i></i><b></b></span><span class="audit-laptop"><i></i><b></b></span></span><span class="audit-cover-copy"><strong>Auditoria Contínua</strong><small>Do processo manual à integração automatizada</small></span><span class="video-play"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 4.5v15L20 12z"/></svg><span>Explorar<br>AS IS · TO BE</span></span></button><div class="feature-copy"><span class="feature-tag">INTEGRAÇÕES · AUTOMAÇÃO</span><h3>Auditoria Contínua</h3><p>Integração de dados para automatizar a auditoria, preservar arquivos de origem e ampliar a rastreabilidade. Escopo inicial: Compras e Contas a Pagar.</p><details><summary>Minha atuação</summary><p>Estruturação de requisitos e integrações, com foco em evidências, guarda segura dos arquivos e um processo extensível a outras áreas.</p></details></div></article><article class="feature-card import-feature">
+<section class="featured-section" id="destaques" aria-labelledby="featured-title"><p class="eyebrow">PROJETOS</p><h2 id="featured-title" class="editorial-title">Destaques</h2><div class="featured-grid"><article class="feature-card"><button type="button" class="chat-preview" id="telas-whatsapp" aria-label="Abrir a apresentação de WhatsApp e chatbot" aria-haspopup="dialog"><div class="chat-phone"><div class="chat-top"><span class="chat-avatar" aria-hidden="true">B</span><span>Atendimento digital<small>WhatsApp · Chatbot</small></span></div><div class="chat-body"><span class="bubble incoming">Olá! Como posso ajudar?</span><span class="bubble outgoing">Quero acessar meus serviços.</span><span class="bubble incoming">Escolha o que você precisa:<br><b>Boletos · Serviços · Atendimento</b></span></div><span class="chat-foot">Representação da jornada de atendimento</span></div><span class="video-play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l12-7z"/></svg>Ver demonstração</span></button><div class="feature-copy"><span class="feature-tag">PRODUTOS DIGITAIS · SEGUROS</span><h3>WhatsApp e chatbot</h3><p>Evolução da jornada de atendimento para facilitar o acesso a serviços e direcionar solicitações de autosserviço.</p><details><summary>Minha atuação</summary><p>Discovery, mapeamento AS IS / TO BE, requisitos e critérios de aceite. Colaboração com negócio, arquitetura, desenvolvimento e UX/UI, além do acompanhamento de testes e homologação.</p><ul><li><a href="canais-digitais.html">Estudo de canais digitais e MVP</a></li><li><a href="whatsapp.html">Estudo da jornada de serviços no WhatsApp</a></li></ul></details></div></article><article class="feature-card"><button id="open-audit" class="audit-cover process-cover" type="button" aria-label="Abrir os cenários AS IS e TO BE da Auditoria Contínua"><span class="audit-cover-kicker">INTEGRAÇÕES · AUTOMAÇÃO</span><span class="audit-illustration" aria-hidden="true"><span class="audit-gear gear-one">⚙</span><span class="audit-gear gear-two">⚙</span><span class="audit-person person-one"><i></i><b></b></span><span class="audit-person person-two"><i></i><b></b></span><span class="audit-laptop"><i></i><b></b></span></span><span class="audit-cover-copy"><strong>Auditoria Contínua</strong><small>Do processo manual à integração automatizada</small></span><span class="video-play"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 4.5v15L20 12z"/></svg><span>Explorar<br>AS IS · TO BE</span></span></button><div class="feature-copy"><span class="feature-tag">INTEGRAÇÕES · AUTOMAÇÃO</span><h3>Auditoria Contínua</h3><p>Integração de dados para automatizar a auditoria, preservar arquivos de origem e ampliar a rastreabilidade. Escopo inicial: Compras e Contas a Pagar.</p><details><summary>Minha atuação</summary><p>Estruturação de requisitos e integrações, com foco em evidências, guarda segura dos arquivos e um processo extensível a outras áreas.</p></details></div></article><div class="featured-pair"><article class="feature-card import-feature">
   <button id="open-import" class="audit-cover process-cover" type="button" aria-label="Abrir os cenários AS IS e TO BE da importação no ERP Oracle R12">
     <span class="audit-cover-kicker">ERP ORACLE R12 · COMÉRCIO EXTERIOR</span>
     <span class="import-cover-art" aria-hidden="true">
@@ -473,9 +490,9 @@ dialog:has(.whatsapp-walkthrough) .dialog-body{padding:16px 20px 22px}
   <div class="feature-copy"><span class="feature-tag">INTEGRAÇÕES · ERP INDUSTRIAL</span><h3>Fluxo de importação no ERP Oracle R12</h3><p>Da redigitação de itens à integração entre Compras, Logística, Fiscal e Estoque.</p><details><summary>Minha atuação</summary><p>Mapeei o fluxo do recebimento ao estoque com as áreas envolvidas. Apoiei a implantação e a homologação das integrações no Oracle R12, validando com a equipe o trânsito dos dados de importação entre Compras, Logística, Fiscal e Estoque.</p></details></div>
 </article>
 <article class="feature-card" id="featured-pdv">
-  <button id="open-pdv" type="button" aria-label="Explorar: Do pedido ao preparo da bebida"><span class="card-visual project-cover">Explorar estudo</span></button>
+  <button id="open-pdv" type="button" aria-label="Explorar: Do pedido ao preparo da bebida"><img class="pdv-maquette" src="assets/pdv-maquete.svg" alt="O atendente registra o pedido 042 no caixa. O painel indica o andamento e a máquina serve o refrigerante." width="560" height="290"><span class="video-play"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 4.5v15L20 12z"/></svg><span>Explorar</span></span></button>
   <div class="feature-copy"><span class="feature-tag">INTEGRAÇÃO · REGRAS E BDD</span><h3>Do pedido ao preparo da bebida</h3><p>Integração do ponto de venda ao sistema automatizado de bebidas (ABS).</p><details><summary>Minha atuação</summary><p>Detalhei as regras de categoria, sabor, copo, gelo, tamanho e consumo em histórias de usuário, critérios de aceite e cenários BDD.</p><p><a href="pdv.html">Abrir estudo completo</a></p></details></div>
-</article></div></section>
+</article></div></div></section>
 <div aria-labelledby="projects-title"><div class="section-top"><div><h3 id="projects-title">Demais projetos</h3><p>Aqui, você encontra alguns trabalhos, de canais digitais e automação a integrações e implantação de ERP.</p></div></div><div class="grid" id="grid"></div><div class="more-row"><button class="more" id="more" aria-expanded="false">Ver outros projetos +</button></div></div>
 </section>
 <section class="help-section" id="como-ajudo" aria-labelledby="help-title"><p class="eyebrow">COMO ATUO NOS PROJETOS</p><div class="help-intro"><h2 id="help-title">Da necessidade de negócio<br>à solução tecnológica.</h2></div><div class="help-grid"><button data-help="discovery"><span class="help-number">01 / ENTENDER</span><h3>Discovery e entendimento.</h3><p>Escuta do usuário, busca de transcrições e análise de descobertas com IA.</p><span class="help-open">Explorar minha atuação</span></button><button data-help="processos"><span class="help-number">02 / ESTRUTURAR</span><h3>Processos e boards.</h3><p>Atualização de processos BPMN e boards no Miro e no Mural com evidências das descobertas.</p><span class="help-open">Explorar minha atuação</span></button><button data-help="bdd"><span class="help-number">03 / VALIDAR</span><h3>Requisitos e validação.</h3><p>Regras de negócio, cenários BDD e feedback dos usuários organizados com IA.</p><span class="help-open">Explorar minha atuação</span></button><button data-help="gmo"><span class="help-number">04 / APOIAR A ADOÇÃO</span><h3>Gestão de mudanças.</h3><p>Comunicação, treinamento e acompanhamento da adoção de novos processos e soluções.</p><span class="help-open">Explorar minha atuação</span></button></div></section>
@@ -510,20 +527,6 @@ const projectCoverStages={
   [
    "Oracle R12",
    "gear"
-  ]
- ],
- "pdv": [
-  [
-   "Pedido no PDV",
-   "counter"
-  ],
-  [
-   "Enviar pedido",
-   "transfer"
-  ],
-  [
-   "Preparar bebida",
-   "drink"
   ]
  ],
  "ia": [
@@ -573,8 +576,6 @@ const projectCoverIcons={
  "document": "<path d=\"M17 7h24l11 11v38H17zM41 7v12h11M24 29h21m-21 8h21m-21 8h14\"/>",
  "transfer": "<rect x=\"5\" y=\"11\" width=\"20\" height=\"15\" rx=\"4\"/><rect x=\"39\" y=\"39\" width=\"20\" height=\"15\" rx=\"4\"/><path d=\"M25 18h16a8 8 0 0 1 8 8v8m-5-5 5 5 5-5M39 47H23a8 8 0 0 1-8-8v-8m-5 5 5-5 5 5\"/>",
  "gear": "<path d=\"M27 6h10l2 8 6 3 8-2 5 9-6 6v6l6 6-5 9-8-2-6 3-2 8H27l-2-8-6-3-8 2-5-9 6-6v-6l-6-6 5-9 8 2 6-3z\"/><circle cx=\"32\" cy=\"33\" r=\"10\"/>",
- "counter": "<circle cx=\"14\" cy=\"13\" r=\"6\"/><path d=\"M6 43V30a8 8 0 0 1 15-4l6 8h8M10 43v12m9-12v12M25 41h34M29 41v14m26-14v14M43 31v9\"/><rect x=\"29\" y=\"13\" width=\"28\" height=\"18\" rx=\"3\"/>",
- "drink": "<rect x=\"13\" y=\"6\" width=\"38\" height=\"52\" rx=\"5\"/><path d=\"M13 23h38M20 30h24v20H20zM32 29v7m-7 2h14l-2 9H27zM24 14h16\"/>",
  "checklist": "<rect x=\"13\" y=\"10\" width=\"38\" height=\"47\" rx=\"4\"/><path d=\"M24 10V7h16v3M20 27l3 3 5-6m6 4h10M20 41l3 3 5-6m6 4h10\"/>",
  "spark": "<path d=\"M27 9l5 15 15 5-15 5-5 15-5-15-15-5 15-5zM49 7l2 7 7 2-7 2-2 7-2-7-7-2 7-2zM48 37l3 7 7 3-7 3-3 7-3-7-7-3 7-3z\"/>",
  "browser": "<rect x=\"7\" y=\"11\" width=\"50\" height=\"42\" rx=\"5\"/><path d=\"M7 21h50M15 16h2m4 0h2m4 0h2M14 29h14v16H14zM34 31h15m-15 7h15m-15 7h10\"/>",
@@ -595,11 +596,10 @@ function projectCover(id){
 }
 function render(){const items=projects.filter((p,i)=>filter==='todos'?(expanded||i<4):p.group===filter);grid.innerHTML=items.map(p=>`<button class="card" data-project="${p.id}" aria-label="Explorar: ${p.title}">${projectCover(p.id)}<div class="card-bottom"><div><span class="tag">${p.tag}</span><h3>${p.title}</h3><p>${p.line}</p></div><span class="arrow" aria-hidden="true"></span></div></button>`).join('');more.hidden=filter!=='todos'||projects.length<=4;more.textContent=expanded?'Recolher projetos −':'Ver outros projetos +';more.setAttribute('aria-expanded',String(expanded));document.querySelectorAll('[data-filter]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.filter===filter)));}
 function shell(tag,title,body){opener=document.activeElement;dialog.innerHTML=`<div class="dialog-head"><span class="eyebrow">${tag}</span><h2 id="dialog-title">${title}</h2><button class="close" aria-label="Fechar detalhes">×</button></div><div class="dialog-body">${body}</div>`;dialog.querySelector('.close').onclick=()=>dialog.close();dialog.showModal();}
-function openProject(p){const projectLink=p.upcoming?'<p>Em breve</p><a class="source-link" data-portfolio-return href="#inicio">Voltar ao portfólio</a>':`<a class="source-link" href="${p.url}">Abrir estudo completo</a>`;shell(p.tag,p.title,`<div class="tabs" role="tablist" aria-label="Explorar projeto"><button id="tab-contexto" role="tab" aria-controls="panel" data-tab="contexto" aria-selected="true">Contexto</button><button id="tab-atuacao" role="tab" aria-controls="panel" data-tab="atuacao" aria-selected="false" tabindex="-1">Minha atuação</button><button id="tab-entregas" role="tab" aria-controls="panel" data-tab="entregas" aria-selected="false" tabindex="-1">Entregas</button></div><div class="detail" id="panel" role="tabpanel" aria-labelledby="tab-contexto" tabindex="0"></div>${projectLink}`);if(p.upcoming)dialog.querySelector('[data-portfolio-return]').onclick=()=>{opener=null;dialog.close();};const tabs=[...dialog.querySelectorAll('[data-tab]')];function select(b){const id=b.dataset.tab;tabs.forEach(t=>{t.setAttribute('aria-selected',String(t===b));t.tabIndex=t===b?0:-1});dialog.querySelector('#panel').setAttribute('aria-labelledby',b.id);dialog.querySelector('#panel').innerHTML=id==='entregas'?p.deliver:`<h3>${id==='contexto'?'O problema de negócio':'Como contribuí'}</h3><p>${id==='contexto'?p.context:p.role}</p>`;}tabs.forEach((b,i)=>{b.onclick=()=>select(b);b.onkeydown=e=>{let n;if(e.key==='ArrowRight')n=(i+1)%3;if(e.key==='ArrowLeft')n=(i+2)%3;if(e.key==='Home')n=0;if(e.key==='End')n=2;if(n!==undefined){e.preventDefault();select(tabs[n]);tabs[n].focus();}}});select(tabs[0]);}
+function openProject(p){const projectLink=p.upcoming?'<p>Em breve</p><a class="source-link" data-portfolio-return href="#inicio">Voltar ao portfólio</a>':`<a class="source-link" href="${p.url}">Abrir estudo completo</a>`;shell(p.tag,p.title,`${p.id==='pdv'?'<img class="pdv-maquette" src="assets/pdv-maquete.svg" alt="O atendente registra o pedido 042 no caixa. O painel indica o andamento e a máquina serve o refrigerante." width="560" height="290">':''}<div class="tabs" role="tablist" aria-label="Explorar projeto"><button id="tab-contexto" role="tab" aria-controls="panel" data-tab="contexto" aria-selected="true">Contexto</button><button id="tab-atuacao" role="tab" aria-controls="panel" data-tab="atuacao" aria-selected="false" tabindex="-1">Minha atuação</button><button id="tab-entregas" role="tab" aria-controls="panel" data-tab="entregas" aria-selected="false" tabindex="-1">Entregas</button></div><div class="detail" id="panel" role="tabpanel" aria-labelledby="tab-contexto" tabindex="0"></div>${projectLink}`);if(p.upcoming)dialog.querySelector('[data-portfolio-return]').onclick=()=>{opener=null;dialog.close();};const tabs=[...dialog.querySelectorAll('[data-tab]')];function select(b){const id=b.dataset.tab;tabs.forEach(t=>{t.setAttribute('aria-selected',String(t===b));t.tabIndex=t===b?0:-1});dialog.querySelector('#panel').setAttribute('aria-labelledby',b.id);dialog.querySelector('#panel').innerHTML=id==='entregas'?p.deliver:`<h3>${id==='contexto'?'O problema de negócio':'Como contribuí'}</h3><p>${id==='contexto'?p.context:p.role}</p>`;}tabs.forEach((b,i)=>{b.onclick=()=>select(b);b.onkeydown=e=>{let n;if(e.key==='ArrowRight')n=(i+1)%3;if(e.key==='ArrowLeft')n=(i+2)%3;if(e.key==='Home')n=0;if(e.key==='End')n=2;if(n!==undefined){e.preventDefault();select(tabs[n]);tabs[n].focus();}}});select(tabs[0]);}
 grid.onclick=e=>{const b=e.target.closest('[data-project]');if(b)openProject(projects.find(p=>p.id===b.dataset.project));};document.querySelectorAll('[data-filter]').forEach(b=>b.onclick=()=>{filter=b.dataset.filter;render()});more.onclick=()=>{expanded=!expanded;render()};dialog.addEventListener('close',()=>{if(opener?.isConnected)opener.focus()});dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});
 render();
 const pdvButton=document.getElementById('open-pdv');
-pdvButton.innerHTML=projectCover(featuredPdv.id);
 pdvButton.addEventListener('click',()=>openProject(featuredPdv));
 
 const helpContent={"discovery":{"tag":"DISCOVERY + IA GENERATIVA","title":"Da escuta às descobertas.","body":"<p>A partir da escuta dos usuários e da análise de transcrições de reuniões, identifico dores, organizo necessidades e registro decisões.</p><ol><li><strong>Reunir:</strong> falas, transcrições e registros do entendimento.</li><li><strong>Analisar com IA:</strong> identificar temas recorrentes, dúvidas e oportunidades.</li><li><strong>Conectar evidências:</strong> relacionar descobertas aos trechos de origem e pontos a validar.</li></ol><div class=\"evidence\">Escuta · Transcrição · Análise com IA · Descobertas</div>"},"processos":{"tag":"BPMN + MIRO + MURAL","title":"Descobertas conectadas ao processo.","body":"<p>Utilizo o Miro e o Mural para montar boards e organizar evidências de descobertas. Uso esses entendimentos para revisar e atualizar o processo.</p><ol><li><strong>Boards no Miro e no Mural:</strong> dores, achados e evidências organizados visualmente.</li><li><strong>Processo atualizado:</strong> fluxos BPMN AS IS e TO BE estruturados com apoio de IA.</li><li><strong>Rastreabilidade:</strong> conexão entre evidência, descoberta e proposta de melhoria.</li></ol><div class=\"evidence\">Evidência · Descoberta · Miro / Mural · Processo BPMN</div>"},"bdd":{"tag":"IA GENERATIVA + REGRAS + BDD","title":"Da descoberta aos critérios de aceite.","body":"<p>Transformar os entendimentos do negócio em regras, histórias de usuário e cenários BDD. Reviso os cenários e valido o conteúdo com usuários e equipe.</p><ol><li><strong>Estruturar:</strong> regras de negócio, requisitos e critérios de aceite.</li><li><strong>Detalhar:</strong> cenários Dado / Quando / Então, exceções e pontos de atenção.</li><li><strong>Refinar:</strong> incorporar feedback e atualizar os artefatos com apoio de IA.</li></ol><div class=\"evidence\">Descobertas · Regras · BDD · Validação com usuários</div>"},"validacao":{"tag":"VALIDAÇÃO COM USUÁRIOS + IA","title":"Feedback que atualiza a solução.","body":"<p>Utilizo IA para organizar os registros de validação, comparar feedback com os requisitos e apoiar a atualização dos processos, regras e cenários.</p><ol><li><strong>Validar com pessoas:</strong> conferir entendimento e aderência às necessidades.</li><li><strong>Organizar:</strong> consolidar dúvidas, ajustes e decisões.</li><li><strong>Atualizar:</strong> refletir os ajustes no board, no processo e nos critérios de aceite.</li></ol><div class=\"evidence\">Validação · Feedback · Apoio da IA · Artefatos atualizados</div>"},"gmo":{"tag":"GMO · GESTÃO DE MUDANÇAS ORGANIZACIONAIS","title":"Preparar pessoas para a mudança.","body":"<p>Apoio a preparação dos usuários para novos processos e soluções, conectando entendimento dos impactos, comunicação e acompanhamento da adoção.</p><ol><li><strong>Entender impactos:</strong> identificar públicos envolvidos e mudanças na rotina.</li><li><strong>Preparar usuários:</strong> organizar comunicação, orientações, treinamentos e materiais de apoio.</li><li><strong>Acompanhar a adoção:</strong> reunir dúvidas e feedbacks para direcionar ajustes.</li></ol><div class=\"evidence\">Impactos · Comunicação · Treinamento · Adoção</div><p><a class=\"source-link\" href=\"gestao-de-mudancas.html\">Acompanhar a evolução do portfólio</a></p>"}};

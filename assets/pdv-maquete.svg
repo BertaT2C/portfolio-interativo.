@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 290" role="img" aria-labelledby="title desc">
+<title id="title">Do caixa à máquina de refrigerante</title>
+<desc id="desc">O atendente registra o pedido de exemplo 042 no PDV. O painel acompanha o preparo enquanto a máquina serve o refrigerante no copo.</desc>
+<style>
+.tap{transform-origin:154px 159px;animation:tap 10s infinite}
+.pulse{stroke-dasharray:8 12;animation:signal 10s linear infinite}
+.drop{stroke-dasharray:7 5;animation:pour 10s linear infinite}
+.fill{transform-origin:408px 220px;animation:fill 10s linear infinite}
+.received{animation:received 10s infinite}.preparing{animation:preparing 10s infinite}.ready{animation:ready 10s infinite}
+@keyframes tap{0%,5%,30%,100%{transform:rotate(0)}10%,20%{transform:rotate(-15deg)}15%,25%{transform:rotate(4deg)}}
+@keyframes signal{0%,21%,53%,100%{opacity:0}24%,49%{opacity:1;stroke-dashoffset:-55}50%{stroke-dashoffset:-125}}
+@keyframes pour{0%,44%,79%,100%{opacity:0}46%,76%{opacity:1}77%{stroke-dashoffset:-110}}
+@keyframes fill{0%,46%{transform:scaleY(.06)}76%,95%{transform:scaleY(1)}100%{transform:scaleY(.06)}}
+@keyframes received{0%,37%{opacity:1}38%,100%{opacity:0}}
+@keyframes preparing{0%,37%,78%,100%{opacity:0}38%,77%{opacity:1}}
+@keyframes ready{0%,77%{opacity:0}78%,100%{opacity:1}}
+@media(prefers-reduced-motion:reduce){.tap,.pulse,.drop,.fill,.received,.preparing,.ready{animation:none}.pulse,.drop,.received,.preparing{opacity:0}.ready{opacity:1}}
+</style>
+<defs><pattern id="floor" width="40" height="40" patternUnits="userSpaceOnUse" patternTransform="rotate(27) skewX(-24)"><rect width="40" height="40" fill="#ecf1e8"/><path d="M0 0h20v20H0zm20 20h20v20H20z" fill="#d0dfd2"/></pattern><clipPath id="cup"><path d="M392 188h34l-5 33h-24z"/></clipPath></defs>
+<rect width="560" height="290" rx="24" fill="#eaf2e7"/>
+<path d="M14 225l144-62 383 61-145 56z" fill="url(#floor)" stroke="#b0cab9" stroke-width="2"/>
+<path d="M21 103l133-56 101 13-133 57z" fill="#e2b885"/><path d="M21 103l101 14v114L21 215z" fill="#f4dfbf"/><path d="M122 117l133-57v90l-133 60z" fill="#d7b08b"/>
+<path d="M33 109l80 12v12l-80-12z" fill="#9e4c39"/>
+<g stroke="#2f453c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M109 198v35m29-35v39" stroke-width="8"/><path d="M97 194v-32c0-14 11-22 25-22s25 8 25 22v32z" fill="#356953"/><circle cx="122" cy="123" r="17" fill="#dba678"/><path d="M105 121c0-18 30-24 35-3l-7 1-6-8-9 8z" fill="#333632"/>
+ <path class="tap" d="M154 159l4 17 26-5" fill="none" stroke="#dba678" stroke-width="8"/>
+ <path d="M153 185l85 11v49l-85-12z" fill="#ac4938"/><path d="M153 185l26-15 86 11-27 15z" fill="#f0c093"/><path d="M238 196l27-15v48l-27 16z" fill="#813d32"/>
+ <path d="M177 135l43 6v33l-43-6z" fill="#2d4b43"/><path d="M183 142l30 4v17l-30-4z" fill="#a9d6b7"/><path d="M198 170v8m-10 2 22 3"/>
+ <path d="M354 124l33-17 105 13-32 18z" fill="#a7bdb0"/><path d="M460 138l32-18v92l-32 18z" fill="#79958a"/>
+ <rect x="354" y="125" width="107" height="105" rx="7" fill="#3a544b"/><rect x="371" y="149" width="70" height="73" rx="5" fill="#172f2a"/>
+ <path d="M399 150v11h18v-11" fill="#d8e3d8"/><path class="drop" d="M408 162v39" stroke="#d69858" stroke-width="6"/>
+ <path d="M392 188h34l-5 33h-24z" fill="#f5e9cc" stroke="#c5d7c8"/>
+ <g clip-path="url(#cup)"><rect class="fill" x="391" y="195" width="36" height="26" fill="#9b603c" stroke="none"/></g><path d="M392 188h34" stroke="#fbf6e9" stroke-width="4"/>
+</g>
+<path d="M221 155c53-44 81-12 119-21" fill="none" stroke="#587b69" stroke-width="3" stroke-dasharray="4 7"/>
+<path class="pulse" d="M221 155c53-44 81-12 119-21" fill="none" stroke="#a16111" stroke-width="6" stroke-linecap="round"/>
+<g font-family="system-ui,sans-serif">
+ <rect x="278" y="17" width="252" height="88" rx="13" fill="#143c32"/><text x="298" y="40" font-size="12" font-weight="700" letter-spacing="2" fill="#e3eee3">PAINEL DE PEDIDOS</text>
+ <text x="298" y="77" font-size="29" font-weight="800" fill="#ffe498">#042</text>
+ <g font-size="15" font-weight="750" fill="#f3f8ee"><text class="received" x="374" y="76">Recebido</text><text class="preparing" opacity="0" x="374" y="76">Em preparo</text><text class="ready" opacity="0" x="374" y="76">Pronto</text></g>
+ <text x="153" y="264" font-size="15" font-weight="800" fill="#234a3b">CAIXA · PDV</text><text x="376" y="255" font-size="15" font-weight="800" fill="#234a3b">MÁQUINA · ABS</text>
+</g>
+</svg>
