@@ -423,11 +423,11 @@ dialog:has(.whatsapp-walkthrough) .dialog-body{padding:16px 20px 22px}
 #destaques :is(#telas-whatsapp,#open-audit,#open-import,#open-pdv) .video-play svg{
  width:55px;height:55px;padding:13px;box-sizing:border-box;flex:none
 }
-#destaques :is(.featured-pair,.feature-card){display:grid;grid-row:span 4;grid-template-rows:subgrid;row-gap:0;min-width:0}
-#destaques .feature-copy{display:grid;grid-row:span 3;grid-template-rows:subgrid;row-gap:0}
+#destaques :is(.featured-pair,.feature-card){display:grid;grid-row:span 3;grid-template-rows:subgrid;row-gap:0;min-width:0}
+#destaques .feature-copy{display:grid;grid-row:span 2;grid-template-rows:subgrid;row-gap:0}
 #destaques .feature-intro,#destaques .feature-copy details{min-width:0}
 #destaques .feature-copy details{align-self:start}
-#destaques .feature-actions{display:flex;align-self:end;justify-content:flex-end;flex-wrap:wrap;gap:8px;margin-top:14px}
+.journey-footer{position:sticky;bottom:0;display:flex;justify-content:flex-end;padding:12px clamp(16px,4vw,30px);background:var(--paper);border-top:1px solid var(--line);z-index:2}
 .study-access-form{display:grid;gap:13px}
 .study-access-form label{display:grid;gap:5px;font-weight:650}
 .study-access-form input{width:100%;min-height:44px;padding:9px 11px;font:inherit;color:var(--ink);background:var(--theme-surface);border:1px solid var(--line);border-radius:8px}
@@ -516,7 +516,7 @@ dialog:has(.whatsapp-walkthrough) .dialog-body{padding:16px 20px 22px}
   </div>
 </section>
 <section id="projetos" aria-labelledby="featured-title">
-<section class="featured-section" id="destaques" aria-labelledby="featured-title"><p class="eyebrow">PROJETOS</p><h2 id="featured-title" class="editorial-title">Destaques</h2><div class="featured-grid"><article class="feature-card"><button type="button" class="chat-preview" id="telas-whatsapp" aria-label="Abrir a apresentação de WhatsApp e chatbot" aria-haspopup="dialog"><div class="chat-phone"><div class="chat-top"><span class="chat-avatar" aria-hidden="true">B</span><span>Atendimento digital<small>WhatsApp · Chatbot</small></span></div><div class="chat-body"><span class="bubble incoming">Olá! Como posso ajudar?</span><span class="bubble outgoing">Quero acessar meus serviços.</span><span class="bubble incoming">Escolha o que você precisa:<br><b>Boletos · Serviços · Atendimento</b></span></div><span class="chat-foot">Representação da jornada de atendimento</span></div><span class="video-play"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 4.5v15L20 12z"/></svg><span>Explorar</span></span></button><div class="feature-copy"><div class="feature-intro"><span class="feature-tag">PRODUTOS DIGITAIS · SEGUROS</span><h3>WhatsApp e chatbot</h3><p>Evolução da jornada de atendimento para facilitar o acesso a serviços e direcionar solicitações de autosserviço.</p></div><details><summary>Minha atuação</summary><p>Discovery, mapeamento AS IS / TO BE, requisitos e critérios de aceite. Colaboração com negócio, arquitetura, desenvolvimento e UX/UI, além do acompanhamento de testes e homologação.</p></details><div class="feature-actions"><button class="feature-action" type="button" data-study-access="whatsapp">Jornada do processo</button></div></div></article><article class="feature-card"><button id="open-audit" class="audit-cover process-cover" type="button" aria-label="Abrir os cenários AS IS e TO BE da Auditoria Contínua"><span class="audit-cover-kicker">INTEGRAÇÕES · AUTOMAÇÃO</span><span class="audit-illustration" aria-hidden="true"><span class="audit-gear gear-one">⚙</span><span class="audit-gear gear-two">⚙</span><span class="audit-person person-one"><i></i><b></b></span><span class="audit-person person-two"><i></i><b></b></span><span class="audit-laptop"><i></i><b></b></span></span><span class="audit-cover-copy"><strong>Auditoria Contínua</strong><small>Do processo manual à integração automatizada</small></span><span class="video-play"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 4.5v15L20 12z"/></svg><span>Explorar</span></span></button><div class="feature-copy"><div class="feature-intro"><span class="feature-tag">INTEGRAÇÕES · AUTOMAÇÃO</span><h3>Auditoria Contínua</h3><p>Integração de dados para automatizar a auditoria, preservar arquivos de origem e ampliar a rastreabilidade. Escopo inicial: Compras e Contas a Pagar.</p></div><details><summary>Minha atuação</summary><p>Estruturação de requisitos e integrações, com foco em evidências, guarda segura dos arquivos e um processo extensível a outras áreas.</p></details><div class="feature-actions"><button class="feature-action" type="button" data-study-access="auditoria">Jornada do processo</button></div></div></article><div class="featured-pair"><article class="feature-card import-feature">
+<section class="featured-section" id="destaques" aria-labelledby="featured-title"><p class="eyebrow">PROJETOS</p><h2 id="featured-title" class="editorial-title">Destaques</h2><div class="featured-grid"><article class="feature-card"><button type="button" class="chat-preview" id="telas-whatsapp" aria-label="Abrir a apresentação de WhatsApp e chatbot" aria-haspopup="dialog"><div class="chat-phone"><div class="chat-top"><span class="chat-avatar" aria-hidden="true">B</span><span>Atendimento digital<small>WhatsApp · Chatbot</small></span></div><div class="chat-body"><span class="bubble incoming">Olá! Como posso ajudar?</span><span class="bubble outgoing">Quero acessar meus serviços.</span><span class="bubble incoming">Escolha o que você precisa:<br><b>Boletos · Serviços · Atendimento</b></span></div><span class="chat-foot">Representação da jornada de atendimento</span></div><span class="video-play"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 4.5v15L20 12z"/></svg><span>Explorar</span></span></button><div class="feature-copy"><div class="feature-intro"><span class="feature-tag">PRODUTOS DIGITAIS · SEGUROS</span><h3>WhatsApp e chatbot</h3><p>Evolução da jornada de atendimento para facilitar o acesso a serviços e direcionar solicitações de autosserviço.</p></div><details><summary>Minha atuação</summary><p>Discovery, mapeamento AS IS / TO BE, requisitos e critérios de aceite. Colaboração com negócio, arquitetura, desenvolvimento e UX/UI, além do acompanhamento de testes e homologação.</p></details></div></article><article class="feature-card"><button id="open-audit" class="audit-cover process-cover" type="button" aria-label="Abrir os cenários AS IS e TO BE da Auditoria Contínua"><span class="audit-cover-kicker">INTEGRAÇÕES · AUTOMAÇÃO</span><span class="audit-illustration" aria-hidden="true"><span class="audit-gear gear-one">⚙</span><span class="audit-gear gear-two">⚙</span><span class="audit-person person-one"><i></i><b></b></span><span class="audit-person person-two"><i></i><b></b></span><span class="audit-laptop"><i></i><b></b></span></span><span class="audit-cover-copy"><strong>Auditoria Contínua</strong><small>Do processo manual à integração automatizada</small></span><span class="video-play"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 4.5v15L20 12z"/></svg><span>Explorar</span></span></button><div class="feature-copy"><div class="feature-intro"><span class="feature-tag">INTEGRAÇÕES · AUTOMAÇÃO</span><h3>Auditoria Contínua</h3><p>Integração de dados para automatizar a auditoria, preservar arquivos de origem e ampliar a rastreabilidade. Escopo inicial: Compras e Contas a Pagar.</p></div><details><summary>Minha atuação</summary><p>Estruturação de requisitos e integrações, com foco em evidências, guarda segura dos arquivos e um processo extensível a outras áreas.</p></details></div></article><div class="featured-pair"><article class="feature-card import-feature">
   <button id="open-import" class="audit-cover process-cover" type="button" aria-label="Abrir os cenários AS IS e TO BE da importação no ERP Oracle R12">
     <span class="audit-cover-kicker">ERP ORACLE R12 · COMÉRCIO EXTERIOR</span>
     <span class="import-cover-art" aria-hidden="true">
@@ -537,11 +537,11 @@ dialog:has(.whatsapp-walkthrough) .dialog-body{padding:16px 20px 22px}
     <span class="audit-cover-copy"><strong>Do recebimento ao estoque</strong><small>Integração de dados fiscais e de importação</small></span>
     <span class="video-play"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 4.5v15L20 12z"/></svg><span>Explorar</span></span>
   </button>
-  <div class="feature-copy"><div class="feature-intro"><span class="feature-tag">INTEGRAÇÕES · ERP INDUSTRIAL</span><h3>Fluxo de importação no ERP Oracle R12</h3><p>Da redigitação de itens à integração entre Compras, Logística, Fiscal e Estoque.</p></div><details><summary>Minha atuação</summary><p>Mapeei o fluxo do recebimento ao estoque com as áreas envolvidas. Apoiei a implantação e a homologação das integrações no Oracle R12, validando com a equipe o trânsito dos dados de importação entre Compras, Logística, Fiscal e Estoque.</p><p><strong>Evolução proposta</strong> — acompanhar as falhas de integração e preparar o reprocessamento de pedidos com divergência.</p></details><div class="feature-actions"><button class="feature-action" type="button" data-study-access="erp">Jornada do processo</button></div></div>
+  <div class="feature-copy"><div class="feature-intro"><span class="feature-tag">INTEGRAÇÕES · ERP INDUSTRIAL</span><h3>Fluxo de importação no ERP Oracle R12</h3><p>Da redigitação de itens à integração entre Compras, Logística, Fiscal e Estoque.</p></div><details><summary>Minha atuação</summary><p>Mapeei o fluxo do recebimento ao estoque com as áreas envolvidas. Apoiei a implantação e a homologação das integrações no Oracle R12, validando com a equipe o trânsito dos dados de importação entre Compras, Logística, Fiscal e Estoque.</p><p><strong>Evolução proposta</strong> — acompanhar as falhas de integração e preparar o reprocessamento de pedidos com divergência.</p></details></div>
 </article>
 <article class="feature-card" id="featured-pdv">
   <button id="open-pdv" type="button" aria-label="Explorar: Do pedido ao preparo da bebida"><img class="pdv-maquette" src="assets/pdv-maquete.svg" alt="O atendente registra o pedido 042 no caixa. O painel indica o andamento e a máquina serve o refrigerante." width="560" height="290"><span class="video-play"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 4.5v15L20 12z"/></svg><span>Explorar</span></span></button>
-  <div class="feature-copy"><div class="feature-intro"><span class="feature-tag">INTEGRAÇÃO · REGRAS E BDD</span><h3>Do pedido ao preparo da bebida</h3><p>Integração do ponto de venda ao sistema automatizado de bebidas (ABS).</p></div><details><summary>Minha atuação</summary><p>Detalhei as regras de categoria, sabor, copo, gelo, tamanho e consumo em histórias de usuário, critérios de aceite e cenários BDD.</p></details><div class="feature-actions"><button class="feature-action" type="button" data-study-access="pdv">Jornada do processo</button></div></div>
+  <div class="feature-copy"><div class="feature-intro"><span class="feature-tag">INTEGRAÇÃO · REGRAS E BDD</span><h3>Do pedido ao preparo da bebida</h3><p>Integração do ponto de venda ao sistema automatizado de bebidas (ABS).</p></div><details><summary>Minha atuação</summary><p>Detalhei as regras de categoria, sabor, copo, gelo, tamanho e consumo em histórias de usuário, critérios de aceite e cenários BDD.</p></details></div>
 </article></div></div></section>
 <div aria-labelledby="projects-title"><div class="section-top"><div><h3 id="projects-title">Demais projetos</h3><p>Aqui, você encontra alguns trabalhos, de canais digitais e automação a integrações e implantação de ERP.</p></div></div><div class="grid" id="grid"></div><div class="more-row"><button class="more" id="more" aria-expanded="false">Ver outros projetos +</button></div></div>
 </section>
@@ -556,7 +556,21 @@ dialog:has(.whatsapp-walkthrough) .dialog-body{padding:16px 20px 22px}
 <button type="button" data-gmo-phase="3" aria-pressed="false"><span>Etapa 4</span><strong>Acompanhar a adoção</strong><small>Indicadores e ajustes</small></button>
 </div>
 <p class="gmo-updates"><a href="gestao-de-mudancas.html">Histórico de mudanças</a></p>
-</section><section class="contact-section" id="contato" aria-labelledby="contact-title"><div class="contact-intro"><p class="eyebrow">CONTATO</p><h2 id="contact-title">Vamos conversar sobre<br>o próximo desafio?</h2><p>Análise de negócios, produtos digitais e evolução de processos.</p></div><div class="contact-options"><a href="https://www.linkedin.com/in/bertabatista/" target="_blank" rel="noreferrer"><span>LINKEDIN</span>Conecte-se comigo</a><a href="mailto:bertareg@hotmail.com"><span>E-MAIL</span>bertareg@hotmail.com</a><a href="https://wa.me/5515991814440" target="_blank" rel="noreferrer"><span>WHATSAPP</span>Conversar no WhatsApp</a></div></section><footer class="footer"><p>Projetos e estudos para conhecer minha forma de trabalhar. Dados, documentos e detalhes de casos profissionais são preservados por confidencialidade.</p><span><a href="gestao-de-mudancas.html">Acompanhe as mudanças</a> · <a class="portfolio-service" href="https://bertat2c.github.io/Queromeuportfolio/">Quer um portfólio?</a><br>Berta Batista · Análise de negócios e produtos digitais</span></footer></main><dialog id="detail" aria-labelledby="dialog-title"></dialog><script>
+</section><section class="contact-section" id="contato" aria-labelledby="contact-title"><div class="contact-intro"><p class="eyebrow">CONTATO</p><h2 id="contact-title">Vamos conversar sobre<br>o próximo desafio?</h2><p>Análise de negócios, produtos digitais e evolução de processos.</p></div><div class="contact-options"><a href="https://www.linkedin.com/in/bertabatista/" target="_blank" rel="noreferrer"><span>LINKEDIN</span>Conecte-se comigo</a><a href="mailto:bertareg@hotmail.com"><span>E-MAIL</span>bertareg@hotmail.com</a><a href="https://wa.me/5515991814440" target="_blank" rel="noreferrer"><span>WHATSAPP</span>Conversar no WhatsApp</a></div></section><footer class="footer"><p>Projetos e estudos para conhecer minha forma de trabalhar. Dados, documentos e detalhes de casos profissionais são preservados por confidencialidade.</p><span><a href="gestao-de-mudancas.html">Acompanhe as mudanças</a> · <a class="portfolio-service" href="https://bertat2c.github.io/Queromeuportfolio/">Quer um portfólio?</a><br>Berta Batista · Análise de negócios e produtos digitais</span></footer></main><dialog id="detail" aria-labelledby="dialog-title"></dialog>
+<dialog id="study-access" aria-labelledby="study-access-title">
+ <div class="dialog-head">
+  <h2 id="study-access-title"></h2>
+  <form method="dialog"><button class="close" aria-label="Fechar solicitação">×</button></form>
+ </div>
+ <div class="dialog-body">
+  <p class="study-access-request">Solicite acesso por e-mail.</p>
+  <form class="study-access-form">
+   <label>Nome <input name="nome" type="text" autocomplete="name" maxlength="100" required></label>
+   <label>E-mail <input name="email" type="email" autocomplete="email" maxlength="254" required></label>
+   <button class="feature-action" type="submit">Solicitar acesso</button>
+  </form>
+ </div>
+</dialog><script>
 const featuredPdv={id:'pdv',group:'backlog',tag:'Integração · Regras & BDD',title:'Do pedido ao preparo da bebida',line:'PDV · regras · preparo no ABS',context:'Hoje, o caixa registra a venda no PDV. O pedido não é enviado automaticamente à máquina de bebidas, então um funcionário vai até a estação para preparar e retirar a bebida. A proposta é transformar o pedido do caixa em instruções que a máquina ABS possa executar.',role:'Desdobrei regras de categoria, sabor, copo, gelo, tamanho e consumo em histórias, critérios de aceite e verificações rastreáveis.',deliver:'<div class="evidence"><strong>12</strong> cenários BDD</div><div class="evidence"><strong>15</strong> verificações funcionais</div><p>Regras de negócio conectadas a requisitos e critérios de aceite.</p>',url:'pdv.html'};
 const projects=[
 {id:'oracle',group:'processos',tag:'Automação · Oracle R12',title:'Menos tarefas manuais no ERP',line:'Prazos: 35% · 72% · janeiro × junho',context:'A emissão fiscal exigia preenchimentos repetitivos no Oracle R12, em uma operação industrial com prazos críticos.',role:'Estruturei templates DataLoad, contingências e materiais de orientação para apoiar a automação e a implantação assistida.',deliver:'<div class="evidence"><strong>35% · 72%</strong><br>Cumprimento de prazos</div><div class="evidence"><strong>11% · 6%</strong><br>Taxa de erros</div><p class="subtle">Referências de janeiro e junho publicadas no estudo. Automação introduzida no final de maio.</p>',url:'oracle-r12.html'},
@@ -645,7 +659,20 @@ function projectCover(id){
  </div>`;
 }
 function render(){const items=projects.filter((p,i)=>filter==='todos'?(expanded||i<4):p.group===filter);grid.innerHTML=items.map(p=>`<button class="card" data-project="${p.id}" aria-label="Explorar: ${p.title}">${projectCover(p.id)}<div class="card-bottom"><div><span class="tag">${p.tag}</span><h3>${p.title}</h3><p>${p.line}</p></div><span class="arrow" aria-hidden="true"></span></div></button>`).join('');more.hidden=filter!=='todos'||projects.length<=4;more.textContent=expanded?'Recolher projetos −':'Ver outros projetos +';more.setAttribute('aria-expanded',String(expanded));document.querySelectorAll('[data-filter]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.filter===filter)));}
-function shell(tag,title,body){opener=document.activeElement;dialog.innerHTML=`<div class="dialog-head"><span class="eyebrow">${tag}</span><h2 id="dialog-title">${title}</h2><button class="close" aria-label="Fechar detalhes">×</button></div><div class="dialog-body">${body}</div>`;dialog.querySelector('.close').onclick=()=>dialog.close();dialog.showModal();}
+function shell(tag,title,body,journey){
+ opener=document.activeElement;
+ dialog.innerHTML=`<div class="dialog-head"><span class="eyebrow">${tag}</span><h2 id="dialog-title">${title}</h2><button class="close" aria-label="Fechar detalhes">×</button></div><div class="dialog-body">${body}</div>`;
+ dialog.querySelector('.close').onclick=()=>dialog.close();
+ if(journey){
+  const footer=document.createElement('footer');
+  footer.className='journey-footer';
+  footer.innerHTML='<button class="feature-action" type="button">Jornada do processo</button>';
+  footer.firstElementChild.addEventListener('click',()=>openStudyAccess(journey));
+  dialog.append(footer);
+ }
+ dialog.showModal();
+}
+
 const pdvEvidence = `
  <section class="pdv-bpmn" aria-labelledby="pdv-bpmn-title">
   <h3 id="pdv-bpmn-title">Fluxo BPMN no Bizagi</h3>
@@ -663,7 +690,7 @@ const pdvEvidence = `
   <a class="feature-action pdv-poc-link" href="simulador-abs.html">POC – Experimentar a máquina ABS</a>
  </section>
 `;
-function openProject(p){const projectLink=p.id==='pdv'?'':p.upcoming?'<p>Em breve</p><a class="source-link" data-portfolio-return href="#inicio">Voltar ao portfólio</a>':`<a class="source-link" href="${p.url}">Abrir estudo completo</a>`;shell(p.tag,p.title,`${p.id==='pdv'?'<img class="pdv-maquette" src="assets/pdv-maquete.svg" alt="O atendente registra o pedido 042 no caixa. O painel indica o andamento e a máquina serve o refrigerante." width="560" height="290">':''}<div class="tabs" role="tablist" aria-label="Explorar projeto"><button id="tab-contexto" role="tab" aria-controls="panel" data-tab="contexto" aria-selected="true">Contexto</button><button id="tab-atuacao" role="tab" aria-controls="panel" data-tab="atuacao" aria-selected="false" tabindex="-1">Minha atuação</button><button id="tab-entregas" role="tab" aria-controls="panel" data-tab="entregas" aria-selected="false" tabindex="-1">Entregas</button></div><div class="detail" id="panel" role="tabpanel" aria-labelledby="tab-contexto" tabindex="0"></div>${p.id==='pdv'?pdvEvidence:''}${projectLink}`);if(p.upcoming)dialog.querySelector('[data-portfolio-return]').onclick=()=>{opener=null;dialog.close();};const tabs=[...dialog.querySelectorAll('[data-tab]')];function select(b){const id=b.dataset.tab;tabs.forEach(t=>{t.setAttribute('aria-selected',String(t===b));t.tabIndex=t===b?0:-1});dialog.querySelector('#panel').setAttribute('aria-labelledby',b.id);dialog.querySelector('#panel').innerHTML=id==='entregas'?p.deliver:`<h3>${id==='contexto'?'O problema de negócio':'Como contribuí'}</h3><p>${id==='contexto'?p.context:p.role}</p>`;}tabs.forEach((b,i)=>{b.onclick=()=>select(b);b.onkeydown=e=>{let n;if(e.key==='ArrowRight')n=(i+1)%3;if(e.key==='ArrowLeft')n=(i+2)%3;if(e.key==='Home')n=0;if(e.key==='End')n=2;if(n!==undefined){e.preventDefault();select(tabs[n]);tabs[n].focus();}}});select(tabs[0]);}
+function openProject(p){const projectLink=p.id==='pdv'?'':p.upcoming?'<p>Em breve</p><a class="source-link" data-portfolio-return href="#inicio">Voltar ao portfólio</a>':`<a class="source-link" href="${p.url}">Abrir estudo completo</a>`;shell(p.tag,p.title,`${p.id==='pdv'?'<img class="pdv-maquette" src="assets/pdv-maquete.svg" alt="O atendente registra o pedido 042 no caixa. O painel indica o andamento e a máquina serve o refrigerante." width="560" height="290">':''}<div class="tabs" role="tablist" aria-label="Explorar projeto"><button id="tab-contexto" role="tab" aria-controls="panel" data-tab="contexto" aria-selected="true">Contexto</button><button id="tab-atuacao" role="tab" aria-controls="panel" data-tab="atuacao" aria-selected="false" tabindex="-1">Minha atuação</button><button id="tab-entregas" role="tab" aria-controls="panel" data-tab="entregas" aria-selected="false" tabindex="-1">Entregas</button></div><div class="detail" id="panel" role="tabpanel" aria-labelledby="tab-contexto" tabindex="0"></div>${p.id==='pdv'?pdvEvidence:''}${projectLink}`,p.id==='pdv'?'pdv':undefined);if(p.upcoming)dialog.querySelector('[data-portfolio-return]').onclick=()=>{opener=null;dialog.close();};const tabs=[...dialog.querySelectorAll('[data-tab]')];function select(b){const id=b.dataset.tab;tabs.forEach(t=>{t.setAttribute('aria-selected',String(t===b));t.tabIndex=t===b?0:-1});dialog.querySelector('#panel').setAttribute('aria-labelledby',b.id);dialog.querySelector('#panel').innerHTML=id==='entregas'?p.deliver:`<h3>${id==='contexto'?'O problema de negócio':'Como contribuí'}</h3><p>${id==='contexto'?p.context:p.role}</p>`;}tabs.forEach((b,i)=>{b.onclick=()=>select(b);b.onkeydown=e=>{let n;if(e.key==='ArrowRight')n=(i+1)%3;if(e.key==='ArrowLeft')n=(i+2)%3;if(e.key==='Home')n=0;if(e.key==='End')n=2;if(n!==undefined){e.preventDefault();select(tabs[n]);tabs[n].focus();}}});select(tabs[0]);}
 grid.onclick=e=>{const b=e.target.closest('[data-project]');if(b)openProject(projects.find(p=>p.id===b.dataset.project));};document.querySelectorAll('[data-filter]').forEach(b=>b.onclick=()=>{filter=b.dataset.filter;render()});more.onclick=()=>{expanded=!expanded;render()};dialog.addEventListener('close',()=>{if(opener?.isConnected)opener.focus()});dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});
 render();
 const pdvButton=document.getElementById('open-pdv');
@@ -686,7 +713,7 @@ document.getElementById('telas-whatsapp').onclick=()=>{
     </div>
     <h3 class="whatsapp-step-title" id="whatsapp-step-title" aria-live="polite"></h3>
     <div id="whatsapp-step"></div>
-  </div>`);
+  </div>`,'whatsapp');
  const back=dialog.querySelector('#whatsapp-back');
  const next=dialog.querySelector('#whatsapp-next');
  const nextLabel=next.querySelector('span');
@@ -715,7 +742,7 @@ document.getElementById('telas-whatsapp').onclick=()=>{
  },{once:true});
  showStep();
 };
-document.getElementById('open-audit').onclick=()=>{shell('INTEGRAÇÕES · AUTOMAÇÃO','Auditoria Contínua','<div class="detail"><div class="audit-comparison"><div class="audit-view-tabs" role="group" aria-label="Cenários da auditoria"><button type="button" data-audit-view="as-is" aria-pressed="true">Antes · AS IS</button><button type="button" data-audit-view="to-be" aria-pressed="false">Depois · TO BE</button></div><figure data-audit-panel="as-is"><img src="assets/auditoria-as-is.gif" alt="Auditoria antes da automação: solicitação e extração manuais, envio pelo Teams, preparação de bases e consulta ao resultado no software SaaS" width="1600" height="900"><figcaption>Cenário atual · Solicitação, extração e preparação manual das bases. <a href="assets/auditoria-as-is.gif" target="_blank" rel="noreferrer">Abrir imagem em tamanho maior</a></figcaption></figure><figure data-audit-panel="to-be" hidden><img src="assets/auditoria-to-be.gif" alt="Auditoria com coleta automatizada: orquestrador, APIs de extração, padronização de arquivos, repositório, software SaaS e cópia dos originais para investigação" width="1600" height="900"><figcaption>Cenário proposto · Coleta automatizada, integração via APIs e preservação dos arquivos de origem. <a href="assets/auditoria-to-be.gif" target="_blank" rel="noreferrer">Abrir imagem em tamanho maior</a></figcaption></figure></div><p></p><h3>Minha atuação</h3><p>Levantamento de requisitos e definição das necessidades de integração, rastreabilidade e guarda dos arquivos. O escopo inicial atende Compras e Contas a Pagar, com estrutura flexível para extensão a outras áreas.</p><h3>Valor para o negócio</h3><ul><li>Redução de trocas e etapas manuais.</li><li>Evidências e arquivos de origem disponíveis para conferência.</li><li>Controle do ciclo de vida e apoio à investigação de inconsistências.</li></ul><p class="audit-modal-note">Visão resumida do processo; dados e detalhes internos preservados por confidencialidade.</p></div>');
+document.getElementById('open-audit').onclick=()=>{shell('INTEGRAÇÕES · AUTOMAÇÃO','Auditoria Contínua','<div class="detail"><div class="audit-comparison"><div class="audit-view-tabs" role="group" aria-label="Cenários da auditoria"><button type="button" data-audit-view="as-is" aria-pressed="true">Antes · AS IS</button><button type="button" data-audit-view="to-be" aria-pressed="false">Depois · TO BE</button></div><figure data-audit-panel="as-is"><img src="assets/auditoria-as-is.gif" alt="Auditoria antes da automação: solicitação e extração manuais, envio pelo Teams, preparação de bases e consulta ao resultado no software SaaS" width="1600" height="900"><figcaption>Cenário atual · Solicitação, extração e preparação manual das bases. <a href="assets/auditoria-as-is.gif" target="_blank" rel="noreferrer">Abrir imagem em tamanho maior</a></figcaption></figure><figure data-audit-panel="to-be" hidden><img src="assets/auditoria-to-be.gif" alt="Auditoria com coleta automatizada: orquestrador, APIs de extração, padronização de arquivos, repositório, software SaaS e cópia dos originais para investigação" width="1600" height="900"><figcaption>Cenário proposto · Coleta automatizada, integração via APIs e preservação dos arquivos de origem. <a href="assets/auditoria-to-be.gif" target="_blank" rel="noreferrer">Abrir imagem em tamanho maior</a></figcaption></figure></div><p></p><h3>Minha atuação</h3><p>Levantamento de requisitos e definição das necessidades de integração, rastreabilidade e guarda dos arquivos. O escopo inicial atende Compras e Contas a Pagar, com estrutura flexível para extensão a outras áreas.</p><h3>Valor para o negócio</h3><ul><li>Redução de trocas e etapas manuais.</li><li>Evidências e arquivos de origem disponíveis para conferência.</li><li>Controle do ciclo de vida e apoio à investigação de inconsistências.</li></ul><p class="audit-modal-note">Visão resumida do processo; dados e detalhes internos preservados por confidencialidade.</p></div>','auditoria');
 dialog.querySelectorAll('[data-audit-view]').forEach(button=>{button.onclick=()=>{
 const view=button.dataset.auditView;
 dialog.querySelectorAll('[data-audit-view]').forEach(tab=>tab.setAttribute('aria-pressed',String(tab===button)));
@@ -933,7 +960,7 @@ function openImport(){
    <p class="import-caption"></p>
    <div class="import-canvas" role="group" aria-label="Etapas da importação"></div>
    <p class="import-note">Fluxo ilustrativo, reconstruído a partir da experiência no projeto.</p>
-  </div>`);
+  </div>`,'erp');
  const canvas=dialog.querySelector('.import-canvas');
  const headline=dialog.querySelector('.import-scenario-line');
  const caption=dialog.querySelector('.import-caption');
@@ -994,28 +1021,28 @@ const studyAccessTitles={
  erp:'Jornada do processo · Fluxo de importação no ERP Oracle R12',
  pdv:'Jornada do processo · Do pedido ao preparo da bebida'
 };
-document.querySelectorAll('[data-study-access]').forEach(button=>{
- button.addEventListener('click',()=>{
-  const title=studyAccessTitles[button.dataset.studyAccess];
-  shell('ACESSO SOB SOLICITAÇÃO',title,`<p class="study-access-request">Solicite acesso por e-mail.</p>
-   <form class="study-access-form">
-    <label>Nome <input name="nome" type="text" autocomplete="name" maxlength="100" required></label>
-    <label>E-mail <input name="email" type="email" autocomplete="email" maxlength="254" required></label>
-    <button class="feature-action" type="submit">Solicitar acesso</button>
-   </form>`);
-  const form=dialog.querySelector('.study-access-form');
-  form.addEventListener('submit',event=>{
-   event.preventDefault();
-   const fields=new FormData(form);
-   const name=fields.get('nome').trim();
-   const nameField=form.elements.namedItem('nome');
-   if(!name){nameField.setCustomValidity('Informe seu nome.');nameField.reportValidity();return;}
-   const subject=encodeURIComponent('Solicitação de acesso — '+title);
-   const body=encodeURIComponent('Nome: '+name+'\nE-mail: '+fields.get('email').trim());
-   window.location.href='mailto:bertareg@hotmail.com?subject='+subject+'&body='+body;
-  });
-  form.elements.namedItem('nome').addEventListener('input',event=>event.target.setCustomValidity(''));
- });
+const accessDialog=document.getElementById('study-access');
+const accessForm=accessDialog.querySelector('.study-access-form');
+const accessName=accessForm.elements.namedItem('nome');
+const accessTitle=accessDialog.querySelector('#study-access-title');
+
+function openStudyAccess(journey){
+ accessForm.reset();
+ accessName.setCustomValidity('');
+ accessTitle.textContent=studyAccessTitles[journey];
+ accessDialog.showModal();
+ accessName.focus();
+}
+
+accessName.addEventListener('input',()=>accessName.setCustomValidity(''));
+accessForm.addEventListener('submit',event=>{
+ event.preventDefault();
+ const fields=new FormData(accessForm);
+ const name=fields.get('nome').trim();
+ if(!name){accessName.setCustomValidity('Informe seu nome.');accessName.reportValidity();return;}
+ const subject=encodeURIComponent('Solicitação de acesso — '+accessTitle.textContent);
+ const body=encodeURIComponent('Nome: '+name+'\nE-mail: '+fields.get('email').trim());
+ window.location.href='mailto:bertareg@hotmail.com?subject='+subject+'&body='+body;
 });
 
 {
