@@ -563,8 +563,13 @@ dialog:has(.whatsapp-walkthrough) .dialog-body{padding:16px 20px 22px}
   <form method="dialog"><button class="close" aria-label="Fechar solicitação">×</button></form>
  </div>
  <div class="dialog-body">
-  <p class="study-access-request">Solicite acesso por e-mail.</p>
-  <form class="study-access-form">
+  <p class="study-access-request">Solicite acesso por e-mail. Enviarei o link do estudo ao endereço informado.</p>
+  <form class="study-access-form" action="https://formsubmit.co/bertareg@hotmail.com" method="POST">
+   <input type="hidden" name="_subject" value="Solicitação de acesso ao portfólio">
+   <input type="hidden" name="Projeto" value="">
+   <input type="hidden" name="_template" value="table">
+   <input type="hidden" name="_captcha" value="true">
+   <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
    <label>Nome <input name="nome" type="text" autocomplete="name" maxlength="100" required></label>
    <label>E-mail <input name="email" type="email" autocomplete="email" maxlength="254" required></label>
    <button class="feature-action" type="submit">Solicitar acesso</button>
@@ -1030,19 +1035,18 @@ function openStudyAccess(journey){
  accessForm.reset();
  accessName.setCustomValidity('');
  accessTitle.textContent=studyAccessTitles[journey];
+ accessForm.elements.namedItem('Projeto').value=studyAccessTitles[journey];
+ accessForm.elements.namedItem('_subject').value='Solicitação de acesso — '+studyAccessTitles[journey];
  accessDialog.showModal();
  accessName.focus();
 }
 
 accessName.addEventListener('input',()=>accessName.setCustomValidity(''));
 accessForm.addEventListener('submit',event=>{
- event.preventDefault();
- const fields=new FormData(accessForm);
- const name=fields.get('nome').trim();
- if(!name){accessName.setCustomValidity('Informe seu nome.');accessName.reportValidity();return;}
- const subject=encodeURIComponent('Solicitação de acesso — '+accessTitle.textContent);
- const body=encodeURIComponent('Nome: '+name+'\nE-mail: '+fields.get('email').trim());
- window.location.href='mailto:bertareg@hotmail.com?subject='+subject+'&body='+body;
+ const name=accessName.value.trim();
+ if(!name){event.preventDefault();accessName.setCustomValidity('Informe seu nome.');accessName.reportValidity();return;}
+ accessName.value=name;
+ accessForm.elements.namedItem('email').value=accessForm.elements.namedItem('email').value.trim();
 });
 
 {
